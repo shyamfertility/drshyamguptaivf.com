@@ -483,6 +483,26 @@ footer a{color:var(--on-dark-dim)}
   font-family:"Archivo",sans-serif;line-height:1.5}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 
+/* ============ collapsed article body ============ */
+.readmore{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1.1rem}
+.readmore>summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.88rem;font-weight:600;color:var(--brand);min-height:44px;
+  padding:.5rem .95rem;border:1px solid var(--brand);border-radius:var(--radius-sm);
+  transition:background .16s,color .16s}
+.readmore>summary::-webkit-details-marker{display:none}
+.readmore>summary::after{content:"\25BE";font-size:.9em;transition:transform .16s}
+.readmore[open]>summary::after{transform:rotate(180deg)}
+.readmore>summary:hover,.readmore>summary:focus-visible{background:var(--brand);color:var(--surface)}
+:root[data-theme="dark"] .readmore>summary:hover,
+:root:not([data-theme="light"]) .readmore>summary:hover{color:var(--brand-ink)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .readmore>summary:hover{color:#fff}}
+.readmore>summary .lbl-close{display:none}
+.readmore[open]>summary .lbl-open{display:none}
+.readmore[open]>summary .lbl-close{display:inline}
+.readmore .article{margin-top:1.4rem}
+.read-time{color:var(--muted)}
+
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
 .subhero h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.06;letter-spacing:-.02em;margin-top:.5rem}

@@ -485,6 +485,26 @@ footer a{color:var(--on-dark-dim)}
   font-family:"Archivo",sans-serif;line-height:1.5}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 
+/* ============ collapsed article body ============ */
+.readmore{margin-top:1.25rem;border-top:1px solid var(--line);padding-top:1.1rem}
+.readmore>summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.88rem;font-weight:600;color:var(--brand);min-height:44px;
+  padding:.5rem .95rem;border:1px solid var(--brand);border-radius:var(--radius-sm);
+  transition:background .16s,color .16s}
+.readmore>summary::-webkit-details-marker{display:none}
+.readmore>summary::after{content:"\25BE";font-size:.9em;transition:transform .16s}
+.readmore[open]>summary::after{transform:rotate(180deg)}
+.readmore>summary:hover,.readmore>summary:focus-visible{background:var(--brand);color:var(--surface)}
+:root[data-theme="dark"] .readmore>summary:hover,
+:root:not([data-theme="light"]) .readmore>summary:hover{color:var(--brand-ink)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .readmore>summary:hover{color:#fff}}
+.readmore>summary .lbl-close{display:none}
+.readmore[open]>summary .lbl-open{display:none}
+.readmore[open]>summary .lbl-close{display:inline}
+.readmore .article{margin-top:1.4rem}
+.read-time{color:var(--muted)}
+
 .post-item[hidden]{display:none}
 .gallery figure[hidden]{display:none}
 </style>
@@ -969,7 +989,9 @@ footer a{color:var(--on-dark-dim)}
           <h3>Fertility Medicine in 2030: from IVF clinic to intelligent reproductive health systems</h3>
           <p class="standfirst">Seven shifts that will define the next decade of reproductive medicine — AI-assisted embryology, male fertility moving to centre stage, evidence-based personalisation, fertility preservation, honest outcome reporting, and why trust will remain the strongest medicine.</p>
         </div>
-        <div class="article">
+        <details class="readmore">
+          <summary><span class="lbl-open">Read the full piece</span><span class="lbl-close">Close</span></summary>
+          <div class="article">
           <p>Fertility care is on the cusp of one of the biggest shifts since the invention of IVF. The next decade will not be about more IVF cycles, more labs or more technology. It will be defined by a larger question: can reproductive medicine become more predictive, personalised, ethical, accessible and emotionally intelligent? The scale of the challenge is undeniable. The WHO says that almost one in six adults globally will experience infertility at some point in their life, demonstrating that infertility is not a niche issue but a major public health concern. At the same time, the fertility services market is anticipated to register a CAGR of 9.7% and reach USD 63.36 billion in 2030, up from USD 39.88 billion in 2025. But this is less about expanding the market. The real story is a metamorphosis.</p>
           <p>The first big change is the emergence of AI-assisted IVF labs. Embryo selection, sperm assessment, time-lapse imaging, trigger timing, stimulation prediction and outcome counselling are all becoming data-driven. There is potential for AI to reduce inter-observer variation and standardise embryology decisions but the evidence is still evolving. A 2024 Nature Medicine randomised trial showed that deep-learning embryo selection reduced evaluation time but did not demonstrate non-inferiority for clinical pregnancy compared with morphology-based selection. It’s an important reminder: AI should not replace clinical wisdom but support it.</p>
           <p>The second shift is the shift of male fertility from the wings to centre stage in fertility care. In roughly half of all cases of infertility, a male factor is present, either alone or together with another factor. In the future, fertility clinics will not focus on women when it comes to investigation, counselling and treatment planning . A semen analysis alone will not do. Couples should take into account DNA fragmentation, oxidative stress, lifestyle, endocrine status, varicocele, genetics, infections, environmental exposure and sexual health in fertility planning.</p>
@@ -990,7 +1012,8 @@ footer a{color:var(--on-dark-dim)}
           <p>Reproductive mental health will also be critical. Infertility, miscarriage, repeated IVF failure, pregnancy uncertainty, postpartum stress, perimenopause and sexual health concerns carry a deep emotional weight. Counselling, psychological support, grief care and relationship-sensitive communication should not be optional extras. They need to be central to reproductive health care.</p>
           <p>The future women’s health centre will cover a woman from adolescence, fertility, pregnancy, postpartum, perimenopause, menopause and healthy ageing. That is the greater promise of Women’s Health 2030: not episodic care, but lifelong reproductive intelligence.</p>
           <p class="pull">Fertility is not the science of making babies; it is the art of restoring possibilities and preserving the reproductive time.<span class="sig">Dr Shyam N Gupta, MD</span></p>
-        </div>
+          </div>
+        </details>
       </article>
       <article class="post-item" data-post="1">
         <div class="panel-head">
@@ -998,7 +1021,9 @@ footer a{color:var(--on-dark-dim)}
           <h3>When hope refused to give up</h3>
           <p class="standfirst">A couple, eleven years of marriage, six clinics and two failed IVF cycles — and what their daughter taught me about the part of fertility medicine that never appears in a protocol.</p>
         </div>
-        <div class="article">
+        <details class="readmore">
+          <summary><span class="lbl-open">Read the full piece</span><span class="lbl-close">Close</span></summary>
+          <div class="article">
           <p>In the journey of medicine, there are many patients we treat, many procedures we perform, and many reports we analyze. Yet, only a few stories stay with us forever—stories that remind us why we chose this profession in the first place. One such story from my career as a fertility specialist continues to shape the way I look at infertility, human resilience, and the deep emotional responsibility we carry as doctors.</p>
           <p>This incident took place nearly a two years ago, around August 2023, when I was already several years into my practice in reproductive medicine. By then, I had treated hundreds of couples struggling with infertility, but that particular case taught me something beyond textbooks, protocols, and medical algorithms.</p>
           <p>A couple walked into my clinic one quiet afternoon. The husband was calm but visibly tired, and the wife carried a silence that only someone who has endured repeated disappointments can understand. They had been married for 11 years and had visited more than six fertility clinics across different cities. They had undergone multiple treatments—ovulation induction, several cycles of IUI, and even two unsuccessful IVF attempts.</p>
@@ -1033,7 +1058,8 @@ footer a{color:var(--on-dark-dim)}
           <p>That particular couple reminded me that medicine is not only about solving biological problems; it is also about standing beside people during some of the most vulnerable moments of their lives.</p>
           <p>Every time I see that little girl during follow-up visits, I am reminded of something important: sometimes the greatest success in medicine is not the procedure we perform, but the hope we help someone rediscover.</p>
           <p>And that is what continues to inspire me every day as a fertility specialist. A fertility specialist is not just a doctor of hormones and embryos; he is a guardian of dreams that couples have carried silently for years.</p>
-        </div>
+          </div>
+        </details>
       </article>
       <article class="post-item" data-post="2">
         <div class="panel-head">
@@ -1041,7 +1067,9 @@ footer a{color:var(--on-dark-dim)}
           <h3>Advanced fertility care in Bengaluru: services and approach</h3>
           <p class="standfirst">What each treatment actually involves — natural conception support, infertility workup, IUI, IVF and ICSI, and reproductive immunogenetics for couples with repeated miscarriage or failed cycles.</p>
         </div>
-        <div class="article">
+        <details class="readmore">
+          <summary><span class="lbl-open">Read the full piece</span><span class="lbl-close">Close</span></summary>
+          <div class="article">
           <p>&lt;w:left w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:bottom w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:right w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:between w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;/w:pBdr&gt;&lt;w:shd w:fill=&quot;auto&quot; w:val=&quot;clear&quot;/&gt;&lt;w:spacing w:after=&quot;0&quot; w:before=&quot;0&quot; w:line=&quot;276&quot; w:lineRule=&quot;auto&quot;/&gt;&lt;w:ind w:left=&quot;0&quot; w:right=&quot;0&quot; w:firstLine=&quot;0&quot;/&gt;&lt;w:jc w:val=&quot;left&quot;/&gt;&lt;w:rPr/&gt;&lt;/w:pPr&gt;&lt;w:r w:rsidDel=&quot;00000000&quot; w:rsidR=&quot;00000000&quot; w:rsidRPr=&quot;00000000&quot;&gt;&lt;w:rPr&gt;&lt;w:rtl w:val=&quot;0&quot;/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;In the bustling city of Bengaluru, where innovation meets tradition, Dr Shyam N Gupta stands out as a beacon of hope for those seeking top-tier fertility and reproductive services. With a legacy of 12 years in the industry, Dr. Gupta has carved a niche as a leading expert in natural pregnancy and advanced reproductive techniques like IVF / ICSI and Reproductive immunogenetics. His practice, a blend of cutting-edge technology and compassionate care, has transformed the lives of countless families. As the go-to specialist in the region, Dr. Gupta ensures each patient receives personalized attention, paving the way for successful outcomes and happy families.</p>
           <h4>Our Premier Services &amp; Solutions</h4>
           <p>&lt;w:left w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:bottom w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:right w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:between w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;/w:pBdr&gt;&lt;w:shd w:fill=&quot;auto&quot; w:val=&quot;clear&quot;/&gt;&lt;w:spacing w:after=&quot;0&quot; w:before=&quot;0&quot; w:line=&quot;276&quot; w:lineRule=&quot;auto&quot;/&gt;&lt;w:ind w:left=&quot;0&quot; w:right=&quot;0&quot; w:firstLine=&quot;0&quot;/&gt;&lt;w:jc w:val=&quot;left&quot;/&gt;&lt;w:rPr/&gt;&lt;/w:pPr&gt;&lt;w:r w:rsidDel=&quot;00000000&quot; w:rsidR=&quot;00000000&quot; w:rsidRPr=&quot;00000000&quot;&gt;&lt;w:rPr&gt;&lt;w:rtl w:val=&quot;0&quot;/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;At Dr Shyam N Gupta, we pride ourselves on offering a comprehensive suite of services designed to address a wide array of reproductive challenges.</p>
@@ -1061,7 +1089,8 @@ footer a{color:var(--on-dark-dim)}
           <p>&lt;w:left w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:bottom w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:right w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:between w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;/w:pBdr&gt;&lt;w:shd w:fill=&quot;auto&quot; w:val=&quot;clear&quot;/&gt;&lt;w:spacing w:after=&quot;0&quot; w:before=&quot;0&quot; w:line=&quot;276&quot; w:lineRule=&quot;auto&quot;/&gt;&lt;w:ind w:left=&quot;0&quot; w:right=&quot;0&quot; w:firstLine=&quot;0&quot;/&gt;&lt;w:jc w:val=&quot;left&quot;/&gt;&lt;w:rPr/&gt;&lt;/w:pPr&gt;&lt;w:r w:rsidDel=&quot;00000000&quot; w:rsidR=&quot;00000000&quot; w:rsidRPr=&quot;00000000&quot;&gt;&lt;w:rPr&gt;&lt;w:rtl w:val=&quot;0&quot;/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;Experience matters, especially when it comes to fertility and reproductive health. With over a decade of proven market leadership, Dr Shyam N Gupta has established a reputation for excellence and reliability. Our team is composed of highly skilled professionals who are not only experts in their field but are also deeply committed to patient care.</p>
           <p>&lt;w:left w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:bottom w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:right w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:between w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;/w:pBdr&gt;&lt;w:shd w:fill=&quot;auto&quot; w:val=&quot;clear&quot;/&gt;&lt;w:spacing w:after=&quot;0&quot; w:before=&quot;0&quot; w:line=&quot;276&quot; w:lineRule=&quot;auto&quot;/&gt;&lt;w:ind w:left=&quot;0&quot; w:right=&quot;0&quot; w:firstLine=&quot;0&quot;/&gt;&lt;w:jc w:val=&quot;left&quot;/&gt;&lt;w:rPr/&gt;&lt;/w:pPr&gt;&lt;w:r w:rsidDel=&quot;00000000&quot; w:rsidR=&quot;00000000&quot; w:rsidRPr=&quot;00000000&quot;&gt;&lt;w:rPr&gt;&lt;w:rtl w:val=&quot;0&quot;/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;Our superior outcomes are a testament to our rigorous protocols and personalized treatment plans. Patients choose us because they trust in our ability to deliver results, backed by a track record of successful pregnancies and satisfied families. Unlike other clinics, we prioritize transparency and patient education, empowering our clients with the knowledge needed to make informed decisions about their care.</p>
           <p>&lt;w:left w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:bottom w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:right w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;w:between w:space=&quot;0&quot; w:sz=&quot;0&quot; w:val=&quot;nil&quot;/&gt;&lt;/w:pBdr&gt;&lt;w:shd w:fill=&quot;auto&quot; w:val=&quot;clear&quot;/&gt;&lt;w:spacing w:after=&quot;0&quot; w:before=&quot;0&quot; w:line=&quot;276&quot; w:lineRule=&quot;auto&quot;/&gt;&lt;w:ind w:left=&quot;0&quot; w:right=&quot;0&quot; w:firstLine=&quot;0&quot;/&gt;&lt;w:jc w:val=&quot;left&quot;/&gt;&lt;w:rPr/&gt;&lt;/w:pPr&gt;&lt;w:r w:rsidDel=&quot;00000000&quot; w:rsidR=&quot;00000000&quot; w:rsidRPr=&quot;00000000&quot;&gt;&lt;w:rPr&gt;&lt;w:rtl w:val=&quot;0&quot;/&gt;&lt;/w:rPr&gt;&lt;w:t xml:space=&quot;preserve&quot;&gt;Furthermore, our dedication to continuous improvement ensures we stay at the forefront of reproductive medicine, adopting the latest technologies and methodologies to enhance treatment outcomes. At Dr Shyam N Gupta, we are not just providers; we are partners in your journey to achieving the family you desire.</p>
-        </div>
+          </div>
+        </details>
       </article>
     </div>
   </div>
