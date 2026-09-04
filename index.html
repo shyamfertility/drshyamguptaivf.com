@@ -26,7 +26,7 @@
   --ink:#15272D; --body:#3A4D55; --muted:#596C74; --line:#E4DED5;
   --brand:#0E6472; --brand-deep:#0A4653; --brand-ink:#083B45;
   --on-dark:#F1F7F7; --on-dark-dim:#BDD6DA; --on-dark-line:#215C68;
-  --accent:#B8462F; --accent-fill:#B84A34; --accent-tint:#FBEDE8;
+  --accent:#B8462F; --accent-fill:#B84A34; --accent-tint:#FBEDE8; --star:#9A6206;
   --radius:14px; --radius-sm:10px;
   --shadow-sm:0 1px 2px rgba(21,39,45,.05), 0 2px 8px -4px rgba(21,39,45,.14);
   --shadow:0 2px 4px rgba(21,39,45,.05), 0 16px 36px -22px rgba(21,39,45,.36);
@@ -41,7 +41,7 @@
     --ink:#EAF2F2; --body:#C3D3D6; --muted:#9EB5BB; --line:#26383E;
     --brand:#5EC2CE; --brand-deep:#0C2A31; --brand-ink:#081E23;
     --on-dark:#EAF2F2; --on-dark-dim:#A8C5CA; --on-dark-line:#1E4750;
-    --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17;
+    --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17; --star:#E8A33D;
     --shadow-sm:0 1px 2px rgba(0,0,0,.45), 0 2px 8px -4px rgba(0,0,0,.6);
     --shadow:0 2px 4px rgba(0,0,0,.45), 0 16px 36px -22px rgba(0,0,0,.85);
     --wave-1:rgba(255,255,255,.018); --wave-2:rgba(255,255,255,.011);
@@ -55,7 +55,7 @@
   --ink:#EAF2F2; --body:#C3D3D6; --muted:#9EB5BB; --line:#26383E;
   --brand:#5EC2CE; --brand-deep:#0C2A31; --brand-ink:#081E23;
   --on-dark:#EAF2F2; --on-dark-dim:#A8C5CA; --on-dark-line:#1E4750;
-  --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17;
+  --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17; --star:#E8A33D;
   --shadow-sm:0 1px 2px rgba(0,0,0,.45), 0 2px 8px -4px rgba(0,0,0,.6);
   --shadow:0 2px 4px rgba(0,0,0,.45), 0 16px 36px -22px rgba(0,0,0,.85);
   --wave-1:rgba(255,255,255,.018); --wave-2:rgba(255,255,255,.011);
@@ -461,6 +461,30 @@ footer a{color:var(--on-dark-dim)}
 .faq summary:hover{color:var(--brand)}
 .faq .a{padding:0 1.2rem 1.15rem;color:var(--body);font-size:.97rem;line-height:1.7;max-width:70ch}
 
+/* ============ patients / reviews ============ */
+.rating-band{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.25rem,4vw,2.5rem);
+  align-items:center;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:clamp(1.25rem,3vw,1.8rem);box-shadow:var(--shadow-sm)}
+.rating-score{text-align:center;padding-right:clamp(1rem,3vw,2rem);border-right:1px solid var(--line)}
+.rating-score .num{font-family:"Newsreader",Georgia,serif;font-size:clamp(2.6rem,6vw,3.6rem);
+  line-height:1;color:var(--ink);display:block}
+.rating-score .stars{color:var(--star);font-size:1.05rem;letter-spacing:.12em;display:block;margin-top:.35rem}
+.rating-score .count{display:block;margin-top:.35rem;font-size:.82rem;color:var(--muted)}
+.rating-what p{font-size:1rem;line-height:1.65;color:var(--body)}
+.rating-what .who{display:block;margin-top:.5rem;font-size:.85rem;color:var(--muted)}
+.rating-what .cta-row{margin-top:1.1rem}
+@media (max-width:640px){
+  .rating-band{grid-template-columns:1fr}
+  .rating-score{border-right:0;border-bottom:1px solid var(--line);padding:0 0 1rem;text-align:left}
+}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.quotes blockquote{margin:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.25rem 1.35rem;box-shadow:var(--shadow-sm)}
+.quotes p{font-family:"Newsreader",Georgia,serif;font-size:1.08rem;line-height:1.55;color:var(--ink)}
+.quotes .who{display:block;margin-top:.7rem;font-size:.83rem;color:var(--muted);
+  font-family:"Archivo",sans-serif;line-height:1.5}
+@media (max-width:760px){.quotes{grid-template-columns:1fr}}
+
 .post-item[hidden]{display:none}
 .gallery figure[hidden]{display:none}
 </style>
@@ -490,6 +514,7 @@ footer a{color:var(--on-dark-dim)}
         <a href="#gallery">Photos</a>
         <a href="#writing">Writing</a>
         <a href="#faq">FAQ</a>
+        <a href="#patients">Patients</a>
         <a href="#connect">Follow</a>
         <a href="#contact">Visit us</a>
         <a href="tel:+919899984791">Call +91 98999 84791</a>
@@ -1090,6 +1115,40 @@ footer a{color:var(--on-dark-dim)}
         <summary>How do I book an appointment?</summary>
         <div class="a">Call or message +91 98999 84791 — the same number takes calls and WhatsApp. Consultations are by appointment at Indira IVF, Woody&#x27;s Building, 3rd Floor, Plot No. 45/1-1, near Bangalore Central Mall, J.P. Nagar, Bengaluru 560078.</div>
       </details>
+    </div>
+  </div>
+</section>
+
+<section id="patients">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Patients</p>
+      <h2>What people say about the centre</h2>
+      <p class="measure">Dr Gupta consults at Indira IVF, J.P. Nagar. These are the centre&#8217;s Google reviews &#8212; for the whole team, not one doctor.</p>
+    </div>
+    <div class="rating-band">
+      <div class="rating-score">
+        <span class="num">4.8</span>
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="count">1,439 Google reviews</span>
+      </div>
+      <div class="rating-what">
+        <p>Indira IVF J.P. Nagar, where Dr Gupta is Centre Head, is rated 4.8 out of 5 across more than 1,400 reviews on Google. The rating belongs to the centre and its full clinical team.</p>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="https://g.page/r/CXxDEThKmkaVEAE">Read the reviews</a>
+          <a class="btn btn-solid" href="https://g.page/r/CXxDEThKmkaVEAE/review">Write a review</a>
+        </div>
+      </div>
+    </div>
+    <div class="quotes">
+      <blockquote>
+        <p>&#8220;Met Dr Shyam sir and discussed our previous reports &#8212; the experience felt completely different from the very beginning.&#8221;</p>
+        <span class="who">Mohammed V. &#183; Google review, after treatment at three or four other centres</span>
+      </blockquote>
+      <blockquote>
+        <p>&#8220;Our special thanks to Dr Shwetha and Dr Shyam for their guidance, support and positive approach, which kept us hopeful throughout the journey.&#8221;</p>
+        <span class="who">Asha H. &#183; Google review</span>
+      </blockquote>
     </div>
   </div>
 </section>
