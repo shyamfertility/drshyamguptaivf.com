@@ -16,15 +16,21 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,300..500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..700&display=swap">
 <style>
 /* ============ tokens ============ */
 :root{
-  --bg:#FBF9F6; --surface:#FFFFFF; --surface-2:#F4F1EC; --tint:#E9F2F3;
-  --ink:#15272D; --body:#3A4D55; --muted:#596C74; --line:#E4DED5;
-  --brand:#0E6472; --brand-deep:#0A4653; --brand-ink:#083B45;
-  --on-dark:#F1F7F7; --on-dark-dim:#BDD6DA; --on-dark-line:#215C68;
-  --accent:#B8462F; --accent-fill:#B84A34; --accent-tint:#FBEDE8; --star:#9A6206;
+  /* palette: Deep Teal #0E5C66 . Warm Coral #E27D73 . Soft Ivory #F7F5EF . Sage #A8C5B0 */
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Plus Jakarta Sans","Helvetica Neue",Arial,sans-serif;
+  --bg:#F7F5EF; --surface:#FFFFFF; --surface-2:#F1EEE6; --tint:#E7F0E9;
+  --ink:#12262B; --body:#38505A; --muted:#4E6570; --line:#E3DDD1;
+  --brand:#0E5C66; --brand-deep:#0A464E; --brand-ink:#083A41;
+  --on-dark:#F2F7F4; --on-dark-dim:#BFD8CB; --on-dark-line:#1F5A61;
+  /* coral is a fill, never white-on-coral text: white on #E27D73 is only 2.8:1 */
+  --accent:#B8452F; --accent-fill:#E27D73; --on-accent:#2A1512;
+  --accent-tint:#FBEAE6; --star:#9A6206;
+  --sage:#A8C5B0; --sage-deep:#7FA98D; --sage-soft:#DCE9E0;
   --radius:14px; --radius-sm:10px;
   --shadow-sm:0 1px 2px rgba(21,39,45,.05), 0 2px 8px -4px rgba(21,39,45,.14);
   --shadow:0 2px 4px rgba(21,39,45,.05), 0 16px 36px -22px rgba(21,39,45,.36);
@@ -35,11 +41,13 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0E1719; --surface:#152227; --surface-2:#1B2A2F; --tint:#152D33;
-    --ink:#EAF2F2; --body:#C3D3D6; --muted:#9EB5BB; --line:#26383E;
-    --brand:#5EC2CE; --brand-deep:#0C2A31; --brand-ink:#081E23;
-    --on-dark:#EAF2F2; --on-dark-dim:#A8C5CA; --on-dark-line:#1E4750;
-    --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17; --star:#E8A33D;
+    --bg:#0F1A1C; --surface:#16252A; --surface-2:#1C2E33; --tint:#16302E;
+    --ink:#E9F1EF; --body:#C0D2D5; --muted:#A3B9BF; --line:#27393E;
+    --brand:#6CC5D0; --brand-deep:#0B2A2F; --brand-ink:#071E22;
+    --on-dark:#E9F1EF; --on-dark-dim:#A9C7BC; --on-dark-line:#1D4750;
+    --accent:#F09A85; --accent-fill:#E27D73; --on-accent:#2A1512;
+    --accent-tint:#2B1A16; --star:#E8A33D;
+    --sage:#8FB59C; --sage-deep:#6E9A7E; --sage-soft:#1E3229;
     --shadow-sm:0 1px 2px rgba(0,0,0,.45), 0 2px 8px -4px rgba(0,0,0,.6);
     --shadow:0 2px 4px rgba(0,0,0,.45), 0 16px 36px -22px rgba(0,0,0,.85);
     --wave-1:rgba(255,255,255,.018); --wave-2:rgba(255,255,255,.011);
@@ -49,11 +57,13 @@
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0E1719; --surface:#152227; --surface-2:#1B2A2F; --tint:#152D33;
-  --ink:#EAF2F2; --body:#C3D3D6; --muted:#9EB5BB; --line:#26383E;
-  --brand:#5EC2CE; --brand-deep:#0C2A31; --brand-ink:#081E23;
-  --on-dark:#EAF2F2; --on-dark-dim:#A8C5CA; --on-dark-line:#1E4750;
-  --accent:#F09077; --accent-fill:#B84A34; --accent-tint:#2A1B17; --star:#E8A33D;
+  --bg:#0F1A1C; --surface:#16252A; --surface-2:#1C2E33; --tint:#16302E;
+  --ink:#E9F1EF; --body:#C0D2D5; --muted:#A3B9BF; --line:#27393E;
+  --brand:#6CC5D0; --brand-deep:#0B2A2F; --brand-ink:#071E22;
+  --on-dark:#E9F1EF; --on-dark-dim:#A9C7BC; --on-dark-line:#1D4750;
+  --accent:#F09A85; --accent-fill:#E27D73; --on-accent:#2A1512;
+  --accent-tint:#2B1A16; --star:#E8A33D;
+  --sage:#8FB59C; --sage-deep:#6E9A7E; --sage-soft:#1E3229;
   --shadow-sm:0 1px 2px rgba(0,0,0,.45), 0 2px 8px -4px rgba(0,0,0,.6);
   --shadow:0 2px 4px rgba(0,0,0,.45), 0 16px 36px -22px rgba(0,0,0,.85);
   --wave-1:rgba(255,255,255,.018); --wave-2:rgba(255,255,255,.011);
@@ -67,11 +77,12 @@
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
 body{
   margin:0;background:var(--bg);color:var(--body);
-  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
-  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  font-family:var(--sans);
+  font-size:17px;line-height:1.68;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
 }
-h1,h2,h3{font-family:"Newsreader",Georgia,"Times New Roman",serif;color:var(--ink);
-  text-wrap:balance;margin:0;font-weight:400}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);
+  text-wrap:balance;margin:0;font-weight:600;font-optical-sizing:auto;letter-spacing:-.012em}
 p{margin:0} img{max-width:100%}
 button,input,select,textarea{font-family:inherit}
 a{color:inherit}
@@ -91,8 +102,8 @@ a{color:inherit}
   min-height:52px;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .12s;
 }
 .btn:active{transform:translateY(1px)}
-.btn-solid{background:var(--accent-fill);color:#fff;border-color:var(--accent-fill)}
-.btn-solid:hover,.btn-solid:focus-visible{background:var(--accent);border-color:var(--accent)}
+.btn-solid{background:var(--accent-fill);color:var(--on-accent);border-color:var(--accent-fill)}
+.btn-solid:hover,.btn-solid:focus-visible{background:#EE9184;border-color:#EE9184;color:var(--on-accent)}
 .btn-brand{background:var(--brand);color:var(--surface);border-color:var(--brand)}
 :root[data-theme="dark"] .btn-brand,
 :root:not([data-theme="light"]) .btn-brand{color:var(--brand-ink)}
@@ -108,7 +119,7 @@ a{color:inherit}
 /* ============ header ============ */
 .bar{position:sticky;top:0;z-index:80;background:var(--surface);border-bottom:1px solid var(--line)}
 .bar-in{display:flex;align-items:center;gap:1rem;min-height:68px}
-.bar-name{font-family:"Newsreader",Georgia,serif;font-size:1.12rem;color:var(--ink);
+.bar-name{font-family:var(--serif);font-size:1.12rem;color:var(--ink);
   text-decoration:none;white-space:nowrap;margin-right:auto;
   min-width:0;overflow:hidden;text-overflow:ellipsis}
 .bar-name em{font-style:italic;color:var(--muted);font-size:.9em}
@@ -199,7 +210,7 @@ a{color:inherit}
   border-radius:var(--radius);padding:1.15rem 1.25rem;text-decoration:none;
   box-shadow:var(--shadow-sm);transition:transform .16s,box-shadow .16s,border-color .16s}
 .qcard:hover,.qcard:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--brand)}
-.qcard .qt{display:block;font-family:"Newsreader",Georgia,serif;font-size:1.14rem;color:var(--ink)}
+.qcard .qt{display:block;font-family:var(--serif);font-size:1.14rem;color:var(--ink)}
 .qcard .qd{display:block;margin-top:.28rem;font-size:.88rem;color:var(--muted);line-height:1.45}
 .qcard .qgo{display:inline-block;margin-top:.6rem;font-size:.82rem;font-weight:700;color:var(--brand)}
 @media (max-width:760px){.quick{grid-template-columns:1fr}}
@@ -209,7 +220,7 @@ a{color:inherit}
   padding-block:clamp(2.25rem,4.5vw,3.25rem) clamp(4.5rem,8vw,7rem)}
 .ledger-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
 .stat{padding:0}
-.stat dt{font-family:"Newsreader",Georgia,serif;font-size:clamp(1.7rem,3.2vw,2.4rem);
+.stat dt{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.4rem);
   color:var(--on-dark);line-height:1.05;font-variant-numeric:tabular-nums lining-nums}
 .stat dd{margin:.4rem 0 0;font-size:.8rem;color:var(--on-dark-dim);line-height:1.4}
 @media (max-width:900px){.ledger-grid{grid-template-columns:repeat(3,1fr);gap:1.5rem 1rem}}
@@ -228,7 +239,7 @@ section{padding-block:clamp(3rem,6vw,5rem)}
 .focus{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .focus-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:1.35rem 1.4rem;box-shadow:var(--shadow-sm)}
-.focus-item h3{font-size:1.12rem;font-weight:600;font-family:"Archivo",sans-serif;
+.focus-item h3{font-size:1.12rem;font-weight:600;font-family:var(--sans);
   color:var(--ink);line-height:1.35}
 .focus-item p{margin-top:.5rem;font-size:.93rem;color:var(--muted);line-height:1.6}
 @media (max-width:1000px){.focus{grid-template-columns:repeat(2,1fr)}}
@@ -246,7 +257,7 @@ section{padding-block:clamp(3rem,6vw,5rem)}
 /* credentials */
 .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .cred-col{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem}
-.cred-col h3{font-family:"Archivo",sans-serif;font-size:.74rem;letter-spacing:.12em;
+.cred-col h3{font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;
   text-transform:uppercase;font-weight:700;color:var(--brand);padding-bottom:.7rem;
   border-bottom:1px solid var(--line)}
 .cred-col ul{list-style:none;margin:0;padding:0}
@@ -267,7 +278,7 @@ section{padding-block:clamp(3rem,6vw,5rem)}
 .chrono a:hover{color:var(--accent)}
 @media (max-width:560px){.chrono li{grid-template-columns:1fr}}
 .trials{margin-top:clamp(1.75rem,4vw,2.5rem)}
-.trials h3{font-family:"Archivo",sans-serif;font-size:.74rem;letter-spacing:.12em;
+.trials h3{font-family:var(--sans);font-size:.74rem;letter-spacing:.12em;
   text-transform:uppercase;font-weight:700;color:var(--brand);margin-bottom:.7rem}
 .trial-list{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
 .trial-list li{padding:.95rem 1.15rem;background:var(--surface);border:1px solid var(--line);
@@ -324,11 +335,11 @@ section{padding-block:clamp(3rem,6vw,5rem)}
 .panel-head .standfirst{margin-top:.7rem;color:var(--muted);max-width:64ch;font-size:1rem;line-height:1.6}
 .article{max-width:66ch;margin-top:1.5rem;display:grid;gap:1rem}
 .article p{font-size:1.01rem;line-height:1.75;color:var(--body)}
-.article h4{font-family:"Archivo",sans-serif;font-size:.76rem;letter-spacing:.12em;
+.article h4{font-family:var(--sans);font-size:.76rem;letter-spacing:.12em;
   text-transform:uppercase;font-weight:700;color:var(--brand);margin-top:.8rem}
-.article .pull{font-family:"Newsreader",Georgia,serif;font-size:1.2rem;line-height:1.45;
+.article .pull{font-family:var(--serif);font-size:1.2rem;line-height:1.45;
   font-style:italic;color:var(--ink);border-left:3px solid var(--accent);padding-left:1.1rem}
-.article .sig{display:block;margin-top:.45rem;font-size:.85rem;color:var(--muted);font-style:normal;font-family:"Archivo",sans-serif}
+.article .sig{display:block;margin-top:.45rem;font-size:.85rem;color:var(--muted);font-style:normal;font-family:var(--sans)}
 .empty{color:var(--muted);font-size:.95rem;padding:1.25rem 0}
 
 /* ============ connect ============ */
@@ -339,7 +350,7 @@ section{padding-block:clamp(3rem,6vw,5rem)}
   transition:transform .16s,border-color .16s}
 .link-card:hover,.link-card:focus-visible{transform:translateY(-2px);border-color:var(--brand)}
 .link-card .net{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:700}
-.link-card .handle{display:block;margin-top:.35rem;font-family:"Newsreader",Georgia,serif;
+.link-card .handle{display:block;margin-top:.35rem;font-family:var(--serif);
   font-size:1.05rem;color:var(--ink);overflow-wrap:anywhere}
 .link-card .what{display:block;margin-top:.3rem;font-size:.85rem;color:var(--muted);line-height:1.5}
 .review{background:var(--accent-tint);border:1px solid var(--line);border-radius:var(--radius);
@@ -405,7 +416,7 @@ footer a{color:var(--on-dark-dim)}
 :root[data-theme="dark"] .btn-add,
 :root:not([data-theme="light"]) .btn-add{color:var(--brand-ink)}
 @media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .btn-add{color:#fff}}
-.btn-add:hover,.btn-add:focus-visible{background:var(--accent-fill);border-color:var(--accent-fill);color:#fff}
+.btn-add:hover,.btn-add:focus-visible{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
 .btn-add .plus{font-size:1.15em;line-height:1}
 [hidden]{display:none !important}
 
@@ -464,7 +475,7 @@ footer a{color:var(--on-dark-dim)}
   align-items:center;background:var(--surface);border:1px solid var(--line);
   border-radius:var(--radius);padding:clamp(1.25rem,3vw,1.8rem);box-shadow:var(--shadow-sm)}
 .rating-score{text-align:center;padding-right:clamp(1rem,3vw,2rem);border-right:1px solid var(--line)}
-.rating-score .num{font-family:"Newsreader",Georgia,serif;font-size:clamp(2.6rem,6vw,3.6rem);
+.rating-score .num{font-family:var(--serif);font-size:clamp(2.6rem,6vw,3.6rem);
   line-height:1;color:var(--ink);display:block}
 .rating-score .stars{color:var(--star);font-size:1.05rem;letter-spacing:.12em;display:block;margin-top:.35rem}
 .rating-score .count{display:block;margin-top:.35rem;font-size:.82rem;color:var(--muted)}
@@ -478,9 +489,9 @@ footer a{color:var(--on-dark-dim)}
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
 .quotes blockquote{margin:0;background:var(--surface);border:1px solid var(--line);
   border-radius:var(--radius);padding:1.25rem 1.35rem;box-shadow:var(--shadow-sm)}
-.quotes p{font-family:"Newsreader",Georgia,serif;font-size:1.08rem;line-height:1.55;color:var(--ink)}
+.quotes p{font-family:var(--serif);font-size:1.08rem;line-height:1.55;color:var(--ink)}
 .quotes .who{display:block;margin-top:.7rem;font-size:.83rem;color:var(--muted);
-  font-family:"Archivo",sans-serif;line-height:1.5}
+  font-family:var(--sans);line-height:1.5}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 
 /* ============ collapsed article body ============ */
@@ -554,6 +565,55 @@ footer a{color:var(--on-dark-dim)}
 @media (max-width:900px){.docs{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.docs{grid-template-columns:1fr}}
 
+/* ============ emphasis: highlights, marks and rules ============ */
+/* Warm Coral and Sage are grounds, not text colours - white on #E27D73 is
+   2.8:1 - so every highlight below puts dark ink on the colour. */
+/* a marker highlight, not an underline: a gradient band across the x-height
+   reads as a strikethrough, so the colour goes behind the whole word */
+.hl,.hl-sage{padding:.1em .3em;border-radius:5px;font-weight:700;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+  color:var(--on-accent);box-shadow:0 1px 0 rgba(18,38,43,.06)}
+.hl{background:var(--accent-fill)}
+.hl-sage{background:var(--sage)}
+mark{background:var(--accent-fill);color:var(--on-accent);
+  padding:.08em .3em;border-radius:4px;font-weight:700}
+strong{font-weight:700;color:var(--ink)}
+.lede strong,.prose strong{font-weight:700;color:var(--ink)}
+.keyline{color:var(--brand);font-weight:700}
+
+/* a coral rule under every section heading, the one repeated flourish */
+.sec-head h2::after,.subhero h1::after{content:"";display:block;width:3.25rem;height:4px;
+  margin-top:.85rem;border-radius:2px;background:var(--accent-fill)}
+.cta-band h2::after,.contact h2::after{background:var(--sage)}
+.rating-what h2::after{display:none}
+
+/* eyebrows get a coral tick so the sections read as a set */
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:800}
+.eyebrow::before{content:"";width:.55rem;height:.55rem;border-radius:2px;
+  background:var(--accent-fill);flex:none}
+.eyebrow.on-pine::before{background:var(--sage)}
+
+/* sage panels alternate against the ivory ground so the page has rhythm */
+.band-sage{background:var(--tint)}
+.chip{font-weight:700}
+.chip b{color:var(--brand)}
+.soc{font-weight:700}
+.stat dt{font-weight:600;letter-spacing:-.02em}
+.tab{font-weight:700}
+.qcard .qt{font-weight:600}
+.qcard{border-left:4px solid var(--sage)}
+.qcard:hover,.qcard:focus-visible{border-left-color:var(--accent-fill)}
+.focus-item{border-top:3px solid var(--sage)}
+.cred-col h3,.trials h3,.article h4{font-weight:800}
+.yr{font-weight:800}
+.hero h1 .given{font-weight:400}
+.role{font-weight:700}
+.bar-nav a{font-weight:600}
+.bar-name{font-weight:600}
+.btn{font-weight:700}
+.faq summary{font-weight:700}
+.link-card .net,.review .net{font-weight:800}
+
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
 .subhero h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.06;letter-spacing:-.02em;margin-top:.5rem}
@@ -565,7 +625,7 @@ footer a{color:var(--on-dark-dim)}
 .prose p{font-size:1.03rem;line-height:1.75;color:var(--body)}
 .prose ul{margin:0;padding-left:1.15rem;display:grid;gap:.5rem}
 .prose li{font-size:1rem;line-height:1.65;color:var(--body)}
-.prose .q{font-family:"Newsreader",Georgia,serif;font-size:1.18rem;line-height:1.5;font-style:italic;
+.prose .q{font-family:var(--serif);font-size:1.18rem;line-height:1.5;font-style:italic;
   color:var(--ink);border-left:3px solid var(--accent);padding-left:1.1rem}
 .related{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 @media (max-width:820px){.related{grid-template-columns:1fr}}
@@ -607,6 +667,9 @@ footer a{color:var(--on-dark-dim)}
         <a href="/recurrent-implantation-failure/">Implantation failure</a>
         <a href="/recurrent-miscarriage/">Recurrent miscarriage</a>
         <a href="/male-infertility/">Male infertility</a>
+        <a href="/low-amh-treatment-bangalore/">Low AMH</a>
+        <a href="/natural-fertility-doctor-bangalore/">Conceiving without IVF</a>
+        <a href="/ivf-india-international-patients/">Travelling from abroad</a>
         <a href="/ivf-jp-nagar-bengaluru/">Visit the centre</a>
         <a href="/#research">Research</a>
         <a href="/#writing">Writing</a>
