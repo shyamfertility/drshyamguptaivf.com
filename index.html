@@ -541,6 +541,21 @@ footer a{color:var(--on-dark-dim)}
   border-top:1px solid var(--line);padding-top:1.1rem}
 .listen-row .readmore{margin-top:0;border-top:0;padding-top:0}
 
+/* ============ documents: certificates & posters ============ */
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.docs figure{margin:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column}
+.docs .shot{background:var(--surface-2);padding:.9rem;display:flex;align-items:center;
+  justify-content:center;min-height:230px}
+.docs img{display:block;max-width:100%;max-height:300px;width:auto;height:auto;
+  object-fit:contain;border-radius:4px}
+.docs figcaption{padding:.85rem 1rem 1rem}
+.docs .cap-title{display:block;color:var(--ink);font-size:.92rem;line-height:1.45}
+.docs .cap-meta{display:block;margin-top:.3rem;font-size:.78rem;font-weight:700;color:var(--brand)}
+@media (max-width:900px){.docs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.docs{grid-template-columns:1fr}}
+
 .post-item[hidden]{display:none}
 .gallery figure[hidden]{display:none}
 </style>
@@ -579,6 +594,8 @@ footer a{color:var(--on-dark-dim)}
         <a href="#research">Research</a>
         <a href="#recognition">Awards</a>
         <a href="#gallery">Photos</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#posters">Posters</a>
         <a href="#writing">Writing</a>
         <a href="#faq">FAQ</a>
         <a href="#patients">Patients</a>
@@ -956,9 +973,9 @@ footer a{color:var(--on-dark-dim)}
       <p class="measure">Award ceremonies, congress presentations, CME teaching sessions and Indira IVF centre openings across Karnataka. Choose a group to filter.</p>
     </div>
     <div class="tabs" id="gallery-tabs" role="tablist" aria-label="Photograph groups" hidden>
-      <button type="button" class="tab" role="tab" data-cat="all" aria-selected="true">All<span class="n">13</span></button>
-      <button type="button" class="tab" role="tab" data-cat="awards">Awards<span class="n">2</span></button>
-      <button type="button" class="tab" role="tab" data-cat="teaching">Teaching &amp; CME<span class="n">7</span></button>
+      <button type="button" class="tab" role="tab" data-cat="all" aria-selected="true">All<span class="n">11</span></button>
+      <button type="button" class="tab" role="tab" data-cat="awards">Awards<span class="n">1</span></button>
+      <button type="button" class="tab" role="tab" data-cat="teaching">Teaching &amp; CME<span class="n">6</span></button>
       <button type="button" class="tab" role="tab" data-cat="inaugurations">Inaugurations<span class="n">2</span></button>
       <button type="button" class="tab" role="tab" data-cat="centre">The centre<span class="n">2</span></button>
     </div>
@@ -995,14 +1012,6 @@ footer a{color:var(--on-dark-dim)}
         <img src="assets/photo-08.jpg" alt="With faculty and delegates after the CME session" loading="lazy" decoding="async">
         <figcaption><span class="cap-title">With faculty and delegates after the CME session</span><span class="cap-meta">Continuing medical education</span></figcaption>
       </figure>
-      <figure data-cat="teaching">
-        <img src="assets/photo-09.jpg" alt="Poster: low-dose lymphocyte immunisation therapy in recurrent implantation failure and recurrent pregnancy loss" loading="lazy" decoding="async">
-        <figcaption><span class="cap-title">Poster: low-dose lymphocyte immunisation therapy in recurrent implantation failure and recurrent pregnancy loss</span><span class="cap-meta">Congress poster presentation</span></figcaption>
-      </figure>
-      <figure data-cat="awards">
-        <img src="assets/photo-10.jpg" alt="ESHRE 39th Annual Meeting, Copenhagen" loading="lazy" decoding="async">
-        <figcaption><span class="cap-title">ESHRE 39th Annual Meeting, Copenhagen</span><span class="cap-meta">2023</span></figcaption>
-      </figure>
       <figure data-cat="inaugurations">
         <img src="assets/photo-11.jpg" alt="Opening a new Indira IVF centre with the clinical team" loading="lazy" decoding="async">
         <figcaption><span class="cap-title">Opening a new Indira IVF centre with the clinical team</span><span class="cap-meta">Centre inauguration</span></figcaption>
@@ -1014,6 +1023,42 @@ footer a{color:var(--on-dark-dim)}
       <figure data-cat="centre">
         <img src="assets/photo-13.jpg" alt="Indira IVF Fertility &amp; IVF Centre" loading="lazy" decoding="async">
         <figcaption><span class="cap-title">Indira IVF Fertility &amp; IVF Centre</span><span class="cap-meta">J.P. Nagar, Bengaluru</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div class="sec-head">
+        <p class="eyebrow">Certificates</p>
+        <h2>Congress attendance and credentials</h2>
+        <p class="measure">Certificates from congresses, workshops and courses &#8212; ESHRE, ASPIRE, ASRM and the fellowship and diploma programmes behind the practice.</p>
+      </div>
+    </div>
+    <div class="docs" id="cert-grid">
+      <figure>
+        <div class="shot"><img src="assets/photo-10.jpg" alt="ESHRE 39th Annual Meeting, Copenhagen" loading="lazy" decoding="async"></div>
+        <figcaption><span class="cap-title">ESHRE 39th Annual Meeting, Copenhagen</span><span class="cap-meta">2023</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="posters">
+  <div class="wrap">
+    <div class="sec-head-row">
+      <div class="sec-head">
+        <p class="eyebrow">Poster presentations</p>
+        <h2>Research presented at congress</h2>
+        <p class="measure">Scientific posters presented at ESHRE, ASPIRE and ASRM &#8212; reproductive immunology, male factor infertility and endometrial receptivity.</p>
+      </div>
+    </div>
+    <div class="docs" id="poster-grid">
+      <figure>
+        <div class="shot"><img src="assets/photo-09.jpg" alt="Poster: low-dose lymphocyte immunisation therapy in recurrent implantation failure and recurrent pregnancy loss" loading="lazy" decoding="async"></div>
+        <figcaption><span class="cap-title">Poster: low-dose lymphocyte immunisation therapy in recurrent implantation failure and recurrent pregnancy loss</span><span class="cap-meta">Congress poster presentation</span></figcaption>
       </figure>
     </div>
   </div>
