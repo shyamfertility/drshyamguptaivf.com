@@ -503,6 +503,42 @@ footer a{color:var(--on-dark-dim)}
 .readmore .article{margin-top:1.4rem}
 .read-time{color:var(--muted)}
 
+/* ============ 8-figure ledger ============ */
+@media (min-width:901px){.ledger-grid{grid-template-columns:repeat(4,1fr);gap:1.9rem 1.25rem}}
+
+/* ============ language switch ============ */
+.langs{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.langs .lbl{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin-right:.2rem}
+.lang{display:inline-flex;align-items:center;min-height:40px;padding:.4rem .8rem;
+  font-size:.85rem;font-weight:600;text-decoration:none;color:var(--body);
+  background:var(--surface);border:1px solid var(--line);border-radius:999px;
+  transition:border-color .16s,color .16s}
+.lang:hover,.lang:focus-visible{border-color:var(--brand);color:var(--brand)}
+.lang.is-en{border-color:var(--brand);color:var(--brand)}
+.langbar{background:var(--surface-2);border-bottom:1px solid var(--line);padding:.5rem 0}
+.langbar .wrap{display:flex;justify-content:flex-end}
+@media (max-width:600px){.langbar .wrap{justify-content:flex-start;overflow-x:auto}
+  .langs{flex-wrap:nowrap}}
+
+/* ============ listen (text to speech) ============ */
+.listen{display:inline-flex;align-items:center;gap:.5rem;margin-left:.6rem;
+  appearance:none;cursor:pointer;font:inherit;font-size:.85rem;font-weight:600;
+  color:var(--brand);background:var(--surface);border:1px solid var(--brand);
+  border-radius:var(--radius-sm);padding:.5rem .9rem;min-height:44px;
+  transition:background .16s,color .16s}
+.listen:hover,.listen:focus-visible{background:var(--brand);color:var(--surface)}
+:root[data-theme="dark"] .listen:hover,
+:root:not([data-theme="light"]) .listen:hover{color:var(--brand-ink)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .listen:hover{color:#fff}}
+.listen[hidden]{display:none !important}
+.listen .ico-play::before{content:"\25B6";font-size:.8em}
+.listen.is-playing .ico-play::before{content:"\25A0"}
+.readmore>summary{margin-right:.4rem}
+.listen-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-top:1.25rem;
+  border-top:1px solid var(--line);padding-top:1.1rem}
+.listen-row .readmore{margin-top:0;border-top:0;padding-top:0}
+
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
 .subhero h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.06;letter-spacing:-.02em;margin-top:.5rem}
@@ -523,9 +559,20 @@ footer a{color:var(--on-dark-dim)}
 .cta-band p{color:var(--on-dark-dim);margin-top:.7rem;max-width:52ch}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/recurrent-miscarriage/#page", "url": "https://www.drshyamguptaivf.com/recurrent-miscarriage/", "name": "Recurrent miscarriage and reproductive immunology", "description": "Recurrent pregnancy loss investigated and treated in Bengaluru — genetic, anatomic, endocrine, thrombophilia and immune evaluation, including lymphocyte immunisation therapy (LIT) in selected couples. Published live birth outcomes.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Recurrent miscarriage and reproductive immunology"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-05", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "After how many miscarriages should I be investigated?", "acceptedAnswer": {"@type": "Answer", "text": "Two consecutive losses is a reasonable point to start, and earlier if you are older, if the losses happened after a heartbeat was seen, or if conceiving has also been difficult. Waiting for a third is no longer standard."}}, {"@type": "Question", "name": "Is LIT proven?", "acceptedAnswer": {"@type": "Answer", "text": "In unexplained recurrent miscarriage, most studies report improved pregnancy outcomes, and Dr Gupta has published live birth data with low-dose LIT using partner lymphocytes. In recurrent implantation failure the evidence is weaker and less settled. That distinction is explained before treatment, not after."}}, {"@type": "Question", "name": "Will I definitely need immune treatment?", "acceptedAnswer": {"@type": "Answer", "text": "No. Immune evaluation is considered after genetic, anatomic, endocrine and thrombophilia causes have been assessed. Many couples have a treatable cause found earlier in that sequence, and some need no specific treatment at all."}}, {"@type": "Question", "name": "Can recurrent miscarriage be caused by the male partner?", "acceptedAnswer": {"@type": "Answer", "text": "It can contribute. Sperm DNA fragmentation is increasingly recognised in recurrent pregnancy loss, and the male partner is evaluated rather than assumed to be irrelevant."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Recurrent miscarriage and reproductive immunology", "item": "https://www.drshyamguptaivf.com/recurrent-miscarriage/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/recurrent-miscarriage/#page", "url": "https://www.drshyamguptaivf.com/recurrent-miscarriage/", "name": "Recurrent miscarriage and reproductive immunology", "description": "Recurrent pregnancy loss investigated and treated in Bengaluru — genetic, anatomic, endocrine, thrombophilia and immune evaluation, including lymphocyte immunisation therapy (LIT) in selected couples. Published live birth outcomes.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Recurrent miscarriage and reproductive immunology"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-06", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "After how many miscarriages should I be investigated?", "acceptedAnswer": {"@type": "Answer", "text": "Two consecutive losses is a reasonable point to start, and earlier if you are older, if the losses happened after a heartbeat was seen, or if conceiving has also been difficult. Waiting for a third is no longer standard."}}, {"@type": "Question", "name": "Is LIT proven?", "acceptedAnswer": {"@type": "Answer", "text": "In unexplained recurrent miscarriage, most studies report improved pregnancy outcomes, and Dr Gupta has published live birth data with low-dose LIT using partner lymphocytes. In recurrent implantation failure the evidence is weaker and less settled. That distinction is explained before treatment, not after."}}, {"@type": "Question", "name": "Will I definitely need immune treatment?", "acceptedAnswer": {"@type": "Answer", "text": "No. Immune evaluation is considered after genetic, anatomic, endocrine and thrombophilia causes have been assessed. Many couples have a treatable cause found earlier in that sequence, and some need no specific treatment at all."}}, {"@type": "Question", "name": "Can recurrent miscarriage be caused by the male partner?", "acceptedAnswer": {"@type": "Answer", "text": "It can contribute. Sperm DNA fragmentation is increasingly recognised in recurrent pregnancy loss, and the male partner is evaluated rather than assumed to be irrelevant."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Recurrent miscarriage and reproductive immunology", "item": "https://www.drshyamguptaivf.com/recurrent-miscarriage/"}]}]}</script>
 </head>
 <body>
+<div class="langbar">
+  <div class="wrap">
+    <div class="langs">
+      <span class="lbl">Read in</span>
+      <a class="lang is-en" data-lang="en" href="/">English</a>
+      <a class="lang" data-lang="kn" href="#">&#3221;&#3240;&#3277;&#3240;&#3233;</a>
+      <a class="lang" data-lang="bn" href="#">&#2476;&#2494;&#2434;&#2482;&#2494;</a>
+      <a class="lang" data-lang="ne" href="#">&#2344;&#2375;&#2346;&#2366;&#2354;&#2368;</a>
+    </div>
+  </div>
+</div>
 <header class="bar">
   <div class="wrap bar-in">
     <a class="bar-name" href="/">Dr Shyam N Gupta<em> &#183; Fertility &amp; IVF</em></a>
@@ -568,7 +615,11 @@ footer a{color:var(--on-dark-dim)}
 
 <section>
   <div class="wrap">
-    <div class="prose">
+    <button type="button" class="listen" hidden data-listen="#page-body"
+            style="margin-left:0;margin-bottom:1.4rem">
+      <span class="ico-play" aria-hidden="true"></span><span class="lbl">Listen to this page</span>
+    </button>
+    <div class="prose" id="page-body">
       <h3>When to investigate</h3>
       <p>Recurrent pregnancy loss is usually defined as two or more consecutive miscarriages. Waiting for a third before investigating is no longer standard practice, particularly where the woman is older, where losses occurred after a heartbeat was seen, or where there has been difficulty conceiving as well.</p>
       <h3>The standard workup</h3>
@@ -661,5 +712,90 @@ footer a{color:var(--on-dark-dim)}
   <a class="btn btn-solid" href="tel:+919899984791">Call</a>
   <a class="btn btn-ghost" href="https://wa.me/919899984791">WhatsApp</a>
 </div>
+<script>/* ---- language switch: Google's translate proxy, no API key, no widget ---- */
+(function () {
+  var host = location.hostname.replace(/\./g, "-");
+  var path = location.pathname + location.search;
+  document.querySelectorAll("[data-lang]").forEach(function (a) {
+    var code = a.getAttribute("data-lang");
+    if (code === "en") { a.href = location.origin + path; return; }
+    a.href = "https://" + host + ".translate.goog" + path +
+             (path.indexOf("?") > -1 ? "&" : "?") +
+             "_x_tr_sl=en&_x_tr_tl=" + code + "&_x_tr_hl=en&_x_tr_pto=wapp";
+    a.setAttribute("rel", "nofollow");
+  });
+  // on a translated page, mark the active language and point "English" home
+  var m = location.hostname.match(/\.translate\.goog$/) &&
+          (location.search.match(/_x_tr_tl=([a-z-]+)/) || [])[1];
+  if (m) {
+    document.querySelectorAll("[data-lang]").forEach(function (a) {
+      a.classList.toggle("is-en", a.getAttribute("data-lang") === m);
+    });
+  }
+})();
+
+/* ---- listen: Web Speech API, no network, no dependency ---- */
+(function () {
+  var synth = window.speechSynthesis;
+  if (!synth || typeof SpeechSynthesisUtterance === "undefined") return;
+
+  var current = null;
+
+  function stopAll() {
+    synth.cancel();
+    document.querySelectorAll(".listen.is-playing").forEach(function (b) {
+      b.classList.remove("is-playing");
+      b.querySelector(".lbl").textContent = b.dataset.label || "Listen";
+    });
+    current = null;
+  }
+
+  // strip to readable prose: headings, paragraphs and list items, in order
+  function textOf(root) {
+    var out = [];
+    root.querySelectorAll("h3,h4,p,li").forEach(function (n) {
+      if (n.closest(".listen-row")) return;
+      var t = (n.textContent || "").replace(/\s+/g, " ").trim();
+      if (t) out.push(t);
+    });
+    return out.join(". ");
+  }
+
+  function attach(btn) {
+    var targetSel = btn.getAttribute("data-listen");
+    btn.hidden = false;
+    btn.dataset.label = btn.querySelector(".lbl").textContent;
+    btn.addEventListener("click", function () {
+      var host = document.querySelector(targetSel);
+      if (!host) return;
+      if (btn.classList.contains("is-playing")) { stopAll(); return; }
+      stopAll();
+      var text = textOf(host);
+      if (!text) return;
+      // long text is chunked: some engines truncate a single long utterance
+      var chunks = text.match(/[\s\S]{1,220}(?:[.!?]\s|$)/g) || [text];
+      var i = 0;
+      function speak() {
+        if (i >= chunks.length) { stopAll(); return; }
+        var u = new SpeechSynthesisUtterance(chunks[i++]);
+        u.lang = "en-IN"; u.rate = 0.98; u.pitch = 1;
+        u.onend = speak;
+        u.onerror = stopAll;
+        current = u;
+        synth.speak(u);
+      }
+      btn.classList.add("is-playing");
+      btn.querySelector(".lbl").textContent = "Stop";
+      speak();
+    });
+  }
+
+  document.querySelectorAll(".listen[data-listen]").forEach(attach);
+  window.addEventListener("beforeunload", stopAll);
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stopAll();
+  });
+})();
+</script>
 </body>
 </html>
