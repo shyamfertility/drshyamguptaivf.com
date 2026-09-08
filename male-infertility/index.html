@@ -717,6 +717,38 @@ strong{font-weight:700;color:var(--ink)}
   .bot-launch{padding:.8rem;border-radius:50%;width:54px;height:54px;justify-content:center}
 }
 @media (prefers-reduced-motion: reduce){.bot-launch,.bot-chip{transition:none}}
+/* ---- 600-answer additions: type-ahead, browse chips, answer actions ---- */
+.bot-form{position:relative}
+.bot-suggest{position:absolute;left:.85rem;right:.85rem;bottom:calc(100% + .4rem);z-index:5;
+  max-height:15rem;overflow-y:auto;overscroll-behavior:contain;display:grid;gap:2px;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.3rem;
+  box-shadow:0 -12px 34px -18px rgba(10,30,40,.55)}
+.bot-sug{appearance:none;cursor:pointer;font:inherit;text-align:left;display:grid;gap:.12rem;
+  background:transparent;border:0;border-radius:8px;padding:.55rem .6rem;width:100%}
+.bot-sug:hover,.bot-sug[aria-selected="true"]{background:var(--tint)}
+.bot-sug-q{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.4}
+.bot-sug-g{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--brand)}
+
+.bot-n{margin-left:auto;padding-left:.6rem;font-size:.76rem;font-weight:700;color:var(--muted)}
+.bot-stages .bot-chip{border-left:4px solid var(--sage);font-weight:700}
+.bot-groups .bot-chip{font-weight:600}
+.bot-chip-back,.bot-chip-more{background:var(--tint);border-style:dashed;color:var(--brand)}
+.bot-plain{color:var(--muted) !important;font-size:.88rem !important}
+
+.bot-acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;
+  padding-top:.7rem;border-top:1px solid var(--line)}
+.bot-act{appearance:none;cursor:pointer;font:inherit;text-decoration:none;
+  font-size:.78rem;font-weight:700;color:var(--brand);background:var(--surface);
+  border:1px solid var(--line);border-radius:999px;padding:.42rem .8rem;min-height:36px;
+  display:inline-flex;align-items:center}
+.bot-act:hover,.bot-act:focus-visible{border-color:var(--brand);background:var(--tint)}
+.bot-act.is-on{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
+.bot-act[disabled]{opacity:.45;cursor:default}
+@media (max-width:760px){
+  .bot-suggest{max-height:11rem}
+}
+.bot-covers{margin-top:.5rem;font-size:.78rem;line-height:1.5;color:var(--muted)}
 
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
@@ -738,7 +770,7 @@ strong{font-weight:700;color:var(--ink)}
 .cta-band p{color:var(--on-dark-dim);margin-top:.7rem;max-width:52ch}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/male-infertility/#page", "url": "https://www.drshyamguptaivf.com/male-infertility/", "name": "Male factor infertility and azoospermia", "description": "Male factor infertility in Bengaluru — beyond semen analysis to DNA fragmentation, and surgical sperm retrieval by PESA and TESA for azoospermia followed by ICSI. 1,100+ retrievals. Diploma in Male Infertility, ANDROFERT Brazil.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Male factor infertility and azoospermia"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-06", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "There is no sperm in the semen sample. Is anything possible?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes. Azoospermia may be obstructive or non-obstructive, and sperm can frequently be recovered surgically by PESA or TESA and used for ICSI. Which applies to you is established before anything is planned."}}, {"@type": "Question", "name": "My semen analysis was normal but we still are not conceiving. What next?", "acceptedAnswer": {"@type": "Answer", "text": "A normal analysis does not exclude high sperm DNA fragmentation, which is associated with poorer embryo development, implantation failure and miscarriage. DNA fragmentation testing is worth considering, particularly after unexplained failure or recurrent loss."}}, {"@type": "Question", "name": "Is sperm retrieval painful?", "acceptedAnswer": {"@type": "Answer", "text": "PESA and TESA are short procedures performed under anaesthesia or sedation. Most men describe mild soreness for a few days afterwards. Retrieved sperm can usually be frozen so the procedure need not be repeated for a later cycle."}}, {"@type": "Question", "name": "Does a varicocele need treating?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. It is common and many men with one are fertile. It is considered for treatment where it is clinically significant and sperm parameters or DNA fragmentation are abnormal."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Male factor infertility and azoospermia", "item": "https://www.drshyamguptaivf.com/male-infertility/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/male-infertility/#page", "url": "https://www.drshyamguptaivf.com/male-infertility/", "name": "Male factor infertility and azoospermia", "description": "Male factor infertility in Bengaluru — beyond semen analysis to DNA fragmentation, and surgical sperm retrieval by PESA and TESA for azoospermia followed by ICSI. 1,100+ retrievals. Diploma in Male Infertility, ANDROFERT Brazil.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Male factor infertility and azoospermia"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-08", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "There is no sperm in the semen sample. Is anything possible?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes. Azoospermia may be obstructive or non-obstructive, and sperm can frequently be recovered surgically by PESA or TESA and used for ICSI. Which applies to you is established before anything is planned."}}, {"@type": "Question", "name": "My semen analysis was normal but we still are not conceiving. What next?", "acceptedAnswer": {"@type": "Answer", "text": "A normal analysis does not exclude high sperm DNA fragmentation, which is associated with poorer embryo development, implantation failure and miscarriage. DNA fragmentation testing is worth considering, particularly after unexplained failure or recurrent loss."}}, {"@type": "Question", "name": "Is sperm retrieval painful?", "acceptedAnswer": {"@type": "Answer", "text": "PESA and TESA are short procedures performed under anaesthesia or sedation. Most men describe mild soreness for a few days afterwards. Retrieved sperm can usually be frozen so the procedure need not be repeated for a later cycle."}}, {"@type": "Question", "name": "Does a varicocele need treating?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. It is common and many men with one are fertile. It is considered for treatment where it is clinically significant and sperm parameters or DNA fragmentation are abnormal."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Male factor infertility and azoospermia", "item": "https://www.drshyamguptaivf.com/male-infertility/"}]}]}</script>
 </head>
 <body>
 <div class="langbar">
@@ -901,15 +933,18 @@ strong{font-weight:700;color:var(--ink)}
   <div class="bot-head">
     <div>
       <p class="bot-title" id="bot-title">Ask Dr Gupta</p>
-      <p class="bot-sub">100 questions, answered in his own words</p>
+      <p class="bot-sub" id="bot-count">Answered in his own words</p>
     </div>
     <button type="button" id="bot-close" class="bot-close" aria-label="Close">&#215;</button>
   </div>
   <div class="bot-log" id="bot-log" role="log" aria-live="polite"></div>
-  <form class="bot-form" id="bot-form">
+  <form class="bot-form" id="bot-form" autocomplete="off">
+    <div id="bot-suggest" class="bot-suggest" role="listbox" aria-label="Matching questions" hidden></div>
     <label class="sr-only" for="bot-input">Type your question</label>
     <input type="text" id="bot-input" autocomplete="off" enterkeyhint="send"
-           placeholder="Why did my IVF cycle fail?">
+           role="combobox" aria-autocomplete="list" aria-expanded="false"
+           aria-controls="bot-suggest"
+           placeholder="Start typing &#8212; low AMH, cost, no sperm&#8230;">
     <button type="submit" class="bot-send">Ask</button>
   </form>
   <p class="bot-foot">General information, not a diagnosis and not a substitute for

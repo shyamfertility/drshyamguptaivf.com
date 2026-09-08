@@ -717,6 +717,38 @@ strong{font-weight:700;color:var(--ink)}
   .bot-launch{padding:.8rem;border-radius:50%;width:54px;height:54px;justify-content:center}
 }
 @media (prefers-reduced-motion: reduce){.bot-launch,.bot-chip{transition:none}}
+/* ---- 600-answer additions: type-ahead, browse chips, answer actions ---- */
+.bot-form{position:relative}
+.bot-suggest{position:absolute;left:.85rem;right:.85rem;bottom:calc(100% + .4rem);z-index:5;
+  max-height:15rem;overflow-y:auto;overscroll-behavior:contain;display:grid;gap:2px;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.3rem;
+  box-shadow:0 -12px 34px -18px rgba(10,30,40,.55)}
+.bot-sug{appearance:none;cursor:pointer;font:inherit;text-align:left;display:grid;gap:.12rem;
+  background:transparent;border:0;border-radius:8px;padding:.55rem .6rem;width:100%}
+.bot-sug:hover,.bot-sug[aria-selected="true"]{background:var(--tint)}
+.bot-sug-q{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.4}
+.bot-sug-g{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--brand)}
+
+.bot-n{margin-left:auto;padding-left:.6rem;font-size:.76rem;font-weight:700;color:var(--muted)}
+.bot-stages .bot-chip{border-left:4px solid var(--sage);font-weight:700}
+.bot-groups .bot-chip{font-weight:600}
+.bot-chip-back,.bot-chip-more{background:var(--tint);border-style:dashed;color:var(--brand)}
+.bot-plain{color:var(--muted) !important;font-size:.88rem !important}
+
+.bot-acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;
+  padding-top:.7rem;border-top:1px solid var(--line)}
+.bot-act{appearance:none;cursor:pointer;font:inherit;text-decoration:none;
+  font-size:.78rem;font-weight:700;color:var(--brand);background:var(--surface);
+  border:1px solid var(--line);border-radius:999px;padding:.42rem .8rem;min-height:36px;
+  display:inline-flex;align-items:center}
+.bot-act:hover,.bot-act:focus-visible{border-color:var(--brand);background:var(--tint)}
+.bot-act.is-on{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
+.bot-act[disabled]{opacity:.45;cursor:default}
+@media (max-width:760px){
+  .bot-suggest{max-height:11rem}
+}
+.bot-covers{margin-top:.5rem;font-size:.78rem;line-height:1.5;color:var(--muted)}
 
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
@@ -738,7 +770,7 @@ strong{font-weight:700;color:var(--ink)}
 .cta-band p{color:var(--on-dark-dim);margin-top:.7rem;max-width:52ch}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/#page", "url": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/", "name": "Conceiving naturally, and when IVF is not the first answer", "description": "Not every couple needs IVF. Timing, ovulation induction, IUI, weight and lifestyle, and the point at which IVF becomes the right step rather than the first one. Dr Shyam N Gupta, fertility specialist, Indira IVF J.P. Nagar, Bangalore.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Conceiving naturally, and when IVF is not the first answer"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-06", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should we try before seeing a fertility doctor?", "acceptedAnswer": {"@type": "Answer", "text": "Twelve months of regular unprotected intercourse, or six months if the woman is over 35. Come immediately, regardless of how long it has been, if periods are irregular or absent, if there is known PCOS or endometriosis, after two or more miscarriages, or if there is a known male factor."}}, {"@type": "Question", "name": "Is letrozole better than clomiphene for PCOS?", "acceptedAnswer": {"@type": "Answer", "text": "For women with PCOS who are not ovulating, yes - randomised evidence shows higher ovulation and live birth rates with letrozole, and it is now first line in international guidance. Cycles should be monitored on scan so that one or two follicles develop rather than several."}}, {"@type": "Question", "name": "Do fertility supplements work?", "acceptedAnswer": {"@type": "Answer", "text": "Folic acid before conception is established. Vitamin D is worth correcting if you are deficient. For most other supplements marketed for fertility, in men or women, the evidence is weak. No supplement, diet or herbal preparation cures infertility, and in India advertising such a cure is an offence."}}, {"@type": "Question", "name": "How many cycles of IUI are worth trying?", "acceptedAnswer": {"@type": "Answer", "text": "Three to four with stimulation, in the right indication - unexplained infertility, mild male factor or cervical factor, with at least one open tube. If it has not worked in that many, further cycles rarely help and the discussion should move on."}}, {"@type": "Question", "name": "Can losing weight alone help us conceive?", "acceptedAnswer": {"@type": "Answer", "text": "In women with PCOS and a raised BMI, losing five to ten per cent of body weight restores ovulation in a meaningful proportion of cases, without medication. It is not a cure-all, and it should not be used as a reason to delay investigating everything else."}}, {"@type": "Question", "name": "We have unexplained infertility. Does that mean nothing is wrong?", "acceptedAnswer": {"@type": "Answer", "text": "It means the standard tests were normal, not that there is no cause. It is a common finding and it does not prevent treatment - the plan is based on age, how long you have been trying and ovarian reserve rather than on a diagnosis."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Conceiving naturally, and when IVF is not the first answer", "item": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/#page", "url": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/", "name": "Conceiving naturally, and when IVF is not the first answer", "description": "Not every couple needs IVF. Timing, ovulation induction, IUI, weight and lifestyle, and the point at which IVF becomes the right step rather than the first one. Dr Shyam N Gupta, fertility specialist, Indira IVF J.P. Nagar, Bangalore.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Conceiving naturally, and when IVF is not the first answer"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-08", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long should we try before seeing a fertility doctor?", "acceptedAnswer": {"@type": "Answer", "text": "Twelve months of regular unprotected intercourse, or six months if the woman is over 35. Come immediately, regardless of how long it has been, if periods are irregular or absent, if there is known PCOS or endometriosis, after two or more miscarriages, or if there is a known male factor."}}, {"@type": "Question", "name": "Is letrozole better than clomiphene for PCOS?", "acceptedAnswer": {"@type": "Answer", "text": "For women with PCOS who are not ovulating, yes - randomised evidence shows higher ovulation and live birth rates with letrozole, and it is now first line in international guidance. Cycles should be monitored on scan so that one or two follicles develop rather than several."}}, {"@type": "Question", "name": "Do fertility supplements work?", "acceptedAnswer": {"@type": "Answer", "text": "Folic acid before conception is established. Vitamin D is worth correcting if you are deficient. For most other supplements marketed for fertility, in men or women, the evidence is weak. No supplement, diet or herbal preparation cures infertility, and in India advertising such a cure is an offence."}}, {"@type": "Question", "name": "How many cycles of IUI are worth trying?", "acceptedAnswer": {"@type": "Answer", "text": "Three to four with stimulation, in the right indication - unexplained infertility, mild male factor or cervical factor, with at least one open tube. If it has not worked in that many, further cycles rarely help and the discussion should move on."}}, {"@type": "Question", "name": "Can losing weight alone help us conceive?", "acceptedAnswer": {"@type": "Answer", "text": "In women with PCOS and a raised BMI, losing five to ten per cent of body weight restores ovulation in a meaningful proportion of cases, without medication. It is not a cure-all, and it should not be used as a reason to delay investigating everything else."}}, {"@type": "Question", "name": "We have unexplained infertility. Does that mean nothing is wrong?", "acceptedAnswer": {"@type": "Answer", "text": "It means the standard tests were normal, not that there is no cause. It is a common finding and it does not prevent treatment - the plan is based on age, how long you have been trying and ovarian reserve rather than on a diagnosis."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Conceiving naturally, and when IVF is not the first answer", "item": "https://www.drshyamguptaivf.com/natural-fertility-doctor-bangalore/"}]}]}</script>
 </head>
 <body>
 <div class="langbar">
@@ -925,15 +957,18 @@ strong{font-weight:700;color:var(--ink)}
   <div class="bot-head">
     <div>
       <p class="bot-title" id="bot-title">Ask Dr Gupta</p>
-      <p class="bot-sub">100 questions, answered in his own words</p>
+      <p class="bot-sub" id="bot-count">Answered in his own words</p>
     </div>
     <button type="button" id="bot-close" class="bot-close" aria-label="Close">&#215;</button>
   </div>
   <div class="bot-log" id="bot-log" role="log" aria-live="polite"></div>
-  <form class="bot-form" id="bot-form">
+  <form class="bot-form" id="bot-form" autocomplete="off">
+    <div id="bot-suggest" class="bot-suggest" role="listbox" aria-label="Matching questions" hidden></div>
     <label class="sr-only" for="bot-input">Type your question</label>
     <input type="text" id="bot-input" autocomplete="off" enterkeyhint="send"
-           placeholder="Why did my IVF cycle fail?">
+           role="combobox" aria-autocomplete="list" aria-expanded="false"
+           aria-controls="bot-suggest"
+           placeholder="Start typing &#8212; low AMH, cost, no sperm&#8230;">
     <button type="submit" class="bot-send">Ask</button>
   </form>
   <p class="bot-foot">General information, not a diagnosis and not a substitute for

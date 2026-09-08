@@ -717,6 +717,38 @@ strong{font-weight:700;color:var(--ink)}
   .bot-launch{padding:.8rem;border-radius:50%;width:54px;height:54px;justify-content:center}
 }
 @media (prefers-reduced-motion: reduce){.bot-launch,.bot-chip{transition:none}}
+/* ---- 600-answer additions: type-ahead, browse chips, answer actions ---- */
+.bot-form{position:relative}
+.bot-suggest{position:absolute;left:.85rem;right:.85rem;bottom:calc(100% + .4rem);z-index:5;
+  max-height:15rem;overflow-y:auto;overscroll-behavior:contain;display:grid;gap:2px;
+  background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.3rem;
+  box-shadow:0 -12px 34px -18px rgba(10,30,40,.55)}
+.bot-sug{appearance:none;cursor:pointer;font:inherit;text-align:left;display:grid;gap:.12rem;
+  background:transparent;border:0;border-radius:8px;padding:.55rem .6rem;width:100%}
+.bot-sug:hover,.bot-sug[aria-selected="true"]{background:var(--tint)}
+.bot-sug-q{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.4}
+.bot-sug-g{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--brand)}
+
+.bot-n{margin-left:auto;padding-left:.6rem;font-size:.76rem;font-weight:700;color:var(--muted)}
+.bot-stages .bot-chip{border-left:4px solid var(--sage);font-weight:700}
+.bot-groups .bot-chip{font-weight:600}
+.bot-chip-back,.bot-chip-more{background:var(--tint);border-style:dashed;color:var(--brand)}
+.bot-plain{color:var(--muted) !important;font-size:.88rem !important}
+
+.bot-acts{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem;
+  padding-top:.7rem;border-top:1px solid var(--line)}
+.bot-act{appearance:none;cursor:pointer;font:inherit;text-decoration:none;
+  font-size:.78rem;font-weight:700;color:var(--brand);background:var(--surface);
+  border:1px solid var(--line);border-radius:999px;padding:.42rem .8rem;min-height:36px;
+  display:inline-flex;align-items:center}
+.bot-act:hover,.bot-act:focus-visible{border-color:var(--brand);background:var(--tint)}
+.bot-act.is-on{background:var(--accent-fill);border-color:var(--accent-fill);color:var(--on-accent)}
+.bot-act[disabled]{opacity:.45;cursor:default}
+@media (max-width:760px){
+  .bot-suggest{max-height:11rem}
+}
+.bot-covers{margin-top:.5rem;font-size:.78rem;line-height:1.5;color:var(--muted)}
 
 
 .subhero{background:var(--tint);position:relative;overflow:hidden;padding-block:clamp(2rem,4.5vw,3.25rem)}
@@ -737,16 +769,31 @@ strong{font-weight:700;color:var(--ink)}
 .cta-band h2{color:var(--on-dark);font-size:clamp(1.5rem,3vw,2rem)}
 .cta-band p{color:var(--on-dark-dim);margin-top:.7rem;max-width:52ch}
 
-.qa-jumps{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem}
-.qa-jump{display:inline-flex;align-items:center;gap:.45rem;text-decoration:none;
-  font-size:.85rem;font-weight:700;color:var(--ink);background:var(--surface);
-  border:1px solid var(--line);border-radius:999px;padding:.5rem .95rem;min-height:44px}
+
+.qa-jumps{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  gap:1.1rem;margin-top:1.5rem}
+.qa-stage{display:grid;gap:.35rem;align-content:start}
+.qa-stage-h{font-size:.72rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.2rem}
+.qa-jump{display:flex;align-items:center;gap:.5rem;text-decoration:none;
+  font-size:.88rem;font-weight:600;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-radius:9px;padding:.5rem .75rem;min-height:42px}
 .qa-jump:hover,.qa-jump:focus-visible{border-color:var(--brand);color:var(--brand)}
-.qa-jump .n{font-weight:600;color:var(--muted)}
-.qa-sec{padding-block:clamp(2rem,4vw,3rem)}
-.qa-sec:nth-of-type(even){background:var(--tint)}
+.qa-jump .n{margin-left:auto;font-weight:700;color:var(--muted);font-size:.8rem}
+.qa-band{background:var(--brand-deep);color:var(--on-dark);
+  padding-block:clamp(1.6rem,3vw,2.2rem)}
+.qa-band .eyebrow{color:var(--on-dark-dim)}
+.qa-band .eyebrow::before{background:var(--sage)}
+.qa-band-h{color:var(--on-dark);font-size:clamp(1.25rem,2.6vw,1.7rem);
+  margin-top:.5rem;max-width:44ch}
+.qa-band-h::after{display:none}
+.qa-band-n{margin-top:.5rem;font-size:.82rem;font-weight:700;color:var(--on-dark-dim)}
+.qa-sec{padding-block:clamp(1.8rem,3.5vw,2.6rem)}
+.qa-sec.alt{background:var(--tint)}
+.qa-note{display:block;margin-top:.7rem;font-size:.85rem;color:var(--muted)}
+
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/questions/#page", "url": "https://www.drshyamguptaivf.com/questions/", "name": "Fertility and IVF questions answered", "description": "The questions couples actually ask about fertility, IVF, ICSI, male factor, costs and Indian ART law, answered by Dr Shyam N Gupta at Indira IVF, J.P. Nagar, Bengaluru.", "inLanguage": "en-IN", "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-06", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "@id": "https://www.drshyamguptaivf.com/questions/#faq", "mainEntity": [{"@type": "Question", "name": "We've been trying for a year and nothing. When should we see a fertility doctor?", "acceptedAnswer": {"@type": "Answer", "text": "If you're under 35 and have tried for 12 months with regular unprotected intercourse, it's time to evaluate. If you're 35+ or have irregular cycles, endometriosis, previous pelvic infection, or male issues, come earlier-after 6 months or even sooner. Early assessment saves time and stress."}}, {"@type": "Question", "name": "What tests will you do first for both of us?", "acceptedAnswer": {"@type": "Answer", "text": "We usually start with a simple, step-by-step workup: for her-ultrasound to check uterus/ovaries, AMH/AFC for reserve, thyroid and prolactin, and a tube test (HSG/HyCoSy) if needed; for him-semen analysis and sometimes hormones. Then we tailor next steps based on results."}}, {"@type": "Question", "name": "How often should we have sex to conceive?", "acceptedAnswer": {"@type": "Answer", "text": "Every 2-3 days through the cycle works for most couples. If cycles are regular, having intercourse on alternate days in the fertile window (about 5 days before ovulation and the day of ovulation) is ideal. Avoid turning it into a strict schedule that adds pressure."}}, {"@type": "Question", "name": "People say we are 'infertile.' Does that mean we can't have a baby naturally?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Infertility just means pregnancy hasn't happened yet after a certain time. Many causes are treatable, and some couples conceive naturally after guidance. We focus on your specific reason and timeline, not a label."}}, {"@type": "Question", "name": "My periods are irregular. Does that mean I'm not ovulating?", "acceptedAnswer": {"@type": "Answer", "text": "Irregular cycles often signal irregular ovulation, but not always zero ovulation. We confirm with ultrasound tracking or blood tests. If ovulation is inconsistent, medicines and lifestyle changes can help restore it."}}, {"@type": "Question", "name": "I have PCOS. Will I definitely need IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Most women with PCOS don't need IVF right away. First-line treatment is weight/lifestyle management, ovulation induction tablets/injections, and timed intercourse or IUI. IVF is considered if these don't work or if there are additional factors."}}, {"@type": "Question", "name": "Does endometriosis always cause infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Endometriosis can reduce fertility, but many women still conceive naturally. Severity, age, and ovarian reserve matter. We may use medicines, surgery, or assisted reproduction depending on your stage and symptoms."}}, {"@type": "Question", "name": "I was told I have fibroids/adenomyosis. Can I still get pregnant?", "acceptedAnswer": {"@type": "Answer", "text": "Many fibroids don't affect fertility. Ones that distort the cavity or are large may reduce implantation. Adenomyosis can also affect implantation. We assess size/location and decide if treatment before trying is needed."}}, {"@type": "Question", "name": "My AMH is low. Is my egg quality poor?", "acceptedAnswer": {"@type": "Answer", "text": "Low AMH mainly indicates lower egg quantity, not automatically poor quality. Quality is more linked to age. With low AMH, we plan efficiently, sometimes aiming for earlier treatment or multiple retrievals if IVF is needed."}}, {"@type": "Question", "name": "I'm 39. Are my chances too low?", "acceptedAnswer": {"@type": "Answer", "text": "Chances decline with age, but many 39-year-olds conceive-naturally or with help. The key is not to delay evaluation and to choose the right plan (ovulation support, IUI, or IVF depending on results)."}}, {"@type": "Question", "name": "If my tubes are blocked, is IVF the only option?", "acceptedAnswer": {"@type": "Answer", "text": "If both tubes are significantly blocked or damaged, IVF is usually the best option because it bypasses the tubes. If one tube is open and healthy, natural/IUI may still be possible depending on other factors."}}, {"@type": "Question", "name": "I had two miscarriages. Is IVF with genetic testing needed?", "acceptedAnswer": {"@type": "Answer", "text": "Not automatically. We first look for causes-uterine factors, thyroid/diabetes, antiphospholipid antibodies, chromosomal issues, sperm DNA issues, etc. IVF with PGT may help in selected cases, especially with age 38+ or proven genetic problems."}}, {"@type": "Question", "name": "My progesterone was low last time. Does that stop pregnancy?", "acceptedAnswer": {"@type": "Answer", "text": "Low progesterone can reduce implantation or early support. If confirmed, we supplement after ovulation or embryo transfer. It's a common, manageable issue."}}, {"@type": "Question", "name": "My lining is thin. Can implantation still happen?", "acceptedAnswer": {"@type": "Answer", "text": "Thin lining can reduce chances, but we often improve it with tailored medication, correcting infections, optimizing hormones, and sometimes changing protocol or doing frozen transfer."}}, {"@type": "Question", "name": "Should I freeze eggs now even though I'm not ready for a baby?", "acceptedAnswer": {"@type": "Answer", "text": "Egg freezing is a way to protect future choice, especially if you're in your early-mid 30s or have risk factors (family history, low reserve). We'll check your reserve and discuss expected egg numbers and costs."}}, {"@type": "Question", "name": "What exactly is a semen analysis and how do I prepare?", "acceptedAnswer": {"@type": "Answer", "text": "It measures sperm count, motility (movement), and morphology (shape). You give a sample after 2-5 days of abstinence, avoid fever/alcohol/heavy smoking beforehand, and ideally repeat if abnormal, since sperm changes over time."}}, {"@type": "Question", "name": "My semen report is borderline low. Does that mean I'm infertile?", "acceptedAnswer": {"@type": "Answer", "text": "Borderline values don't equal infertility. Many men with mild issues conceive naturally. We repeat the test, look for treatable causes, and decide if lifestyle, medication, IUI, or IVF/ICSI is best."}}, {"@type": "Question", "name": "If there is no sperm, is there any hope?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We first confirm with a repeat test and hormones. Some cases are obstructive and can be treated surgically or with sperm retrieval. Non-obstructive cases may still yield sperm on micro-TESE. Donor sperm is an option if retrieval fails."}}, {"@type": "Question", "name": "I have varicocele. Should I operate?", "acceptedAnswer": {"@type": "Answer", "text": "Varicocele repair can improve semen in selected men-especially if there's pain, a palpable varicocele, and abnormal semen. It may improve natural or IUI chances, and sometimes IVF outcomes."}}, {"@type": "Question", "name": "Performance anxiety is making timing hard. What can we do?", "acceptedAnswer": {"@type": "Answer", "text": "This is common. We can reduce pressure by focusing on regular intercourse rather than a single day, using ovulation tracking calmly, and involving counseling. If needed, a short course of medication or IUI can remove timing stress."}}, {"@type": "Question", "name": "Does the man's age matter for fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, sperm quality and DNA integrity gradually decline with age, and miscarriage risk can rise in older fathers. Healthy lifestyle and timely planning help, and in IVF we may consider sperm DNA testing in some cases."}}, {"@type": "Question", "name": "What lifestyle changes improve sperm?", "acceptedAnswer": {"@type": "Answer", "text": "Stop smoking/vaping, limit alcohol, maintain healthy weight, exercise moderately, sleep 7-8 hours, reduce heat exposure to testes, and eat a balanced diet with enough protein, omega-3, zinc, folate, and antioxidants."}}, {"@type": "Question", "name": "What is sperm DNA fragmentation and when do you test it?", "acceptedAnswer": {"@type": "Answer", "text": "It checks sperm DNA breaks that can affect fertilization and miscarriage. We consider it after repeated IVF failure, unexplained infertility, recurrent miscarriage, or in older males/varicocele."}}, {"@type": "Question", "name": "Can past infections cause male infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, infections like mumps orchitis, STIs, or prostatitis can affect sperm. We look for symptoms, do tests if needed, and treat infections to improve outcomes."}}, {"@type": "Question", "name": "Do diabetes or BP medicines affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Some illnesses and a few medicines can affect erectile function or sperm. We review your drugs and control sugars/BP well. Never stop medicines on your own-let's adjust safely if needed."}}, {"@type": "Question", "name": "All tests are normal. Why aren't we conceiving?", "acceptedAnswer": {"@type": "Answer", "text": "This is called unexplained infertility. It may involve subtle egg/sperm/implantation issues we can't measure yet. Options include timed intercourse with mild stimulation, IUI, and IVF depending on age and duration."}}, {"@type": "Question", "name": "How do you decide between IUI and IVF?", "acceptedAnswer": {"@type": "Answer", "text": "We use age, duration, tube status, sperm quality, ovarian reserve, and previous attempts. IUI suits younger couples with open tubes and mild male/ovulation issues; IVF is better for low reserve, tubal block, severe male factor, or long-standing infertility."}}, {"@type": "Question", "name": "Can you explain IVF in simple steps?", "acceptedAnswer": {"@type": "Answer", "text": "Sure: 1) stimulate ovaries with injections, 2) monitor follicles, 3) retrieve eggs under anesthesia, 4) fertilize eggs with sperm in lab (IVF/ICSI), 5) grow embryos 3-5 days, 6) transfer one embryo, and 7) support hormones and do a pregnancy test."}}, {"@type": "Question", "name": "How long does one IVF cycle take?", "acceptedAnswer": {"@type": "Answer", "text": "Usually 3-4 weeks from start of injections to embryo transfer. If we freeze embryos and transfer later, each step is still within a month or so, but the full journey may span 1-3 months."}}, {"@type": "Question", "name": "Is egg retrieval painful or risky?", "acceptedAnswer": {"@type": "Answer", "text": "Retrieval is done under short anesthesia, so you shouldn't feel pain during it. Mild cramps/bloating after are common for 1-3 days. Serious risks like bleeding/infection are rare."}}, {"@type": "Question", "name": "What is ICSI and when is it needed?", "acceptedAnswer": {"@type": "Answer", "text": "ICSI means injecting a single sperm into each egg. We use it for low count/motility, azoospermia with retrieved sperm, previous fertilization failure, or sometimes for older couples."}}, {"@type": "Question", "name": "What's the difference between fresh and frozen embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Fresh transfer happens in the same cycle as retrieval. Frozen transfer uses embryos stored earlier and transferred in a later cycle when the uterus is best prepared. Frozen transfers can reduce OHSS risk and sometimes improve implantation."}}, {"@type": "Question", "name": "What are realistic IVF success chances at my age?", "acceptedAnswer": {"@type": "Answer", "text": "Success depends mainly on female age and embryo quality. Rough guide for live birth per transfer using own eggs: about 35-45% under 35, ~25-35% at 35-37, ~15-25% at 38-40, ~5-10% at 41-42, and <5% over 42. Your personal chances may be higher or lower based on diagnosis."}}, {"@type": "Question", "name": "How many IVF cycles do people usually need?", "acceptedAnswer": {"@type": "Answer", "text": "Many couples conceive in 1-3 cycles. Because biology is variable, we plan in batches and review after each attempt rather than promising a fixed number."}}, {"@type": "Question", "name": "What does embryo grading mean?", "acceptedAnswer": {"@type": "Answer", "text": "It's a lab-based way of describing how embryos look and develop. Higher-graded embryos generally have better chances, but even average-graded embryos can result in healthy babies."}}, {"@type": "Question", "name": "Why are you advising only one embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Single embryo transfer lowers twin/triplet risks without reducing overall success much, especially in women under 38 with good embryos. If needed, we can transfer remaining frozen embryos later."}}, {"@type": "Question", "name": "I heard about OHSS. How common and how do you prevent it?", "acceptedAnswer": {"@type": "Answer", "text": "OHSS is ovarian over-response causing bloating, fluid shifts, and rarely clots. Severe OHSS is uncommon, and we prevent it by adjusting doses, using antagonist protocols, triggering safely, and freezing all embryos if risk is high."}}, {"@type": "Question", "name": "What if IVF fails-does that mean no chance?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. Failure gives us information. We review embryo quality, uterine factors, sperm DNA, and protocol, then modify the next plan. Many couples succeed on a later attempt."}}, {"@type": "Question", "name": "Why would a cycle get cancelled?", "acceptedAnswer": {"@type": "Answer", "text": "Reasons include too few follicles, over-response risk, premature ovulation, or medical issues. Cancellation is frustrating but sometimes safer than proceeding with low chances."}}, {"@type": "Question", "name": "What is PGT-A and who should consider it?", "acceptedAnswer": {"@type": "Answer", "text": "PGT-A checks embryos for chromosome number errors to select a euploid embryo. It's most helpful for women 38+, recurrent miscarriage, repeated IVF failure, or severe male factor/older paternal age."}}, {"@type": "Question", "name": "We have a known genetic disease in family. Can IVF prevent passing it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With PGT-M, we test embryos for a specific gene mutation and transfer only unaffected embryos. It needs genetic counseling and a custom test setup."}}, {"@type": "Question", "name": "Should we do genetic carrier screening before IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Carrier screening can identify hidden recessive disease risks. It's optional but useful if there's family history, consanguinity, or you want maximum reassurance before treatment."}}, {"@type": "Question", "name": "We are thalassemia carriers. What are our options?", "acceptedAnswer": {"@type": "Answer", "text": "You can conceive naturally with prenatal diagnosis, or do IVF with PGT-M to transfer unaffected embryos. The choice depends on your values, cost, and timeline."}}, {"@type": "Question", "name": "Does IVF reduce the chance of Down syndrome?", "acceptedAnswer": {"@type": "Answer", "text": "IVF itself doesn't reduce risk, but selecting embryos via PGT-A or doing prenatal screening in pregnancy can lower the chance of transferring an aneuploid embryo."}}, {"@type": "Question", "name": "After embryo transfer, what precautions should I take?", "acceptedAnswer": {"@type": "Answer", "text": "Think normal life with moderation: avoid heavy lifting, intense workouts, smoking/alcohol, and overheating. Continue medicines, eat balanced meals, and try to stay calm. Bed rest isn't required."}}, {"@type": "Question", "name": "I have no symptoms after transfer. Is that bad?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some women feel nothing and still get positive results. Symptoms depend more on hormones than on pregnancy itself."}}, {"@type": "Question", "name": "Light spotting after IVF-should I panic?", "acceptedAnswer": {"@type": "Answer", "text": "Light spotting can happen from implantation or cervical irritation. If bleeding is heavy, painful, or persistent, contact us immediately. We'll guide you."}}, {"@type": "Question", "name": "Is ectopic pregnancy possible in IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but still uncommon. IVF slightly increases the risk versus natural conception, so we do early ultrasounds to confirm the pregnancy location."}}, {"@type": "Question", "name": "What if twins happen? Is it dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "Twins can be healthy but carry higher risks: preterm birth, diabetes, hypertension, and NICU admission. That's why we prefer single embryo transfer whenever possible."}}, {"@type": "Question", "name": "Do IVF pregnancies need special monitoring?", "acceptedAnswer": {"@type": "Answer", "text": "Most follow standard antenatal care, with a bit more early monitoring. If there are additional risks (age, twins, diabetes, OHSS), we add targeted scans/consults."}}, {"@type": "Question", "name": "Is C-section mandatory after IVF?", "acceptedAnswer": {"@type": "Answer", "text": "No. Mode of delivery depends on obstetric indications, not IVF alone. Many IVF mothers deliver vaginally."}}, {"@type": "Question", "name": "Once heartbeat is seen, what are chances of continuing?", "acceptedAnswer": {"@type": "Answer", "text": "A confirmed fetal heartbeat at 6-7 weeks is a strong positive sign. Miscarriage risk drops significantly after this, though exact risk depends on age and past history."}}, {"@type": "Question", "name": "Are IVF babies normal? Any long-term risks?", "acceptedAnswer": {"@type": "Answer", "text": "Most IVF children are healthy and develop normally. Some risks seen in studies relate more to underlying infertility, multiple pregnancy, or prematurity than to IVF itself."}}, {"@type": "Question", "name": "Is the risk of birth defects higher with IVF/ICSI?", "acceptedAnswer": {"@type": "Answer", "text": "Overall risk is only slightly higher and still low. Part of the increase is linked to parental factors (age, genetics, male factor) rather than the technique itself."}}, {"@type": "Question", "name": "Does IVF increase cancer risk in women?", "acceptedAnswer": {"@type": "Answer", "text": "Current evidence does not show a meaningful increase in breast/ovarian/uterine cancer from IVF medicines. We still individualize protocols for women with specific risks."}}, {"@type": "Question", "name": "I'm feeling anxious and irritable on injections. Is this normal?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, hormones plus uncertainty can affect mood. Tell us early. We can support you medically and with counseling, and adjust expectations and coping tools."}}, {"@type": "Question", "name": "What is a typical IVF cost per cycle in India?", "acceptedAnswer": {"@type": "Answer", "text": "In India, a basic IVF cycle often ranges roughly ₹1.2-2.5 lakh, depending on city, clinic, medicines, and complexity. Add-ons like ICSI, freezing, or genetic testing increase cost. We'll give a transparent written estimate for your case."}}, {"@type": "Question", "name": "How much extra does ICSI cost?", "acceptedAnswer": {"@type": "Answer", "text": "ICSI is usually an add-on cost on top of IVF. In many Indian centers it can add roughly ₹15,000-₹40,000 or more depending on lab and case; we'll confirm your exact package."}}, {"@type": "Question", "name": "How much does PGT cost?", "acceptedAnswer": {"@type": "Answer", "text": "PGT can add about ₹1-3 lakh+ depending on number of embryos and type (PGT-A vs PGT-M). We'll explain benefits so you decide if it's worth it for you."}}, {"@type": "Question", "name": "If I need donor eggs, what does it cost and what are success rates?", "acceptedAnswer": {"@type": "Answer", "text": "Donor-egg IVF costs more because of the screening, the donor's medical care and insurance, and the bank's charges; many Indian clinics quote several lakhs per cycle. Under the ART (Regulation) Act 2021 no payment may be made for the eggs themselves, and donors are recruited through a registered ART bank rather than by the clinic. Success per transfer is generally higher than with very low-reserve own eggs."}}, {"@type": "Question", "name": "Do you offer EMI or packages?", "acceptedAnswer": {"@type": "Answer", "text": "Many clinics offer package deals or EMI through partners. We can discuss options so finances don't force rushed decisions."}}, {"@type": "Question", "name": "I'm scared of hidden charges. How do I avoid surprises?", "acceptedAnswer": {"@type": "Answer", "text": "Ask for an itemized estimate including medicines, anesthesia, lab procedures, freezing, and transfers. Clarify what is included/excluded before starting. A good clinic will be transparent."}}, {"@type": "Question", "name": "What diet helps female fertility?", "acceptedAnswer": {"@type": "Answer", "text": "A balanced, anti-inflammatory diet helps: plenty of vegetables, fruits, whole grains, pulses, nuts, healthy fats, and adequate protein. Limit excess sugar, trans-fats, and ultra-processed foods."}}, {"@type": "Question", "name": "Any specific foods for sperm health?", "acceptedAnswer": {"@type": "Answer", "text": "Focus on protein, omega-3 sources, nuts/seeds, leafy greens, colorful fruits, and adequate micronutrients like zinc, selenium, folate, and vitamin D. Consistency matters more than one 'superfood'."}}, {"@type": "Question", "name": "Does weight really affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both underweight and overweight can disturb hormones, ovulation, and sperm. Even a 5-10% weight correction can improve natural and assisted pregnancy rates."}}, {"@type": "Question", "name": "Can I exercise during IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Light to moderate activity is fine. Avoid high-impact workouts and heavy core exercises during stimulation and after transfer to reduce torsion/discomfort."}}, {"@type": "Question", "name": "Is coffee or alcohol completely banned?", "acceptedAnswer": {"@type": "Answer", "text": "Moderation. Limit caffeine to about 1-2 cups a day and avoid binge drinking. In the 2-week wait and pregnancy, it's safest to avoid alcohol."}}, {"@type": "Question", "name": "How much does smoking affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Smoking reduces egg reserve, impairs embryo quality, and lowers sperm count/motility. Quitting improves outcomes within a few months."}}, {"@type": "Question", "name": "Which supplements should we take?", "acceptedAnswer": {"@type": "Answer", "text": "Common basics: folic acid for women, vitamin D if deficient, and antioxidants for men if semen is poor. But supplements should be tailored to your labs-avoid megadoses without advice."}}, {"@type": "Question", "name": "Did stress cause our infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Stress alone rarely causes infertility, but it can worsen hormones, libido, and coping. Think of stress as a load on top of a medical issue, not the only reason."}}, {"@type": "Question", "name": "How do we handle the two-week wait emotionally?", "acceptedAnswer": {"@type": "Answer", "text": "Keep a simple routine, avoid constant symptom-checking, limit social media triggers, and share feelings with your partner or counselor. We're here to support you too."}}, {"@type": "Question", "name": "We keep blaming each other. How do we stop?", "acceptedAnswer": {"@type": "Answer", "text": "Infertility is a couple's condition, not a person's fault. Try using 'we' language, attend counseling together, and focus on teamwork and timelines."}}, {"@type": "Question", "name": "Family keeps pressuring us. What should we say?", "acceptedAnswer": {"@type": "Answer", "text": "Set kind but firm boundaries: 'We're under medical care and will share updates when ready.' You don't owe detailed explanations. Protect your mental space."}}, {"@type": "Question", "name": "I feel alone because friends are getting pregnant. Is that normal?", "acceptedAnswer": {"@type": "Answer", "text": "Very normal. Infertility grief is real. Seek a support group or counselor; talking to people who get it can reduce isolation."}}, {"@type": "Question", "name": "My husband feels ashamed about male factor. How can I help him?", "acceptedAnswer": {"@type": "Answer", "text": "Reassure him that male factor is common and treatable. Avoid sharing his reports with others. Come as a team to visits so he feels supported, not singled out."}}, {"@type": "Question", "name": "Is IVF legal and regulated in India?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. IVF is legal and governed by ART and Surrogacy regulations. Clinics must be registered and follow consent, donor screening, and embryo handling rules."}}, {"@type": "Question", "name": "Will we know the egg/sperm donor?", "acceptedAnswer": {"@type": "Answer", "text": "In India, donors are typically anonymous; you receive medical and phenotypic matching details, not identity. Records are maintained for safety."}}, {"@type": "Question", "name": "How long can embryos be frozen?", "acceptedAnswer": {"@type": "Answer", "text": "Embryos can be safely frozen for years with good survival. The legal storage duration depends on national rules and consent, and we renew your consent periodically."}}, {"@type": "Question", "name": "When is surrogacy advised?", "acceptedAnswer": {"@type": "Answer", "text": "Surrogacy is considered when a woman cannot carry a pregnancy safely (absent uterus, severe medical disease, repeated implantation failure after evaluation). It must follow legal criteria and approvals."}}, {"@type": "Question", "name": "If miscarriage happens after IVF, what next?", "acceptedAnswer": {"@type": "Answer", "text": "We do a structured review-genetics of the pregnancy if possible, uterine evaluation, hormones, clotting and immune factors, and sperm quality. Then plan next transfer with corrections."}}, {"@type": "Question", "name": "Will IVF hormones affect breastfeeding later?", "acceptedAnswer": {"@type": "Answer", "text": "No lasting effect. The hormones used are temporary and don't stop future breastfeeding."}}, {"@type": "Question", "name": "Is sex allowed after embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes after a short rest (often 3-5 days), unless you had bleeding, pain, or high OHSS risk. We'll tell you based on your case."}}, {"@type": "Question", "name": "Can I travel during IVF or early pregnancy?", "acceptedAnswer": {"@type": "Answer", "text": "Light travel is okay during stimulation if monitoring is not missed. After transfer, short trips are fine if you're stable, but avoid very long or stressful travel unless cleared."}}, {"@type": "Question", "name": "How do we choose a good IVF clinic?", "acceptedAnswer": {"@type": "Answer", "text": "Look for transparent data, experienced embryology lab, individualized protocols, clear communication, and ethical counseling-not just flashy success ads. Meeting the doctor and lab team matters."}}, {"@type": "Question", "name": "Should we freeze embryos for future child?", "acceptedAnswer": {"@type": "Answer", "text": "If you want another child later or if age/medical condition may worsen, freezing good embryos now is smart. It's usually cheaper and more effective than starting over later."}}, {"@type": "Question", "name": "Do add-on treatments like PRP, growth hormone, or immunotherapy always help?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. Some add-ons help selected patients, but many don't have strong evidence for routine use. We recommend only when your profile suggests benefit."}}, {"@type": "Question", "name": "Is it okay to keep trying naturally while planning IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, unless there's a clear barrier like both tubes blocked. We encourage healthy attempts while we prepare, because natural conception can still happen."}}, {"@type": "Question", "name": "My TSH is high-normal. Does that matter?", "acceptedAnswer": {"@type": "Answer", "text": "Thyroid affects ovulation and early pregnancy. We aim for a TSH around 2.5 or less when trying or in early pregnancy, and treat if needed."}}, {"@type": "Question", "name": "My prolactin is a bit elevated. Is that serious?", "acceptedAnswer": {"@type": "Answer", "text": "Mild elevation is common and treatable. We repeat fasting tests, rule out stress/medication causes, and give treatment if needed to restore ovulation."}}, {"@type": "Question", "name": "Do autoimmune diseases affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Some autoimmune conditions can affect implantation or pregnancy. With proper control and a coordinated plan with your physician, most women conceive safely."}}, {"@type": "Question", "name": "Can I take testosterone to improve sperm?", "acceptedAnswer": {"@type": "Answer", "text": "External testosterone can actually suppress sperm production. Never self-start. If hormones are low, we use fertility-friendly treatments instead."}}, {"@type": "Question", "name": "How long do sperm-improving treatments take?", "acceptedAnswer": {"@type": "Answer", "text": "Sperm take about 70-90 days to regenerate. So lifestyle or medication changes usually need 3 months to show effect."}}, {"@type": "Question", "name": "Is sperm retrieval surgery painful?", "acceptedAnswer": {"@type": "Answer", "text": "Procedures like PESA/TESA are minor and done with anesthesia; discomfort afterward is usually mild. Micro-TESE is a bigger procedure, but pain is manageable and we give proper care."}}, {"@type": "Question", "name": "Can IVF guarantee a boy/girl?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sex selection for social reasons is illegal in India. IVF is for treating infertility and preventing serious genetic disease."}}, {"@type": "Question", "name": "Is IVF acceptable in our religion?", "acceptedAnswer": {"@type": "Answer", "text": "Many couples reconcile IVF with faith by focusing on the intention-building a family. If you want, we can discuss options that align with your beliefs, like using your own gametes."}}, {"@type": "Question", "name": "If my period comes late before starting IVF, what do we do?", "acceptedAnswer": {"@type": "Answer", "text": "We confirm you're not pregnant and check hormones/ultrasound. If everything is okay, we can induce a period safely or start in the next natural cycle."}}, {"@type": "Question", "name": "Can egg quality be improved?", "acceptedAnswer": {"@type": "Answer", "text": "We can optimize factors that hurt quality-smoking, obesity, uncontrolled thyroid/diabetes, vitamin D deficiency, oxidative stress. But age-related decline can't be fully reversed, so timing matters."}}, {"@type": "Question", "name": "Does laptop/sauna/hot baths reduce sperm?", "acceptedAnswer": {"@type": "Answer", "text": "Regular heat exposure can lower sperm count temporarily. Keep laptops off lap, limit saunas/hot tubs, and wear loose underwear."}}, {"@type": "Question", "name": "Does insurance cover IVF in India?", "acceptedAnswer": {"@type": "Answer", "text": "Coverage is still limited, though some corporate policies include add-ons. We can provide documents for claims if your policy supports it."}}, {"@type": "Question", "name": "Are refund-or-guarantee packages safe?", "acceptedAnswer": {"@type": "Answer", "text": "They can be okay if terms are transparent, but read fine print about age, embryo number, exclusions, and what counts as 'success'. Don't choose a clinic only for a guarantee."}}, {"@type": "Question", "name": "How do I book an appointment with Dr Gupta?", "acceptedAnswer": {"@type": "Answer", "text": "Call or WhatsApp +91 98999 84791 - the same number takes both. Consultations at Indira IVF, J.P. Nagar, Bengaluru are by appointment. If you are travelling from outside Bengaluru or from abroad, ask for a video consultation first and send your reports in advance."}}, {"@type": "Question", "name": "Where is the clinic?", "acceptedAnswer": {"@type": "Answer", "text": "Indira IVF, Woody's Building, 3rd Floor, Plot No. 45/1-1, near Bangalore Central Mall, J.P. Nagar, Bengaluru 560078, Karnataka. It is convenient for Jayanagar, Banashankari, BTM Layout and Bannerghatta Road."}}, {"@type": "Question", "name": "What should I bring to the first visit?", "acceptedAnswer": {"@type": "Answer", "text": "Every report you already have: previous cycle summaries and discharge notes, semen analyses, hormone profiles including AMH, thyroid and prolactin, HSG or ultrasound reports, hysteroscopy or laparoscopy notes, and the medicines used in earlier cycles. A consultation with the old records in the room is far more useful than one starting from scratch."}}, {"@type": "Question", "name": "Can I come for a second opinion after treatment elsewhere?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and that is a large part of the practice. Bring the records from the previous centre. The point of the first visit is to work out what happened and why, before anything new is planned."}}, {"@type": "Question", "name": "Which languages can we consult in?", "acceptedAnswer": {"@type": "Answer", "text": "English, Hindi, Nepali and Bhojpuri, and conversational Kannada and Bengali. The website itself can be read in Kannada, Bengali and Nepali using the language buttons at the top of the page."}}, {"@type": "Question", "name": "Who is Dr Shyam N Gupta?", "acceptedAnswer": {"@type": "Answer", "text": "MBBS, MD in Obstetrics and Gynaecology, with fellowships in infertility and gynaecological endoscopy and a diploma in male infertility from ANDROFERT, Brazil. Centre Head at Indira IVF, J.P. Nagar, Bengaluru since 2016 and Zonal Business Director for Indira IVF South, with sixteen publications and twelve years in reproductive medicine. Much of the practice concerns couples for whom something has already gone wrong more than once."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Questions", "item": "https://www.drshyamguptaivf.com/questions/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/questions/#page", "url": "https://www.drshyamguptaivf.com/questions/", "name": "Fertility and IVF questions answered", "description": "The questions couples actually ask about fertility, IVF, ICSI, male factor, costs and Indian ART law, answered by Dr Shyam N Gupta at Indira IVF, J.P. Nagar, Bengaluru.", "inLanguage": "en-IN", "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-08", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "@id": "https://www.drshyamguptaivf.com/questions/#faq", "mainEntity": [{"@type": "Question", "name": "We've been trying for a year and nothing. When should we see a fertility doctor?", "acceptedAnswer": {"@type": "Answer", "text": "If you're under 35 and have tried for 12 months with regular unprotected intercourse, it's time to evaluate. If you're 35+ or have irregular cycles, endometriosis, previous pelvic infection, or male issues, come earlier-after 6 months or even sooner. Early assessment saves time and stress."}}, {"@type": "Question", "name": "What tests will you do first for both of us?", "acceptedAnswer": {"@type": "Answer", "text": "We usually start with a simple, step-by-step workup: for her-ultrasound to check uterus/ovaries, AMH/AFC for reserve, thyroid and prolactin, and a tube test (HSG/HyCoSy) if needed; for him-semen analysis and sometimes hormones. Then we tailor next steps based on results."}}, {"@type": "Question", "name": "How often should we have sex to conceive?", "acceptedAnswer": {"@type": "Answer", "text": "Every 2-3 days through the cycle works for most couples. If cycles are regular, having intercourse on alternate days in the fertile window (about 5 days before ovulation and the day of ovulation) is ideal. Avoid turning it into a strict schedule that adds pressure."}}, {"@type": "Question", "name": "People say we are 'infertile.' Does that mean we can't have a baby naturally?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. Infertility just means pregnancy hasn't happened yet after a certain time. Many causes are treatable, and some couples conceive naturally after guidance. We focus on your specific reason and timeline, not a label."}}, {"@type": "Question", "name": "My periods are irregular. Does that mean I'm not ovulating?", "acceptedAnswer": {"@type": "Answer", "text": "Irregular cycles often signal irregular ovulation, but not always zero ovulation. We confirm with ultrasound tracking or blood tests. If ovulation is inconsistent, medicines and lifestyle changes can help restore it."}}, {"@type": "Question", "name": "I have PCOS. Will I definitely need IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Most women with PCOS don't need IVF right away. First-line treatment is weight/lifestyle management, ovulation induction tablets/injections, and timed intercourse or IUI. IVF is considered if these don't work or if there are additional factors."}}, {"@type": "Question", "name": "Does endometriosis always cause infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Endometriosis can reduce fertility, but many women still conceive naturally. Severity, age, and ovarian reserve matter. We may use medicines, surgery, or assisted reproduction depending on your stage and symptoms."}}, {"@type": "Question", "name": "I was told I have fibroids/adenomyosis. Can I still get pregnant?", "acceptedAnswer": {"@type": "Answer", "text": "Many fibroids don't affect fertility. Ones that distort the cavity or are large may reduce implantation. Adenomyosis can also affect implantation. We assess size/location and decide if treatment before trying is needed."}}, {"@type": "Question", "name": "My AMH is low. Is my egg quality poor?", "acceptedAnswer": {"@type": "Answer", "text": "Low AMH mainly indicates lower egg quantity, not automatically poor quality. Quality is more linked to age. With low AMH, we plan efficiently, sometimes aiming for earlier treatment or multiple retrievals if IVF is needed."}}, {"@type": "Question", "name": "I'm 39. Are my chances too low?", "acceptedAnswer": {"@type": "Answer", "text": "Chances decline with age, but many 39-year-olds conceive-naturally or with help. The key is not to delay evaluation and to choose the right plan (ovulation support, IUI, or IVF depending on results)."}}, {"@type": "Question", "name": "If my tubes are blocked, is IVF the only option?", "acceptedAnswer": {"@type": "Answer", "text": "If both tubes are significantly blocked or damaged, IVF is usually the best option because it bypasses the tubes. If one tube is open and healthy, natural/IUI may still be possible depending on other factors."}}, {"@type": "Question", "name": "I had two miscarriages. Is IVF with genetic testing needed?", "acceptedAnswer": {"@type": "Answer", "text": "Not automatically. We first look for causes-uterine factors, thyroid/diabetes, antiphospholipid antibodies, chromosomal issues, sperm DNA issues, etc. IVF with PGT may help in selected cases, especially with age 38+ or proven genetic problems."}}, {"@type": "Question", "name": "My progesterone was low last time. Does that stop pregnancy?", "acceptedAnswer": {"@type": "Answer", "text": "Low progesterone can reduce implantation or early support. If confirmed, we supplement after ovulation or embryo transfer. It's a common, manageable issue."}}, {"@type": "Question", "name": "My lining is thin. Can implantation still happen?", "acceptedAnswer": {"@type": "Answer", "text": "Thin lining can reduce chances, but we often improve it with tailored medication, correcting infections, optimizing hormones, and sometimes changing protocol or doing frozen transfer."}}, {"@type": "Question", "name": "Should I freeze eggs now even though I'm not ready for a baby?", "acceptedAnswer": {"@type": "Answer", "text": "Egg freezing is a way to protect future choice, especially if you're in your early-mid 30s or have risk factors (family history, low reserve). We'll check your reserve and discuss expected egg numbers and costs."}}, {"@type": "Question", "name": "What exactly is a semen analysis and how do I prepare?", "acceptedAnswer": {"@type": "Answer", "text": "It measures sperm count, motility (movement), and morphology (shape). You give a sample after 2-5 days of abstinence, avoid fever/alcohol/heavy smoking beforehand, and ideally repeat if abnormal, since sperm changes over time."}}, {"@type": "Question", "name": "My semen report is borderline low. Does that mean I'm infertile?", "acceptedAnswer": {"@type": "Answer", "text": "Borderline values don't equal infertility. Many men with mild issues conceive naturally. We repeat the test, look for treatable causes, and decide if lifestyle, medication, IUI, or IVF/ICSI is best."}}, {"@type": "Question", "name": "If there is no sperm, is there any hope?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We first confirm with a repeat test and hormones. Some cases are obstructive and can be treated surgically or with sperm retrieval. Non-obstructive cases may still yield sperm on micro-TESE. Donor sperm is an option if retrieval fails."}}, {"@type": "Question", "name": "I have varicocele. Should I operate?", "acceptedAnswer": {"@type": "Answer", "text": "Varicocele repair can improve semen in selected men-especially if there's pain, a palpable varicocele, and abnormal semen. It may improve natural or IUI chances, and sometimes IVF outcomes."}}, {"@type": "Question", "name": "Performance anxiety is making timing hard. What can we do?", "acceptedAnswer": {"@type": "Answer", "text": "This is common. We can reduce pressure by focusing on regular intercourse rather than a single day, using ovulation tracking calmly, and involving counseling. If needed, a short course of medication or IUI can remove timing stress."}}, {"@type": "Question", "name": "Does the man's age matter for fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, sperm quality and DNA integrity gradually decline with age, and miscarriage risk can rise in older fathers. Healthy lifestyle and timely planning help, and in IVF we may consider sperm DNA testing in some cases."}}, {"@type": "Question", "name": "What lifestyle changes improve sperm?", "acceptedAnswer": {"@type": "Answer", "text": "Stop smoking/vaping, limit alcohol, maintain healthy weight, exercise moderately, sleep 7-8 hours, reduce heat exposure to testes, and eat a balanced diet with enough protein, omega-3, zinc, folate, and antioxidants."}}, {"@type": "Question", "name": "What is sperm DNA fragmentation and when do you test it?", "acceptedAnswer": {"@type": "Answer", "text": "It checks sperm DNA breaks that can affect fertilization and miscarriage. We consider it after repeated IVF failure, unexplained infertility, recurrent miscarriage, or in older males/varicocele."}}, {"@type": "Question", "name": "Can past infections cause male infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, infections like mumps orchitis, STIs, or prostatitis can affect sperm. We look for symptoms, do tests if needed, and treat infections to improve outcomes."}}, {"@type": "Question", "name": "Do diabetes or BP medicines affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Some illnesses and a few medicines can affect erectile function or sperm. We review your drugs and control sugars/BP well. Never stop medicines on your own-let's adjust safely if needed."}}, {"@type": "Question", "name": "All tests are normal. Why aren't we conceiving?", "acceptedAnswer": {"@type": "Answer", "text": "This is called unexplained infertility. It may involve subtle egg/sperm/implantation issues we can't measure yet. Options include timed intercourse with mild stimulation, IUI, and IVF depending on age and duration."}}, {"@type": "Question", "name": "How do you decide between IUI and IVF?", "acceptedAnswer": {"@type": "Answer", "text": "We use age, duration, tube status, sperm quality, ovarian reserve, and previous attempts. IUI suits younger couples with open tubes and mild male/ovulation issues; IVF is better for low reserve, tubal block, severe male factor, or long-standing infertility."}}, {"@type": "Question", "name": "Can you explain IVF in simple steps?", "acceptedAnswer": {"@type": "Answer", "text": "Sure: 1) stimulate ovaries with injections, 2) monitor follicles, 3) retrieve eggs under anesthesia, 4) fertilize eggs with sperm in lab (IVF/ICSI), 5) grow embryos 3-5 days, 6) transfer one embryo, and 7) support hormones and do a pregnancy test."}}, {"@type": "Question", "name": "How long does one IVF cycle take?", "acceptedAnswer": {"@type": "Answer", "text": "Usually 3-4 weeks from start of injections to embryo transfer. If we freeze embryos and transfer later, each step is still within a month or so, but the full journey may span 1-3 months."}}, {"@type": "Question", "name": "Is egg retrieval painful or risky?", "acceptedAnswer": {"@type": "Answer", "text": "Retrieval is done under short anesthesia, so you shouldn't feel pain during it. Mild cramps/bloating after are common for 1-3 days. Serious risks like bleeding/infection are rare."}}, {"@type": "Question", "name": "What is ICSI and when is it needed?", "acceptedAnswer": {"@type": "Answer", "text": "ICSI means injecting a single sperm into each egg. We use it for low count/motility, azoospermia with retrieved sperm, previous fertilization failure, or sometimes for older couples."}}, {"@type": "Question", "name": "What's the difference between fresh and frozen embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Fresh transfer happens in the same cycle as retrieval. Frozen transfer uses embryos stored earlier and transferred in a later cycle when the uterus is best prepared. Frozen transfers can reduce OHSS risk and sometimes improve implantation."}}, {"@type": "Question", "name": "What are realistic IVF success chances at my age?", "acceptedAnswer": {"@type": "Answer", "text": "Success depends mainly on female age and embryo quality. Rough guide for live birth per transfer using own eggs: about 35-45% under 35, ~25-35% at 35-37, ~15-25% at 38-40, ~5-10% at 41-42, and <5% over 42. Your personal chances may be higher or lower based on diagnosis."}}, {"@type": "Question", "name": "How many IVF cycles do people usually need?", "acceptedAnswer": {"@type": "Answer", "text": "Many couples conceive in 1-3 cycles. Because biology is variable, we plan in batches and review after each attempt rather than promising a fixed number."}}, {"@type": "Question", "name": "What does embryo grading mean?", "acceptedAnswer": {"@type": "Answer", "text": "It's a lab-based way of describing how embryos look and develop. Higher-graded embryos generally have better chances, but even average-graded embryos can result in healthy babies."}}, {"@type": "Question", "name": "Why are you advising only one embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Single embryo transfer lowers twin/triplet risks without reducing overall success much, especially in women under 38 with good embryos. If needed, we can transfer remaining frozen embryos later."}}, {"@type": "Question", "name": "I heard about OHSS. How common and how do you prevent it?", "acceptedAnswer": {"@type": "Answer", "text": "OHSS is ovarian over-response causing bloating, fluid shifts, and rarely clots. Severe OHSS is uncommon, and we prevent it by adjusting doses, using antagonist protocols, triggering safely, and freezing all embryos if risk is high."}}, {"@type": "Question", "name": "What if IVF fails-does that mean no chance?", "acceptedAnswer": {"@type": "Answer", "text": "Not at all. Failure gives us information. We review embryo quality, uterine factors, sperm DNA, and protocol, then modify the next plan. Many couples succeed on a later attempt."}}, {"@type": "Question", "name": "Why would a cycle get cancelled?", "acceptedAnswer": {"@type": "Answer", "text": "Reasons include too few follicles, over-response risk, premature ovulation, or medical issues. Cancellation is frustrating but sometimes safer than proceeding with low chances."}}, {"@type": "Question", "name": "What is PGT-A and who should consider it?", "acceptedAnswer": {"@type": "Answer", "text": "PGT-A checks embryos for chromosome number errors to select a euploid embryo. It's most helpful for women 38+, recurrent miscarriage, repeated IVF failure, or severe male factor/older paternal age."}}, {"@type": "Question", "name": "We have a known genetic disease in family. Can IVF prevent passing it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With PGT-M, we test embryos for a specific gene mutation and transfer only unaffected embryos. It needs genetic counseling and a custom test setup."}}, {"@type": "Question", "name": "Should we do genetic carrier screening before IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Carrier screening can identify hidden recessive disease risks. It's optional but useful if there's family history, consanguinity, or you want maximum reassurance before treatment."}}, {"@type": "Question", "name": "We are thalassemia carriers. What are our options?", "acceptedAnswer": {"@type": "Answer", "text": "You can conceive naturally with prenatal diagnosis, or do IVF with PGT-M to transfer unaffected embryos. The choice depends on your values, cost, and timeline."}}, {"@type": "Question", "name": "Does IVF reduce the chance of Down syndrome?", "acceptedAnswer": {"@type": "Answer", "text": "IVF itself doesn't reduce risk, but selecting embryos via PGT-A or doing prenatal screening in pregnancy can lower the chance of transferring an aneuploid embryo."}}, {"@type": "Question", "name": "After embryo transfer, what precautions should I take?", "acceptedAnswer": {"@type": "Answer", "text": "Think normal life with moderation: avoid heavy lifting, intense workouts, smoking/alcohol, and overheating. Continue medicines, eat balanced meals, and try to stay calm. Bed rest isn't required."}}, {"@type": "Question", "name": "I have no symptoms after transfer. Is that bad?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some women feel nothing and still get positive results. Symptoms depend more on hormones than on pregnancy itself."}}, {"@type": "Question", "name": "Light spotting after IVF-should I panic?", "acceptedAnswer": {"@type": "Answer", "text": "Light spotting can happen from implantation or cervical irritation. If bleeding is heavy, painful, or persistent, contact us immediately. We'll guide you."}}, {"@type": "Question", "name": "Is ectopic pregnancy possible in IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but still uncommon. IVF slightly increases the risk versus natural conception, so we do early ultrasounds to confirm the pregnancy location."}}, {"@type": "Question", "name": "What if twins happen? Is it dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "Twins can be healthy but carry higher risks: preterm birth, diabetes, hypertension, and NICU admission. That's why we prefer single embryo transfer whenever possible."}}, {"@type": "Question", "name": "Do IVF pregnancies need special monitoring?", "acceptedAnswer": {"@type": "Answer", "text": "Most follow standard antenatal care, with a bit more early monitoring. If there are additional risks (age, twins, diabetes, OHSS), we add targeted scans/consults."}}, {"@type": "Question", "name": "Is C-section mandatory after IVF?", "acceptedAnswer": {"@type": "Answer", "text": "No. Mode of delivery depends on obstetric indications, not IVF alone. Many IVF mothers deliver vaginally."}}, {"@type": "Question", "name": "Once heartbeat is seen, what are chances of continuing?", "acceptedAnswer": {"@type": "Answer", "text": "A confirmed fetal heartbeat at 6-7 weeks is a strong positive sign. Miscarriage risk drops significantly after this, though exact risk depends on age and past history."}}, {"@type": "Question", "name": "Are IVF babies normal? Any long-term risks?", "acceptedAnswer": {"@type": "Answer", "text": "Most IVF children are healthy and develop normally. Some risks seen in studies relate more to underlying infertility, multiple pregnancy, or prematurity than to IVF itself."}}, {"@type": "Question", "name": "Is the risk of birth defects higher with IVF/ICSI?", "acceptedAnswer": {"@type": "Answer", "text": "Overall risk is only slightly higher and still low. Part of the increase is linked to parental factors (age, genetics, male factor) rather than the technique itself."}}, {"@type": "Question", "name": "Does IVF increase cancer risk in women?", "acceptedAnswer": {"@type": "Answer", "text": "Current evidence does not show a meaningful increase in breast/ovarian/uterine cancer from IVF medicines. We still individualize protocols for women with specific risks."}}, {"@type": "Question", "name": "I'm feeling anxious and irritable on injections. Is this normal?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, hormones plus uncertainty can affect mood. Tell us early. We can support you medically and with counseling, and adjust expectations and coping tools."}}, {"@type": "Question", "name": "What is a typical IVF cost per cycle in India?", "acceptedAnswer": {"@type": "Answer", "text": "In India, a basic IVF cycle often ranges roughly ₹1.2-2.5 lakh, depending on city, clinic, medicines, and complexity. Add-ons like ICSI, freezing, or genetic testing increase cost. We'll give a transparent written estimate for your case."}}, {"@type": "Question", "name": "How much extra does ICSI cost?", "acceptedAnswer": {"@type": "Answer", "text": "ICSI is usually an add-on cost on top of IVF. In many Indian centers it can add roughly ₹15,000-₹40,000 or more depending on lab and case; we'll confirm your exact package."}}, {"@type": "Question", "name": "How much does PGT cost?", "acceptedAnswer": {"@type": "Answer", "text": "PGT can add about ₹1-3 lakh+ depending on number of embryos and type (PGT-A vs PGT-M). We'll explain benefits so you decide if it's worth it for you."}}, {"@type": "Question", "name": "If I need donor eggs, what does it cost and what are success rates?", "acceptedAnswer": {"@type": "Answer", "text": "Donor-egg IVF costs more because of the screening, the donor's medical care and insurance, and the bank's charges; many Indian clinics quote several lakhs per cycle. Under the ART (Regulation) Act 2021 no payment may be made for the eggs themselves, and donors are recruited through a registered ART bank rather than by the clinic. Success per transfer is generally higher than with very low-reserve own eggs."}}, {"@type": "Question", "name": "Do you offer EMI or packages?", "acceptedAnswer": {"@type": "Answer", "text": "Many clinics offer package deals or EMI through partners. We can discuss options so finances don't force rushed decisions."}}, {"@type": "Question", "name": "I'm scared of hidden charges. How do I avoid surprises?", "acceptedAnswer": {"@type": "Answer", "text": "Ask for an itemized estimate including medicines, anesthesia, lab procedures, freezing, and transfers. Clarify what is included/excluded before starting. A good clinic will be transparent."}}, {"@type": "Question", "name": "What diet helps female fertility?", "acceptedAnswer": {"@type": "Answer", "text": "A balanced, anti-inflammatory diet helps: plenty of vegetables, fruits, whole grains, pulses, nuts, healthy fats, and adequate protein. Limit excess sugar, trans-fats, and ultra-processed foods."}}, {"@type": "Question", "name": "Any specific foods for sperm health?", "acceptedAnswer": {"@type": "Answer", "text": "Focus on protein, omega-3 sources, nuts/seeds, leafy greens, colorful fruits, and adequate micronutrients like zinc, selenium, folate, and vitamin D. Consistency matters more than one 'superfood'."}}, {"@type": "Question", "name": "Does weight really affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both underweight and overweight can disturb hormones, ovulation, and sperm. Even a 5-10% weight correction can improve natural and assisted pregnancy rates."}}, {"@type": "Question", "name": "Can I exercise during IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Light to moderate activity is fine. Avoid high-impact workouts and heavy core exercises during stimulation and after transfer to reduce torsion/discomfort."}}, {"@type": "Question", "name": "Is coffee or alcohol completely banned?", "acceptedAnswer": {"@type": "Answer", "text": "Moderation. Limit caffeine to about 1-2 cups a day and avoid binge drinking. In the 2-week wait and pregnancy, it's safest to avoid alcohol."}}, {"@type": "Question", "name": "How much does smoking affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Smoking reduces egg reserve, impairs embryo quality, and lowers sperm count/motility. Quitting improves outcomes within a few months."}}, {"@type": "Question", "name": "Which supplements should we take?", "acceptedAnswer": {"@type": "Answer", "text": "Common basics: folic acid for women, vitamin D if deficient, and antioxidants for men if semen is poor. But supplements should be tailored to your labs-avoid megadoses without advice."}}, {"@type": "Question", "name": "Did stress cause our infertility?", "acceptedAnswer": {"@type": "Answer", "text": "Stress alone rarely causes infertility, but it can worsen hormones, libido, and coping. Think of stress as a load on top of a medical issue, not the only reason."}}, {"@type": "Question", "name": "How do we handle the two-week wait emotionally?", "acceptedAnswer": {"@type": "Answer", "text": "Keep a simple routine, avoid constant symptom-checking, limit social media triggers, and share feelings with your partner or counselor. We're here to support you too."}}, {"@type": "Question", "name": "We keep blaming each other. How do we stop?", "acceptedAnswer": {"@type": "Answer", "text": "Infertility is a couple's condition, not a person's fault. Try using 'we' language, attend counseling together, and focus on teamwork and timelines."}}, {"@type": "Question", "name": "Family keeps pressuring us. What should we say?", "acceptedAnswer": {"@type": "Answer", "text": "Set kind but firm boundaries: 'We're under medical care and will share updates when ready.' You don't owe detailed explanations. Protect your mental space."}}, {"@type": "Question", "name": "I feel alone because friends are getting pregnant. Is that normal?", "acceptedAnswer": {"@type": "Answer", "text": "Very normal. Infertility grief is real. Seek a support group or counselor; talking to people who get it can reduce isolation."}}, {"@type": "Question", "name": "My husband feels ashamed about male factor. How can I help him?", "acceptedAnswer": {"@type": "Answer", "text": "Reassure him that male factor is common and treatable. Avoid sharing his reports with others. Come as a team to visits so he feels supported, not singled out."}}, {"@type": "Question", "name": "Is IVF legal and regulated in India?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. IVF is legal and governed by ART and Surrogacy regulations. Clinics must be registered and follow consent, donor screening, and embryo handling rules."}}, {"@type": "Question", "name": "Will we know the egg/sperm donor?", "acceptedAnswer": {"@type": "Answer", "text": "In India, donors are typically anonymous; you receive medical and phenotypic matching details, not identity. Records are maintained for safety."}}, {"@type": "Question", "name": "How long can embryos be frozen?", "acceptedAnswer": {"@type": "Answer", "text": "Embryos can be safely frozen for years with good survival. The legal storage duration depends on national rules and consent, and we renew your consent periodically."}}, {"@type": "Question", "name": "When is surrogacy advised?", "acceptedAnswer": {"@type": "Answer", "text": "Surrogacy is considered when a woman cannot carry a pregnancy safely (absent uterus, severe medical disease, repeated implantation failure after evaluation). It must follow legal criteria and approvals."}}, {"@type": "Question", "name": "If miscarriage happens after IVF, what next?", "acceptedAnswer": {"@type": "Answer", "text": "We do a structured review-genetics of the pregnancy if possible, uterine evaluation, hormones, clotting and immune factors, and sperm quality. Then plan next transfer with corrections."}}, {"@type": "Question", "name": "Will IVF hormones affect breastfeeding later?", "acceptedAnswer": {"@type": "Answer", "text": "No lasting effect. The hormones used are temporary and don't stop future breastfeeding."}}, {"@type": "Question", "name": "Is sex allowed after embryo transfer?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes after a short rest (often 3-5 days), unless you had bleeding, pain, or high OHSS risk. We'll tell you based on your case."}}, {"@type": "Question", "name": "Can I travel during IVF or early pregnancy?", "acceptedAnswer": {"@type": "Answer", "text": "Light travel is okay during stimulation if monitoring is not missed. After transfer, short trips are fine if you're stable, but avoid very long or stressful travel unless cleared."}}, {"@type": "Question", "name": "How do we choose a good IVF clinic?", "acceptedAnswer": {"@type": "Answer", "text": "Look for transparent data, experienced embryology lab, individualized protocols, clear communication, and ethical counseling-not just flashy success ads. Meeting the doctor and lab team matters."}}, {"@type": "Question", "name": "Should we freeze embryos for future child?", "acceptedAnswer": {"@type": "Answer", "text": "If you want another child later or if age/medical condition may worsen, freezing good embryos now is smart. It's usually cheaper and more effective than starting over later."}}, {"@type": "Question", "name": "Do add-on treatments like PRP, growth hormone, or immunotherapy always help?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. Some add-ons help selected patients, but many don't have strong evidence for routine use. We recommend only when your profile suggests benefit."}}, {"@type": "Question", "name": "Is it okay to keep trying naturally while planning IVF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, unless there's a clear barrier like both tubes blocked. We encourage healthy attempts while we prepare, because natural conception can still happen."}}, {"@type": "Question", "name": "My TSH is high-normal. Does that matter?", "acceptedAnswer": {"@type": "Answer", "text": "Thyroid affects ovulation and early pregnancy. We aim for a TSH around 2.5 or less when trying or in early pregnancy, and treat if needed."}}, {"@type": "Question", "name": "My prolactin is a bit elevated. Is that serious?", "acceptedAnswer": {"@type": "Answer", "text": "Mild elevation is common and treatable. We repeat fasting tests, rule out stress/medication causes, and give treatment if needed to restore ovulation."}}, {"@type": "Question", "name": "Do autoimmune diseases affect fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Some autoimmune conditions can affect implantation or pregnancy. With proper control and a coordinated plan with your physician, most women conceive safely."}}, {"@type": "Question", "name": "Can I take testosterone to improve sperm?", "acceptedAnswer": {"@type": "Answer", "text": "External testosterone can actually suppress sperm production. Never self-start. If hormones are low, we use fertility-friendly treatments instead."}}, {"@type": "Question", "name": "How long do sperm-improving treatments take?", "acceptedAnswer": {"@type": "Answer", "text": "Sperm take about 70-90 days to regenerate. So lifestyle or medication changes usually need 3 months to show effect."}}, {"@type": "Question", "name": "Is sperm retrieval surgery painful?", "acceptedAnswer": {"@type": "Answer", "text": "Procedures like PESA/TESA are minor and done with anesthesia; discomfort afterward is usually mild. Micro-TESE is a bigger procedure, but pain is manageable and we give proper care."}}, {"@type": "Question", "name": "Can IVF guarantee a boy/girl?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sex selection for social reasons is illegal in India. IVF is for treating infertility and preventing serious genetic disease."}}, {"@type": "Question", "name": "Is IVF acceptable in our religion?", "acceptedAnswer": {"@type": "Answer", "text": "Many couples reconcile IVF with faith by focusing on the intention-building a family. If you want, we can discuss options that align with your beliefs, like using your own gametes."}}, {"@type": "Question", "name": "If my period comes late before starting IVF, what do we do?", "acceptedAnswer": {"@type": "Answer", "text": "We confirm you're not pregnant and check hormones/ultrasound. If everything is okay, we can induce a period safely or start in the next natural cycle."}}, {"@type": "Question", "name": "Can egg quality be improved?", "acceptedAnswer": {"@type": "Answer", "text": "We can optimize factors that hurt quality-smoking, obesity, uncontrolled thyroid/diabetes, vitamin D deficiency, oxidative stress. But age-related decline can't be fully reversed, so timing matters."}}, {"@type": "Question", "name": "Does laptop/sauna/hot baths reduce sperm?", "acceptedAnswer": {"@type": "Answer", "text": "Regular heat exposure can lower sperm count temporarily. Keep laptops off lap, limit saunas/hot tubs, and wear loose underwear."}}, {"@type": "Question", "name": "Does insurance cover IVF in India?", "acceptedAnswer": {"@type": "Answer", "text": "Coverage is still limited, though some corporate policies include add-ons. We can provide documents for claims if your policy supports it."}}, {"@type": "Question", "name": "Are refund-or-guarantee packages safe?", "acceptedAnswer": {"@type": "Answer", "text": "They can be okay if terms are transparent, but read fine print about age, embryo number, exclusions, and what counts as 'success'. Don't choose a clinic only for a guarantee."}}, {"@type": "Question", "name": "What does the first fertility assessment involve?", "acceptedAnswer": {"@type": "Answer", "text": "A fertility plan should be individualized after reviewing age, duration of trying, menstrual history, previous pregnancies/treatments and both partners' reports. Testing should be targeted rather than ordering every test for everyone."}}, {"@type": "Question", "name": "How do you confirm whether I am ovulating, and what happens if I am not?", "acceptedAnswer": {"@type": "Answer", "text": "The key is to confirm whether and when ovulation occurs and then address the underlying cause. Ultrasound, selected blood tests and cycle tracking can guide treatment; treatment depends on the diagnosis."}}, {"@type": "Question", "name": "What do AMH and AFC actually tell you?", "acceptedAnswer": {"@type": "Answer", "text": "AMH and AFC mainly estimate ovarian reserve/expected response to stimulation; they do not directly measure egg quality. Age remains an important predictor of egg competence and pregnancy outcome."}}, {"@type": "Question", "name": "How does age change our chances, and how should that affect the plan?", "acceptedAnswer": {"@type": "Answer", "text": "Fertility generally declines with increasing age, particularly because egg number and chromosomal competence change. The best plan depends on age, ovarian reserve, sperm factors, duration of trying and the couple's goals."}}, {"@type": "Question", "name": "When are the tubes tested, and what happens if they are damaged?", "acceptedAnswer": {"@type": "Answer", "text": "Tubal assessment is useful when tubal disease is possible. Treatment depends on whether one or both tubes are affected, whether there is hydrosalpinx or other pelvic disease, and the couple's age and fertility factors."}}, {"@type": "Question", "name": "Which uterine findings actually matter for fertility?", "acceptedAnswer": {"@type": "Answer", "text": "Uterine findings matter mainly when they alter the cavity or are associated with symptoms or repeated reproductive problems. Ultrasound and, when indicated, hysteroscopy or other imaging help decide whether treatment is worthwhile."}}, {"@type": "Question", "name": "How does endometriosis affect fertility, and how is it managed?", "acceptedAnswer": {"@type": "Answer", "text": "Endometriosis can affect fertility through inflammation, anatomy and ovarian reserve, but its impact varies widely. Treatment should balance symptoms, age, ovarian reserve, prior surgery and the couple's fertility goals."}}, {"@type": "Question", "name": "How is the male partner evaluated?", "acceptedAnswer": {"@type": "Answer", "text": "Male factors contribute to a substantial proportion of infertility. Evaluation usually starts with semen analysis and history, followed by targeted hormonal, genetic or imaging tests when indicated."}}, {"@type": "Question", "name": "How reliable is a semen report, and when is sperm DNA testing needed?", "acceptedAnswer": {"@type": "Answer", "text": "Semen results vary from sample to sample, so an abnormal report often needs confirmation. Sperm DNA testing is a selected investigation rather than a routine test for every couple, and management should address treatable causes first."}}, {"@type": "Question", "name": "Which lifestyle changes and supplements are worth the effort?", "acceptedAnswer": {"@type": "Answer", "text": "Healthy weight, regular moderate activity, adequate sleep, a balanced diet and avoidance of tobacco and recreational drugs support reproductive health. Supplements should be used selectively because evidence and needs vary between patients."}}, {"@type": "Question", "name": "Who does IUI actually help?", "acceptedAnswer": {"@type": "Answer", "text": "IUI is most useful in selected couples, particularly when at least one tube is functional and sperm parameters are suitable. Success depends strongly on age, ovarian response, diagnosis and sperm factors."}}, {"@type": "Question", "name": "When is IVF the right choice rather than a simpler treatment?", "acceptedAnswer": {"@type": "Answer", "text": "IVF is considered when the expected benefit is higher than simpler options, such as with significant tubal disease, some male factors, reduced ovarian reserve, prolonged infertility or failed lower-intensity treatment. The plan should be personalized."}}, {"@type": "Question", "name": "What is stimulation trying to achieve, and how is it monitored?", "acceptedAnswer": {"@type": "Answer", "text": "Stimulation aims to recruit multiple follicles while minimizing complications. Medication doses and monitoring are individualized using ultrasound, clinical findings and sometimes hormone levels."}}, {"@type": "Question", "name": "What happens at egg retrieval, and what are the risks?", "acceptedAnswer": {"@type": "Answer", "text": "Egg retrieval is usually performed with analgesia or short anesthesia. Most patients recover quickly, but bleeding, infection, ovarian torsion and OHSS are uncommon complications that should be discussed before treatment."}}, {"@type": "Question", "name": "What decides how the embryos do in the laboratory?", "acceptedAnswer": {"@type": "Answer", "text": "Laboratory outcomes depend on egg maturity, sperm quality, fertilization method and embryo biology. ICSI is useful for selected indications but is not automatically better than conventional IVF for every couple."}}, {"@type": "Question", "name": "How is the timing of the embryo transfer decided?", "acceptedAnswer": {"@type": "Answer", "text": "Transfer timing is chosen after considering embryo development, endometrial preparation, hormone levels and clinical circumstances. Single embryo transfer is commonly preferred when appropriate to reduce multiple-pregnancy risk."}}, {"@type": "Question", "name": "What happens in the first weeks after a positive test?", "acceptedAnswer": {"@type": "Answer", "text": "After a positive test, medication and follow-up are continued according to the treatment plan. Serial beta-hCG and ultrasound are used when appropriate to confirm pregnancy location and development."}}, {"@type": "Question", "name": "How is repeated failure or recurrent miscarriage investigated?", "acceptedAnswer": {"@type": "Answer", "text": "Repeated failure or miscarriage deserves a structured review rather than automatically adding multiple tests. The evaluation should consider embryo factors, uterine anatomy, endocrine issues, sperm factors and other findings supported by the clinical history."}}, {"@type": "Question", "name": "When is genetic testing worth doing?", "acceptedAnswer": {"@type": "Answer", "text": "Genetic testing is most useful when there is a clear clinical indication. Carrier screening, PGT-M and PGT-A answer different questions and have limitations; genetic counseling can help couples choose appropriately."}}, {"@type": "Question", "name": "How should we decide about add-ons and donor treatment?", "acceptedAnswer": {"@type": "Answer", "text": "Optional treatments should be offered only when their potential benefit, evidence, risks and costs are clear. Donor treatment, embryo storage, consent and finances should be discussed transparently and in accordance with applicable Indian regulations."}}, {"@type": "Question", "name": "How do you decide what to do next, and when should we come sooner?", "acceptedAnswer": {"@type": "Answer", "text": "The doctor usually decides the next step after reviewing the relevant reports rather than from one number alone, and any single finding is read in the context of your age, your history and the other results. A result on its own does not mean that pregnancy is impossible; what matters is the complete clinical picture. Bring previous reports and a list of medicines to the consultation, and do not start or stop treatment without medical advice. Come sooner than the usual timelines if there are red flags - very irregular cycles, severe pelvic pain, repeated pregnancy loss, or a significant semen abnormality."}}, {"@type": "Question", "name": "How do I book an appointment with Dr Gupta?", "acceptedAnswer": {"@type": "Answer", "text": "Call or WhatsApp +91 98999 84791 - the same number takes both. Consultations at Indira IVF, J.P. Nagar, Bengaluru are by appointment. If you are travelling from outside Bengaluru or from abroad, ask for a video consultation first and send your reports in advance."}}, {"@type": "Question", "name": "Where is the clinic?", "acceptedAnswer": {"@type": "Answer", "text": "Indira IVF, Woody's Building, 3rd Floor, Plot No. 45/1-1, near Bangalore Central Mall, J.P. Nagar, Bengaluru 560078, Karnataka. It is convenient for Jayanagar, Banashankari, BTM Layout and Bannerghatta Road."}}, {"@type": "Question", "name": "What should I bring to the first visit?", "acceptedAnswer": {"@type": "Answer", "text": "Every report you already have: previous cycle summaries and discharge notes, semen analyses, hormone profiles including AMH, thyroid and prolactin, HSG or ultrasound reports, hysteroscopy or laparoscopy notes, and the medicines used in earlier cycles. A consultation with the old records in the room is far more useful than one starting from scratch."}}, {"@type": "Question", "name": "Can I come for a second opinion after treatment elsewhere?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and that is a large part of the practice. Bring the records from the previous centre. The point of the first visit is to work out what happened and why, before anything new is planned."}}, {"@type": "Question", "name": "Which languages can we consult in?", "acceptedAnswer": {"@type": "Answer", "text": "English, Hindi, Nepali and Bhojpuri, and conversational Kannada and Bengali. The website itself can be read in Kannada, Bengali and Nepali using the language buttons at the top of the page."}}, {"@type": "Question", "name": "Who is Dr Shyam N Gupta?", "acceptedAnswer": {"@type": "Answer", "text": "MBBS, MD in Obstetrics and Gynaecology, with fellowships in infertility and gynaecological endoscopy and a diploma in male infertility from ANDROFERT, Brazil. Centre Head at Indira IVF, J.P. Nagar, Bengaluru since 2016 and Zonal Business Director for Indira IVF South, with sixteen publications and twelve years in reproductive medicine. Much of the practice concerns couples for whom something has already gone wrong more than once."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Questions", "item": "https://www.drshyamguptaivf.com/questions/"}]}]}</script>
 </head>
 <body>
 <div class="langbar">
@@ -799,36 +846,69 @@ strong{font-weight:700;color:var(--ink)}
   <div class="wrap">
     <p class="crumb"><a href="/">Dr Shyam N Gupta</a> &#8250; Questions</p>
     <p class="eyebrow">Questions and answers</p>
-    <h1>106 fertility questions, answered</h1>
-    <p class="lede">The questions patients actually ask at Indira IVF, J.P. Nagar, with
-      Dr Gupta&#8217;s own answers. Every one of these is also in the
-      <strong>Ask a question</strong> box at the bottom of the screen &#8212; type in
-      your own words and it will find the right one.</p>
+    <h1>127 fertility questions, answered</h1>
+    <p class="lede">The questions patients actually ask at Indira IVF, J.P. Nagar,
+      with Dr Gupta&#8217;s own answers, arranged by where you are in your own
+      treatment. Every one is also in the <strong>Ask a question</strong> box at the
+      bottom of the screen &#8212; type in your own words and it will find the right
+      one.</p>
     <div class="qa-jumps">
-      <a class="qa-jump" href="#basics">Basics<span class="n">4</span></a>
-      <a class="qa-jump" href="#female">Female<span class="n">16</span></a>
-      <a class="qa-jump" href="#male">Male<span class="n">14</span></a>
-      <a class="qa-jump" href="#couple">Couple<span class="n">4</span></a>
-      <a class="qa-jump" href="#ivf">IVF<span class="n">16</span></a>
-      <a class="qa-jump" href="#genetics">Genetics<span class="n">5</span></a>
-      <a class="qa-jump" href="#pregnancy">Pregnancy<span class="n">9</span></a>
-      <a class="qa-jump" href="#risks">Risks<span class="n">4</span></a>
-      <a class="qa-jump" href="#costs">Costs<span class="n">8</span></a>
-      <a class="qa-jump" href="#lifestyle">Lifestyle<span class="n">7</span></a>
-      <a class="qa-jump" href="#psych">Psych<span class="n">6</span></a>
-      <a class="qa-jump" href="#legal">Legal<span class="n">4</span></a>
-      <a class="qa-jump" href="#after-ivf">After IVF<span class="n">3</span></a>
-      <a class="qa-jump" href="#clinic">Clinic<span class="n">6</span></a>
+      <div class="qa-stage">
+        <p class="qa-stage-h">Where to start</p>
+        <a class="qa-jump" href="#getting-started">Getting started<span class="n">8</span></a>
+        <a class="qa-jump" href="#age-and-fertility">Age and fertility<span class="n">2</span></a>
+        <a class="qa-jump" href="#lifestyle-diet-and-supplements">Lifestyle, diet and supplements<span class="n">12</span></a>
+      </div>
+      <div class="qa-stage">
+        <p class="qa-stage-h">Finding the reason</p>
+        <a class="qa-jump" href="#ovulation-and-cycle-problems">Ovulation and cycle problems<span class="n">5</span></a>
+        <a class="qa-jump" href="#ovarian-reserve-and-amh">Ovarian reserve and AMH<span class="n">4</span></a>
+        <a class="qa-jump" href="#tubes-and-pelvic-factors">Tubes and pelvic factors<span class="n">2</span></a>
+        <a class="qa-jump" href="#uterus-fibroids-and-polyps">Uterus, fibroids and polyps<span class="n">3</span></a>
+        <a class="qa-jump" href="#endometriosis">Endometriosis<span class="n">2</span></a>
+        <a class="qa-jump" href="#male-fertility">Male fertility<span class="n">8</span></a>
+        <a class="qa-jump" href="#semen-testing-and-sperm-dna">Semen testing and sperm DNA<span class="n">4</span></a>
+      </div>
+      <div class="qa-stage">
+        <p class="qa-stage-h">Going through treatment</p>
+        <a class="qa-jump" href="#iui">IUI<span class="n">1</span></a>
+        <a class="qa-jump" href="#planning-ivf">Planning IVF<span class="n">7</span></a>
+        <a class="qa-jump" href="#stimulation-and-monitoring">Stimulation and monitoring<span class="n">3</span></a>
+        <a class="qa-jump" href="#egg-retrieval-and-safety">Egg retrieval and safety<span class="n">4</span></a>
+        <a class="qa-jump" href="#in-the-laboratory">In the laboratory<span class="n">3</span></a>
+        <a class="qa-jump" href="#embryo-transfer-and-freezing">Embryo transfer and freezing<span class="n">5</span></a>
+        <a class="qa-jump" href="#add-ons-and-donor-options">Add-ons and donor options<span class="n">2</span></a>
+      </div>
+      <div class="qa-stage">
+        <p class="qa-stage-h">After the transfer</p>
+        <a class="qa-jump" href="#pregnancy-after-ivf">Pregnancy after IVF<span class="n">14</span></a>
+        <a class="qa-jump" href="#repeated-failure-and-miscarriage">Repeated failure and miscarriage<span class="n">5</span></a>
+        <a class="qa-jump" href="#genetics-and-pgt">Genetics and PGT<span class="n">6</span></a>
+      </div>
+      <div class="qa-stage">
+        <p class="qa-stage-h">Money, law and feelings</p>
+        <a class="qa-jump" href="#costs-and-payment">Costs and payment<span class="n">8</span></a>
+        <a class="qa-jump" href="#law-and-consent-in-india">Law and consent in India<span class="n">5</span></a>
+        <a class="qa-jump" href="#feelings-and-support">Feelings and support<span class="n">8</span></a>
+        <a class="qa-jump" href="#appointments-and-the-clinic">Appointments and the clinic<span class="n">6</span></a>
+      </div>
     </div>
   </div>
 </div>
 
-<section id="basics" class="qa-sec">
+<section class="qa-band">
+  <div class="wrap">
+    <p class="eyebrow">Where to start</p>
+    <h2 class="qa-band-h">You have been trying, and you want to know what happens next.</h2>
+    <p class="qa-band-n">22 questions</p>
+  </div>
+</section>
+<section id="getting-started" class="qa-sec">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Basics</p>
-      <h2>Basics &#8212; 4 questions</h2>
-      <p class="measure">When to seek help, what the first tests are, and what the word infertility actually means.</p>
+      <p class="eyebrow">Where to start</p>
+      <h2>Getting started</h2>
+      <p class="measure">When to seek help, the first tests for both of you, and what the word infertility actually means.</p>
     </div>
     <div class="faq">
         <details id="q000">
@@ -847,15 +927,116 @@ strong{font-weight:700;color:var(--ink)}
           <summary>People say we are &#x27;infertile.&#x27; Does that mean we can&#x27;t have a baby naturally?</summary>
           <div class="a">Not necessarily. Infertility just means pregnancy hasn&#x27;t happened yet after a certain time. Many causes are treatable, and some couples conceive naturally after guidance. We focus on your specific reason and timeline, not a label.</div>
         </details>
+        <details id="q025">
+          <summary>All tests are normal. Why aren&#x27;t we conceiving?</summary>
+          <div class="a">This is called unexplained infertility. It may involve subtle egg/sperm/implantation issues we can&#x27;t measure yet. Options include timed intercourse with mild stimulation, IUI, and IVF depending on age and duration.</div>
+        </details>
+        <details id="q026">
+          <summary>How do you decide between IUI and IVF?</summary>
+          <div class="a">We use age, duration, tube status, sperm quality, ovarian reserve, and previous attempts. IUI suits younger couples with open tubes and mild male/ovulation issues; IVF is better for low reserve, tubal block, severe male factor, or long-standing infertility.</div>
+        </details>
+        <details id="q100">
+          <summary>What does the first fertility assessment involve?</summary>
+          <div class="a">A fertility plan should be individualized after reviewing age, duration of trying, menstrual history, previous pregnancies/treatments and both partners&#x27; reports. Testing should be targeted rather than ordering every test for everyone.<span class="qa-note">Covers: when to seek help, first visit assessment, ovulation history, partner evaluation, previous treatment records.</span></div>
+        </details>
+        <details id="q120">
+          <summary>How do you decide what to do next, and when should we come sooner?</summary>
+          <div class="a">The doctor usually decides the next step after reviewing the relevant reports rather than from one number alone, and any single finding is read in the context of your age, your history and the other results. A result on its own does not mean that pregnancy is impossible; what matters is the complete clinical picture. Bring previous reports and a list of medicines to the consultation, and do not start or stop treatment without medical advice. Come sooner than the usual timelines if there are red flags - very irregular cycles, severe pelvic pain, repeated pregnancy loss, or a significant semen abnormality.</div>
+        </details>
     </div>
   </div>
 </section>
-<section id="female" class="qa-sec">
+<section id="age-and-fertility" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Female</p>
-      <h2>Female &#8212; 16 questions</h2>
-      <p class="measure">Ovulation, PCOS, endometriosis, AMH, the lining, the tubes and the thyroid.</p>
+      <p class="eyebrow">Where to start</p>
+      <h2>Age and fertility</h2>
+      <p class="measure">What changes with age, for women and for men, and what that means for timing.</p>
+    </div>
+    <div class="faq">
+        <details id="q009">
+          <summary>I&#x27;m 39. Are my chances too low?</summary>
+          <div class="a">Chances decline with age, but many 39-year-olds conceive-naturally or with help. The key is not to delay evaluation and to choose the right plan (ovulation support, IUI, or IVF depending on results).</div>
+        </details>
+        <details id="q103">
+          <summary>How does age change our chances, and how should that affect the plan?</summary>
+          <div class="a">Fertility generally declines with increasing age, particularly because egg number and chromosomal competence change. The best plan depends on age, ovarian reserve, sperm factors, duration of trying and the couple&#x27;s goals.<span class="qa-note">Covers: fertility after 35, fertility after 40, egg quality with age, male age, timing treatment.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="lifestyle-diet-and-supplements" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Where to start</p>
+      <h2>Lifestyle, diet and supplements</h2>
+      <p class="measure">Weight, smoking, alcohol, coffee, exercise, diet and which supplements are worth taking.</p>
+    </div>
+    <div class="faq">
+        <details id="q021">
+          <summary>What lifestyle changes improve sperm?</summary>
+          <div class="a">Stop smoking/vaping, limit alcohol, maintain healthy weight, exercise moderately, sleep 7-8 hours, reduce heat exposure to testes, and eat a balanced diet with enough protein, omega-3, zinc, folate, and antioxidants.</div>
+        </details>
+        <details id="q062">
+          <summary>What diet helps female fertility?</summary>
+          <div class="a">A balanced, anti-inflammatory diet helps: plenty of vegetables, fruits, whole grains, pulses, nuts, healthy fats, and adequate protein. Limit excess sugar, trans-fats, and ultra-processed foods.</div>
+        </details>
+        <details id="q063">
+          <summary>Any specific foods for sperm health?</summary>
+          <div class="a">Focus on protein, omega-3 sources, nuts/seeds, leafy greens, colorful fruits, and adequate micronutrients like zinc, selenium, folate, and vitamin D. Consistency matters more than one &#x27;superfood&#x27;.</div>
+        </details>
+        <details id="q064">
+          <summary>Does weight really affect fertility?</summary>
+          <div class="a">Yes. Both underweight and overweight can disturb hormones, ovulation, and sperm. Even a 5-10% weight correction can improve natural and assisted pregnancy rates.</div>
+        </details>
+        <details id="q065">
+          <summary>Can I exercise during IVF?</summary>
+          <div class="a">Light to moderate activity is fine. Avoid high-impact workouts and heavy core exercises during stimulation and after transfer to reduce torsion/discomfort.</div>
+        </details>
+        <details id="q066">
+          <summary>Is coffee or alcohol completely banned?</summary>
+          <div class="a">Moderation. Limit caffeine to about 1-2 cups a day and avoid binge drinking. In the 2-week wait and pregnancy, it&#x27;s safest to avoid alcohol.</div>
+        </details>
+        <details id="q067">
+          <summary>How much does smoking affect fertility?</summary>
+          <div class="a">Smoking reduces egg reserve, impairs embryo quality, and lowers sperm count/motility. Quitting improves outcomes within a few months.</div>
+        </details>
+        <details id="q068">
+          <summary>Which supplements should we take?</summary>
+          <div class="a">Common basics: folic acid for women, vitamin D if deficient, and antioxidants for men if semen is poor. But supplements should be tailored to your labs-avoid megadoses without advice.</div>
+        </details>
+        <details id="q090">
+          <summary>Can I take testosterone to improve sperm?</summary>
+          <div class="a">External testosterone can actually suppress sperm production. Never self-start. If hormones are low, we use fertility-friendly treatments instead.</div>
+        </details>
+        <details id="q091">
+          <summary>How long do sperm-improving treatments take?</summary>
+          <div class="a">Sperm take about 70-90 days to regenerate. So lifestyle or medication changes usually need 3 months to show effect.</div>
+        </details>
+        <details id="q097">
+          <summary>Does laptop/sauna/hot baths reduce sperm?</summary>
+          <div class="a">Regular heat exposure can lower sperm count temporarily. Keep laptops off lap, limit saunas/hot tubs, and wear loose underwear.</div>
+        </details>
+        <details id="q109">
+          <summary>Which lifestyle changes and supplements are worth the effort?</summary>
+          <div class="a">Healthy weight, regular moderate activity, adequate sleep, a balanced diet and avoidance of tobacco and recreational drugs support reproductive health. Supplements should be used selectively because evidence and needs vary between patients.<span class="qa-note">Covers: weight, exercise, diet, smoking/alcohol, supplements.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section class="qa-band">
+  <div class="wrap">
+    <p class="eyebrow">Finding the reason</p>
+    <h2 class="qa-band-h">The tests, and what each result actually means.</h2>
+    <p class="qa-band-n">28 questions</p>
+  </div>
+</section>
+<section id="ovulation-and-cycle-problems" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Ovulation and cycle problems</h2>
+      <p class="measure">Irregular cycles, PCOS, thyroid and prolactin, and how ovulation is confirmed.</p>
     </div>
     <div class="faq">
         <details id="q004">
@@ -866,42 +1047,6 @@ strong{font-weight:700;color:var(--ink)}
           <summary>I have PCOS. Will I definitely need IVF?</summary>
           <div class="a">Most women with PCOS don&#x27;t need IVF right away. First-line treatment is weight/lifestyle management, ovulation induction tablets/injections, and timed intercourse or IUI. IVF is considered if these don&#x27;t work or if there are additional factors.</div>
         </details>
-        <details id="q006">
-          <summary>Does endometriosis always cause infertility?</summary>
-          <div class="a">Endometriosis can reduce fertility, but many women still conceive naturally. Severity, age, and ovarian reserve matter. We may use medicines, surgery, or assisted reproduction depending on your stage and symptoms.</div>
-        </details>
-        <details id="q007">
-          <summary>I was told I have fibroids/adenomyosis. Can I still get pregnant?</summary>
-          <div class="a">Many fibroids don&#x27;t affect fertility. Ones that distort the cavity or are large may reduce implantation. Adenomyosis can also affect implantation. We assess size/location and decide if treatment before trying is needed.</div>
-        </details>
-        <details id="q008">
-          <summary>My AMH is low. Is my egg quality poor?</summary>
-          <div class="a">Low AMH mainly indicates lower egg quantity, not automatically poor quality. Quality is more linked to age. With low AMH, we plan efficiently, sometimes aiming for earlier treatment or multiple retrievals if IVF is needed.</div>
-        </details>
-        <details id="q009">
-          <summary>I&#x27;m 39. Are my chances too low?</summary>
-          <div class="a">Chances decline with age, but many 39-year-olds conceive-naturally or with help. The key is not to delay evaluation and to choose the right plan (ovulation support, IUI, or IVF depending on results).</div>
-        </details>
-        <details id="q010">
-          <summary>If my tubes are blocked, is IVF the only option?</summary>
-          <div class="a">If both tubes are significantly blocked or damaged, IVF is usually the best option because it bypasses the tubes. If one tube is open and healthy, natural/IUI may still be possible depending on other factors.</div>
-        </details>
-        <details id="q011">
-          <summary>I had two miscarriages. Is IVF with genetic testing needed?</summary>
-          <div class="a">Not automatically. We first look for causes-uterine factors, thyroid/diabetes, antiphospholipid antibodies, chromosomal issues, sperm DNA issues, etc. IVF with PGT may help in selected cases, especially with age 38+ or proven genetic problems.</div>
-        </details>
-        <details id="q012">
-          <summary>My progesterone was low last time. Does that stop pregnancy?</summary>
-          <div class="a">Low progesterone can reduce implantation or early support. If confirmed, we supplement after ovulation or embryo transfer. It&#x27;s a common, manageable issue.</div>
-        </details>
-        <details id="q013">
-          <summary>My lining is thin. Can implantation still happen?</summary>
-          <div class="a">Thin lining can reduce chances, but we often improve it with tailored medication, correcting infections, optimizing hormones, and sometimes changing protocol or doing frozen transfer.</div>
-        </details>
-        <details id="q014">
-          <summary>Should I freeze eggs now even though I&#x27;m not ready for a baby?</summary>
-          <div class="a">Egg freezing is a way to protect future choice, especially if you&#x27;re in your early-mid 30s or have risk factors (family history, low reserve). We&#x27;ll check your reserve and discuss expected egg numbers and costs.</div>
-        </details>
         <details id="q087">
           <summary>My TSH is high-normal. Does that matter?</summary>
           <div class="a">Thyroid affects ovulation and early pregnancy. We aim for a TSH around 2.5 or less when trying or in early pregnancy, and treat if needed.</div>
@@ -910,37 +1055,109 @@ strong{font-weight:700;color:var(--ink)}
           <summary>My prolactin is a bit elevated. Is that serious?</summary>
           <div class="a">Mild elevation is common and treatable. We repeat fasting tests, rule out stress/medication causes, and give treatment if needed to restore ovulation.</div>
         </details>
-        <details id="q089">
-          <summary>Do autoimmune diseases affect fertility?</summary>
-          <div class="a">Some autoimmune conditions can affect implantation or pregnancy. With proper control and a coordinated plan with your physician, most women conceive safely.</div>
+        <details id="q101">
+          <summary>How do you confirm whether I am ovulating, and what happens if I am not?</summary>
+          <div class="a">The key is to confirm whether and when ovulation occurs and then address the underlying cause. Ultrasound, selected blood tests and cycle tracking can guide treatment; treatment depends on the diagnosis.<span class="qa-note">Covers: irregular periods, ovulation tracking, late periods, anovulation, ovulation medicines.</span></div>
         </details>
-        <details id="q095">
-          <summary>If my period comes late before starting IVF, what do we do?</summary>
-          <div class="a">We confirm you&#x27;re not pregnant and check hormones/ultrasound. If everything is okay, we can induce a period safely or start in the next natural cycle.</div>
+    </div>
+  </div>
+</section>
+<section id="ovarian-reserve-and-amh" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Ovarian reserve and AMH</h2>
+      <p class="measure">What AMH measures, what it does not, and how a low reserve changes the plan.</p>
+    </div>
+    <div class="faq">
+        <details id="q008">
+          <summary>My AMH is low. Is my egg quality poor?</summary>
+          <div class="a">Low AMH mainly indicates lower egg quantity, not automatically poor quality. Quality is more linked to age. With low AMH, we plan efficiently, sometimes aiming for earlier treatment or multiple retrievals if IVF is needed.</div>
+        </details>
+        <details id="q014">
+          <summary>Should I freeze eggs now even though I&#x27;m not ready for a baby?</summary>
+          <div class="a">Egg freezing is a way to protect future choice, especially if you&#x27;re in your early-mid 30s or have risk factors (family history, low reserve). We&#x27;ll check your reserve and discuss expected egg numbers and costs.</div>
         </details>
         <details id="q096">
           <summary>Can egg quality be improved?</summary>
           <div class="a">We can optimize factors that hurt quality-smoking, obesity, uncontrolled thyroid/diabetes, vitamin D deficiency, oxidative stress. But age-related decline can&#x27;t be fully reversed, so timing matters.</div>
         </details>
+        <details id="q102">
+          <summary>What do AMH and AFC actually tell you?</summary>
+          <div class="a">AMH and AFC mainly estimate ovarian reserve/expected response to stimulation; they do not directly measure egg quality. Age remains an important predictor of egg competence and pregnancy outcome.<span class="qa-note">Covers: AMH meaning, low AMH, high AMH, AFC meaning, ovarian reserve and age.</span></div>
+        </details>
     </div>
   </div>
 </section>
-<section id="male" class="qa-sec">
+<section id="tubes-and-pelvic-factors" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Male</p>
-      <h2>Male &#8212; 14 questions</h2>
-      <p class="measure">Semen analysis, low counts, azoospermia, varicocele, DNA fragmentation and retrieval.</p>
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Tubes and pelvic factors</h2>
+      <p class="measure">Blocked tubes, hydrosalpinx, HSG, and pelvic infection.</p>
     </div>
     <div class="faq">
-        <details id="q015">
-          <summary>What exactly is a semen analysis and how do I prepare?</summary>
-          <div class="a">It measures sperm count, motility (movement), and morphology (shape). You give a sample after 2-5 days of abstinence, avoid fever/alcohol/heavy smoking beforehand, and ideally repeat if abnormal, since sperm changes over time.</div>
+        <details id="q010">
+          <summary>If my tubes are blocked, is IVF the only option?</summary>
+          <div class="a">If both tubes are significantly blocked or damaged, IVF is usually the best option because it bypasses the tubes. If one tube is open and healthy, natural/IUI may still be possible depending on other factors.</div>
         </details>
-        <details id="q016">
-          <summary>My semen report is borderline low. Does that mean I&#x27;m infertile?</summary>
-          <div class="a">Borderline values don&#x27;t equal infertility. Many men with mild issues conceive naturally. We repeat the test, look for treatable causes, and decide if lifestyle, medication, IUI, or IVF/ICSI is best.</div>
+        <details id="q104">
+          <summary>When are the tubes tested, and what happens if they are damaged?</summary>
+          <div class="a">Tubal assessment is useful when tubal disease is possible. Treatment depends on whether one or both tubes are affected, whether there is hydrosalpinx or other pelvic disease, and the couple&#x27;s age and fertility factors.<span class="qa-note">Covers: HSG/HyCoSy, blocked tubes, hydrosalpinx, one open tube, tubal surgery.</span></div>
         </details>
+    </div>
+  </div>
+</section>
+<section id="uterus-fibroids-and-polyps" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Uterus, fibroids and polyps</h2>
+      <p class="measure">Fibroids, polyps, adenomyosis, adhesions and a lining that will not grow.</p>
+    </div>
+    <div class="faq">
+        <details id="q007">
+          <summary>I was told I have fibroids/adenomyosis. Can I still get pregnant?</summary>
+          <div class="a">Many fibroids don&#x27;t affect fertility. Ones that distort the cavity or are large may reduce implantation. Adenomyosis can also affect implantation. We assess size/location and decide if treatment before trying is needed.</div>
+        </details>
+        <details id="q013">
+          <summary>My lining is thin. Can implantation still happen?</summary>
+          <div class="a">Thin lining can reduce chances, but we often improve it with tailored medication, correcting infections, optimizing hormones, and sometimes changing protocol or doing frozen transfer.</div>
+        </details>
+        <details id="q105">
+          <summary>Which uterine findings actually matter for fertility?</summary>
+          <div class="a">Uterine findings matter mainly when they alter the cavity or are associated with symptoms or repeated reproductive problems. Ultrasound and, when indicated, hysteroscopy or other imaging help decide whether treatment is worthwhile.<span class="qa-note">Covers: fibroids, endometrial polyps, uterine septum, thin endometrium, adenomyosis.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="endometriosis" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Endometriosis</h2>
+      <p class="measure">Endometriosis and fertility - when surgery helps and when it does not.</p>
+    </div>
+    <div class="faq">
+        <details id="q006">
+          <summary>Does endometriosis always cause infertility?</summary>
+          <div class="a">Endometriosis can reduce fertility, but many women still conceive naturally. Severity, age, and ovarian reserve matter. We may use medicines, surgery, or assisted reproduction depending on your stage and symptoms.</div>
+        </details>
+        <details id="q106">
+          <summary>How does endometriosis affect fertility, and how is it managed?</summary>
+          <div class="a">Endometriosis can affect fertility through inflammation, anatomy and ovarian reserve, but its impact varies widely. Treatment should balance symptoms, age, ovarian reserve, prior surgery and the couple&#x27;s fertility goals.<span class="qa-note">Covers: endometriosis diagnosis, endometriosis and egg reserve, endometriosis pain, surgery before IVF, endometriosis recurrence.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="male-fertility" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Male fertility</h2>
+      <p class="measure">Low counts, azoospermia, varicocele, retrieval, and the things men are rarely told.</p>
+    </div>
+    <div class="faq">
         <details id="q017">
           <summary>If there is no sperm, is there any hope?</summary>
           <div class="a">Yes. We first confirm with a repeat test and hormones. Some cases are obstructive and can be treated surgically or with sperm retrieval. Non-obstructive cases may still yield sperm on micro-TESE. Donor sperm is an option if retrieval fails.</div>
@@ -957,14 +1174,6 @@ strong{font-weight:700;color:var(--ink)}
           <summary>Does the man&#x27;s age matter for fertility?</summary>
           <div class="a">Yes, sperm quality and DNA integrity gradually decline with age, and miscarriage risk can rise in older fathers. Healthy lifestyle and timely planning help, and in IVF we may consider sperm DNA testing in some cases.</div>
         </details>
-        <details id="q021">
-          <summary>What lifestyle changes improve sperm?</summary>
-          <div class="a">Stop smoking/vaping, limit alcohol, maintain healthy weight, exercise moderately, sleep 7-8 hours, reduce heat exposure to testes, and eat a balanced diet with enough protein, omega-3, zinc, folate, and antioxidants.</div>
-        </details>
-        <details id="q022">
-          <summary>What is sperm DNA fragmentation and when do you test it?</summary>
-          <div class="a">It checks sperm DNA breaks that can affect fertilization and miscarriage. We consider it after repeated IVF failure, unexplained infertility, recurrent miscarriage, or in older males/varicocele.</div>
-        </details>
         <details id="q023">
           <summary>Can past infections cause male infertility?</summary>
           <div class="a">Yes, infections like mumps orchitis, STIs, or prostatitis can affect sperm. We look for symptoms, do tests if needed, and treat infections to improve outcomes.</div>
@@ -973,58 +1182,72 @@ strong{font-weight:700;color:var(--ink)}
           <summary>Do diabetes or BP medicines affect fertility?</summary>
           <div class="a">Some illnesses and a few medicines can affect erectile function or sperm. We review your drugs and control sugars/BP well. Never stop medicines on your own-let&#x27;s adjust safely if needed.</div>
         </details>
-        <details id="q090">
-          <summary>Can I take testosterone to improve sperm?</summary>
-          <div class="a">External testosterone can actually suppress sperm production. Never self-start. If hormones are low, we use fertility-friendly treatments instead.</div>
-        </details>
-        <details id="q091">
-          <summary>How long do sperm-improving treatments take?</summary>
-          <div class="a">Sperm take about 70-90 days to regenerate. So lifestyle or medication changes usually need 3 months to show effect.</div>
-        </details>
         <details id="q092">
           <summary>Is sperm retrieval surgery painful?</summary>
           <div class="a">Procedures like PESA/TESA are minor and done with anesthesia; discomfort afterward is usually mild. Micro-TESE is a bigger procedure, but pain is manageable and we give proper care.</div>
         </details>
-        <details id="q097">
-          <summary>Does laptop/sauna/hot baths reduce sperm?</summary>
-          <div class="a">Regular heat exposure can lower sperm count temporarily. Keep laptops off lap, limit saunas/hot tubs, and wear loose underwear.</div>
+        <details id="q107">
+          <summary>How is the male partner evaluated?</summary>
+          <div class="a">Male factors contribute to a substantial proportion of infertility. Evaluation usually starts with semen analysis and history, followed by targeted hormonal, genetic or imaging tests when indicated.<span class="qa-note">Covers: low sperm count, low motility, abnormal morphology, azoospermia, male fertility hormones.</span></div>
         </details>
     </div>
   </div>
 </section>
-<section id="couple" class="qa-sec">
+<section id="semen-testing-and-sperm-dna" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Couple</p>
-      <h2>Couple &#8212; 4 questions</h2>
-      <p class="measure">Unexplained infertility, religion, sex selection and deciding what next.</p>
+      <p class="eyebrow">Finding the reason</p>
+      <h2>Semen testing and sperm DNA</h2>
+      <p class="measure">How a semen analysis is done and read, and where DNA fragmentation fits.</p>
     </div>
     <div class="faq">
-        <details id="q025">
-          <summary>All tests are normal. Why aren&#x27;t we conceiving?</summary>
-          <div class="a">This is called unexplained infertility. It may involve subtle egg/sperm/implantation issues we can&#x27;t measure yet. Options include timed intercourse with mild stimulation, IUI, and IVF depending on age and duration.</div>
+        <details id="q015">
+          <summary>What exactly is a semen analysis and how do I prepare?</summary>
+          <div class="a">It measures sperm count, motility (movement), and morphology (shape). You give a sample after 2-5 days of abstinence, avoid fever/alcohol/heavy smoking beforehand, and ideally repeat if abnormal, since sperm changes over time.</div>
         </details>
-        <details id="q026">
-          <summary>How do you decide between IUI and IVF?</summary>
-          <div class="a">We use age, duration, tube status, sperm quality, ovarian reserve, and previous attempts. IUI suits younger couples with open tubes and mild male/ovulation issues; IVF is better for low reserve, tubal block, severe male factor, or long-standing infertility.</div>
+        <details id="q016">
+          <summary>My semen report is borderline low. Does that mean I&#x27;m infertile?</summary>
+          <div class="a">Borderline values don&#x27;t equal infertility. Many men with mild issues conceive naturally. We repeat the test, look for treatable causes, and decide if lifestyle, medication, IUI, or IVF/ICSI is best.</div>
         </details>
-        <details id="q093">
-          <summary>Can IVF guarantee a boy/girl?</summary>
-          <div class="a">No. Sex selection for social reasons is illegal in India. IVF is for treating infertility and preventing serious genetic disease.</div>
+        <details id="q022">
+          <summary>What is sperm DNA fragmentation and when do you test it?</summary>
+          <div class="a">It checks sperm DNA breaks that can affect fertilization and miscarriage. We consider it after repeated IVF failure, unexplained infertility, recurrent miscarriage, or in older males/varicocele.</div>
         </details>
-        <details id="q094">
-          <summary>Is IVF acceptable in our religion?</summary>
-          <div class="a">Many couples reconcile IVF with faith by focusing on the intention-building a family. If you want, we can discuss options that align with your beliefs, like using your own gametes.</div>
+        <details id="q108">
+          <summary>How reliable is a semen report, and when is sperm DNA testing needed?</summary>
+          <div class="a">Semen results vary from sample to sample, so an abnormal report often needs confirmation. Sperm DNA testing is a selected investigation rather than a routine test for every couple, and management should address treatable causes first.<span class="qa-note">Covers: semen sample preparation, repeat semen analysis, DFI testing, infection and semen, sperm freezing.</span></div>
         </details>
     </div>
   </div>
 </section>
-<section id="ivf" class="qa-sec">
+<section class="qa-band">
+  <div class="wrap">
+    <p class="eyebrow">Going through treatment</p>
+    <h2 class="qa-band-h">IUI and IVF, step by step, from the first injection to the transfer.</h2>
+    <p class="qa-band-n">25 questions</p>
+  </div>
+</section>
+<section id="iui" class="qa-sec">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">IVF</p>
-      <h2>IVF &#8212; 16 questions</h2>
-      <p class="measure">What a cycle involves, ICSI, embryo grading, freezing, OHSS, and what happens if it fails.</p>
+      <p class="eyebrow">Going through treatment</p>
+      <h2>IUI</h2>
+      <p class="measure">Who IUI helps, how many cycles are reasonable, and when to stop.</p>
+    </div>
+    <div class="faq">
+        <details id="q110">
+          <summary>Who does IUI actually help?</summary>
+          <div class="a">IUI is most useful in selected couples, particularly when at least one tube is functional and sperm parameters are suitable. Success depends strongly on age, ovarian response, diagnosis and sperm factors.<span class="qa-note">Covers: who should consider IUI, IUI timing, IUI medicines, IUI success factors, IUI failure.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="planning-ivf" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Going through treatment</p>
+      <h2>Planning IVF</h2>
+      <p class="measure">What a cycle involves, how long it takes, and how to judge a clinic.</p>
     </div>
     <div class="faq">
         <details id="q027">
@@ -1035,18 +1258,6 @@ strong{font-weight:700;color:var(--ink)}
           <summary>How long does one IVF cycle take?</summary>
           <div class="a">Usually 3-4 weeks from start of injections to embryo transfer. If we freeze embryos and transfer later, each step is still within a month or so, but the full journey may span 1-3 months.</div>
         </details>
-        <details id="q029">
-          <summary>Is egg retrieval painful or risky?</summary>
-          <div class="a">Retrieval is done under short anesthesia, so you shouldn&#x27;t feel pain during it. Mild cramps/bloating after are common for 1-3 days. Serious risks like bleeding/infection are rare.</div>
-        </details>
-        <details id="q030">
-          <summary>What is ICSI and when is it needed?</summary>
-          <div class="a">ICSI means injecting a single sperm into each egg. We use it for low count/motility, azoospermia with retrieved sperm, previous fertilization failure, or sometimes for older couples.</div>
-        </details>
-        <details id="q031">
-          <summary>What&#x27;s the difference between fresh and frozen embryo transfer?</summary>
-          <div class="a">Fresh transfer happens in the same cycle as retrieval. Frozen transfer uses embryos stored earlier and transferred in a later cycle when the uterus is best prepared. Frozen transfers can reduce OHSS risk and sometimes improve implantation.</div>
-        </details>
         <details id="q032">
           <summary>What are realistic IVF success chances at my age?</summary>
           <div class="a">Success depends mainly on female age and embryo quality. Rough guide for live birth per transfer using own eggs: about 35-45% under 35, ~25-35% at 35-37, ~15-25% at 38-40, ~5-10% at 41-42, and &lt;5% over 42. Your personal chances may be higher or lower based on diagnosis.</div>
@@ -1055,82 +1266,157 @@ strong{font-weight:700;color:var(--ink)}
           <summary>How many IVF cycles do people usually need?</summary>
           <div class="a">Many couples conceive in 1-3 cycles. Because biology is variable, we plan in batches and review after each attempt rather than promising a fixed number.</div>
         </details>
-        <details id="q034">
-          <summary>What does embryo grading mean?</summary>
-          <div class="a">It&#x27;s a lab-based way of describing how embryos look and develop. Higher-graded embryos generally have better chances, but even average-graded embryos can result in healthy babies.</div>
-        </details>
-        <details id="q035">
-          <summary>Why are you advising only one embryo transfer?</summary>
-          <div class="a">Single embryo transfer lowers twin/triplet risks without reducing overall success much, especially in women under 38 with good embryos. If needed, we can transfer remaining frozen embryos later.</div>
-        </details>
-        <details id="q036">
-          <summary>I heard about OHSS. How common and how do you prevent it?</summary>
-          <div class="a">OHSS is ovarian over-response causing bloating, fluid shifts, and rarely clots. Severe OHSS is uncommon, and we prevent it by adjusting doses, using antagonist protocols, triggering safely, and freezing all embryos if risk is high.</div>
-        </details>
-        <details id="q037">
-          <summary>What if IVF fails-does that mean no chance?</summary>
-          <div class="a">Not at all. Failure gives us information. We review embryo quality, uterine factors, sperm DNA, and protocol, then modify the next plan. Many couples succeed on a later attempt.</div>
-        </details>
-        <details id="q038">
-          <summary>Why would a cycle get cancelled?</summary>
-          <div class="a">Reasons include too few follicles, over-response risk, premature ovulation, or medical issues. Cancellation is frustrating but sometimes safer than proceeding with low chances.</div>
-        </details>
         <details id="q083">
           <summary>How do we choose a good IVF clinic?</summary>
           <div class="a">Look for transparent data, experienced embryology lab, individualized protocols, clear communication, and ethical counseling-not just flashy success ads. Meeting the doctor and lab team matters.</div>
-        </details>
-        <details id="q084">
-          <summary>Should we freeze embryos for future child?</summary>
-          <div class="a">If you want another child later or if age/medical condition may worsen, freezing good embryos now is smart. It&#x27;s usually cheaper and more effective than starting over later.</div>
-        </details>
-        <details id="q085">
-          <summary>Do add-on treatments like PRP, growth hormone, or immunotherapy always help?</summary>
-          <div class="a">Not always. Some add-ons help selected patients, but many don&#x27;t have strong evidence for routine use. We recommend only when your profile suggests benefit.</div>
         </details>
         <details id="q086">
           <summary>Is it okay to keep trying naturally while planning IVF?</summary>
           <div class="a">Yes, unless there&#x27;s a clear barrier like both tubes blocked. We encourage healthy attempts while we prepare, because natural conception can still happen.</div>
         </details>
+        <details id="q111">
+          <summary>When is IVF the right choice rather than a simpler treatment?</summary>
+          <div class="a">IVF is considered when the expected benefit is higher than simpler options, such as with significant tubal disease, some male factors, reduced ovarian reserve, prolonged infertility or failed lower-intensity treatment. The plan should be personalized.<span class="qa-note">Covers: who needs IVF, IVF steps, IVF preparation, number of cycles, choosing protocol.</span></div>
+        </details>
     </div>
   </div>
 </section>
-<section id="genetics" class="qa-sec">
+<section id="stimulation-and-monitoring" class="qa-sec">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Genetics</p>
-      <h2>Genetics &#8212; 5 questions</h2>
-      <p class="measure">PGT-A, PGT-M, carrier screening and thalassaemia.</p>
+      <p class="eyebrow">Going through treatment</p>
+      <h2>Stimulation and monitoring</h2>
+      <p class="measure">Injections, scans, doses, and what a cancelled cycle means.</p>
     </div>
     <div class="faq">
-        <details id="q039">
-          <summary>What is PGT-A and who should consider it?</summary>
-          <div class="a">PGT-A checks embryos for chromosome number errors to select a euploid embryo. It&#x27;s most helpful for women 38+, recurrent miscarriage, repeated IVF failure, or severe male factor/older paternal age.</div>
+        <details id="q038">
+          <summary>Why would a cycle get cancelled?</summary>
+          <div class="a">Reasons include too few follicles, over-response risk, premature ovulation, or medical issues. Cancellation is frustrating but sometimes safer than proceeding with low chances.</div>
         </details>
-        <details id="q040">
-          <summary>We have a known genetic disease in family. Can IVF prevent passing it?</summary>
-          <div class="a">Yes. With PGT-M, we test embryos for a specific gene mutation and transfer only unaffected embryos. It needs genetic counseling and a custom test setup.</div>
+        <details id="q095">
+          <summary>If my period comes late before starting IVF, what do we do?</summary>
+          <div class="a">We confirm you&#x27;re not pregnant and check hormones/ultrasound. If everything is okay, we can induce a period safely or start in the next natural cycle.</div>
         </details>
-        <details id="q041">
-          <summary>Should we do genetic carrier screening before IVF?</summary>
-          <div class="a">Carrier screening can identify hidden recessive disease risks. It&#x27;s optional but useful if there&#x27;s family history, consanguinity, or you want maximum reassurance before treatment.</div>
-        </details>
-        <details id="q042">
-          <summary>We are thalassemia carriers. What are our options?</summary>
-          <div class="a">You can conceive naturally with prenatal diagnosis, or do IVF with PGT-M to transfer unaffected embryos. The choice depends on your values, cost, and timeline.</div>
-        </details>
-        <details id="q043">
-          <summary>Does IVF reduce the chance of Down syndrome?</summary>
-          <div class="a">IVF itself doesn&#x27;t reduce risk, but selecting embryos via PGT-A or doing prenatal screening in pregnancy can lower the chance of transferring an aneuploid embryo.</div>
+        <details id="q112">
+          <summary>What is stimulation trying to achieve, and how is it monitored?</summary>
+          <div class="a">Stimulation aims to recruit multiple follicles while minimizing complications. Medication doses and monitoring are individualized using ultrasound, clinical findings and sometimes hormone levels.<span class="qa-note">Covers: injections, follicle monitoring, estradiol, trigger injection, cycle cancellation.</span></div>
         </details>
     </div>
   </div>
 </section>
-<section id="pregnancy" class="qa-sec">
+<section id="egg-retrieval-and-safety" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Pregnancy</p>
-      <h2>Pregnancy &#8212; 9 questions</h2>
-      <p class="measure">Early pregnancy after treatment, bleeding, twins and what to expect.</p>
+      <p class="eyebrow">Going through treatment</p>
+      <h2>Egg retrieval and safety</h2>
+      <p class="measure">The collection itself, anaesthesia, OHSS and safety.</p>
+    </div>
+    <div class="faq">
+        <details id="q029">
+          <summary>Is egg retrieval painful or risky?</summary>
+          <div class="a">Retrieval is done under short anesthesia, so you shouldn&#x27;t feel pain during it. Mild cramps/bloating after are common for 1-3 days. Serious risks like bleeding/infection are rare.</div>
+        </details>
+        <details id="q036">
+          <summary>I heard about OHSS. How common and how do you prevent it?</summary>
+          <div class="a">OHSS is ovarian over-response causing bloating, fluid shifts, and rarely clots. Severe OHSS is uncommon, and we prevent it by adjusting doses, using antagonist protocols, triggering safely, and freezing all embryos if risk is high.</div>
+        </details>
+        <details id="q054">
+          <summary>Does IVF increase cancer risk in women?</summary>
+          <div class="a">Current evidence does not show a meaningful increase in breast/ovarian/uterine cancer from IVF medicines. We still individualize protocols for women with specific risks.</div>
+        </details>
+        <details id="q113">
+          <summary>What happens at egg retrieval, and what are the risks?</summary>
+          <div class="a">Egg retrieval is usually performed with analgesia or short anesthesia. Most patients recover quickly, but bleeding, infection, ovarian torsion and OHSS are uncommon complications that should be discussed before treatment.<span class="qa-note">Covers: egg pickup, anesthesia, retrieval risks, OHSS prevention, after retrieval.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="in-the-laboratory" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Going through treatment</p>
+      <h2>In the laboratory</h2>
+      <p class="measure">Fertilisation, ICSI, blastocysts, grading and what the embryologist reports.</p>
+    </div>
+    <div class="faq">
+        <details id="q030">
+          <summary>What is ICSI and when is it needed?</summary>
+          <div class="a">ICSI means injecting a single sperm into each egg. We use it for low count/motility, azoospermia with retrieved sperm, previous fertilization failure, or sometimes for older couples.</div>
+        </details>
+        <details id="q034">
+          <summary>What does embryo grading mean?</summary>
+          <div class="a">It&#x27;s a lab-based way of describing how embryos look and develop. Higher-graded embryos generally have better chances, but even average-graded embryos can result in healthy babies.</div>
+        </details>
+        <details id="q114">
+          <summary>What decides how the embryos do in the laboratory?</summary>
+          <div class="a">Laboratory outcomes depend on egg maturity, sperm quality, fertilization method and embryo biology. ICSI is useful for selected indications but is not automatically better than conventional IVF for every couple.<span class="qa-note">Covers: IVF vs ICSI, fertilization rate, embryo development, blastocyst, embryo grading.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="embryo-transfer-and-freezing" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Going through treatment</p>
+      <h2>Embryo transfer and freezing</h2>
+      <p class="measure">Fresh against frozen, how many embryos, the lining, and freezing what is left.</p>
+    </div>
+    <div class="faq">
+        <details id="q012">
+          <summary>My progesterone was low last time. Does that stop pregnancy?</summary>
+          <div class="a">Low progesterone can reduce implantation or early support. If confirmed, we supplement after ovulation or embryo transfer. It&#x27;s a common, manageable issue.</div>
+        </details>
+        <details id="q031">
+          <summary>What&#x27;s the difference between fresh and frozen embryo transfer?</summary>
+          <div class="a">Fresh transfer happens in the same cycle as retrieval. Frozen transfer uses embryos stored earlier and transferred in a later cycle when the uterus is best prepared. Frozen transfers can reduce OHSS risk and sometimes improve implantation.</div>
+        </details>
+        <details id="q035">
+          <summary>Why are you advising only one embryo transfer?</summary>
+          <div class="a">Single embryo transfer lowers twin/triplet risks without reducing overall success much, especially in women under 38 with good embryos. If needed, we can transfer remaining frozen embryos later.</div>
+        </details>
+        <details id="q084">
+          <summary>Should we freeze embryos for future child?</summary>
+          <div class="a">If you want another child later or if age/medical condition may worsen, freezing good embryos now is smart. It&#x27;s usually cheaper and more effective than starting over later.</div>
+        </details>
+        <details id="q115">
+          <summary>How is the timing of the embryo transfer decided?</summary>
+          <div class="a">Transfer timing is chosen after considering embryo development, endometrial preparation, hormone levels and clinical circumstances. Single embryo transfer is commonly preferred when appropriate to reduce multiple-pregnancy risk.<span class="qa-note">Covers: fresh transfer, frozen transfer, endometrial preparation, single embryo transfer, transfer precautions.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="add-ons-and-donor-options" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Going through treatment</p>
+      <h2>Add-ons and donor options</h2>
+      <p class="measure">Add-ons and the evidence for them, and donor eggs, sperm and embryos.</p>
+    </div>
+    <div class="faq">
+        <details id="q085">
+          <summary>Do add-on treatments like PRP, growth hormone, or immunotherapy always help?</summary>
+          <div class="a">Not always. Some add-ons help selected patients, but many don&#x27;t have strong evidence for routine use. We recommend only when your profile suggests benefit.</div>
+        </details>
+        <details id="q119">
+          <summary>How should we decide about add-ons and donor treatment?</summary>
+          <div class="a">Optional treatments should be offered only when their potential benefit, evidence, risks and costs are clear. Donor treatment, embryo storage, consent and finances should be discussed transparently and in accordance with applicable Indian regulations.<span class="qa-note">Covers: PRP/GH/add-ons, donor eggs, donor sperm, embryo freezing, cost/consent/emotional support.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section class="qa-band">
+  <div class="wrap">
+    <p class="eyebrow">After the transfer</p>
+    <h2 class="qa-band-h">Pregnancy, what to do when a cycle does not work, and genetic testing.</h2>
+    <p class="qa-band-n">25 questions</p>
+  </div>
+</section>
+<section id="pregnancy-after-ivf" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">After the transfer</p>
+      <h2>Pregnancy after IVF</h2>
+      <p class="measure">The two-week wait, early scans, bleeding, twins and antenatal care afterwards.</p>
     </div>
     <div class="faq">
         <details id="q044">
@@ -1165,21 +1451,6 @@ strong{font-weight:700;color:var(--ink)}
           <summary>Once heartbeat is seen, what are chances of continuing?</summary>
           <div class="a">A confirmed fetal heartbeat at 6-7 weeks is a strong positive sign. Miscarriage risk drops significantly after this, though exact risk depends on age and past history.</div>
         </details>
-        <details id="q079">
-          <summary>If miscarriage happens after IVF, what next?</summary>
-          <div class="a">We do a structured review-genetics of the pregnancy if possible, uterine evaluation, hormones, clotting and immune factors, and sperm quality. Then plan next transfer with corrections.</div>
-        </details>
-    </div>
-  </div>
-</section>
-<section id="risks" class="qa-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Risks</p>
-      <h2>Risks &#8212; 4 questions</h2>
-      <p class="measure">The health of IVF children, birth defects, cancer risk and mental health.</p>
-    </div>
-    <div class="faq">
         <details id="q052">
           <summary>Are IVF babies normal? Any long-term risks?</summary>
           <div class="a">Most IVF children are healthy and develop normally. Some risks seen in studies relate more to underlying infertility, multiple pregnancy, or prematurity than to IVF itself.</div>
@@ -1188,22 +1459,103 @@ strong{font-weight:700;color:var(--ink)}
           <summary>Is the risk of birth defects higher with IVF/ICSI?</summary>
           <div class="a">Overall risk is only slightly higher and still low. Part of the increase is linked to parental factors (age, genetics, male factor) rather than the technique itself.</div>
         </details>
-        <details id="q054">
-          <summary>Does IVF increase cancer risk in women?</summary>
-          <div class="a">Current evidence does not show a meaningful increase in breast/ovarian/uterine cancer from IVF medicines. We still individualize protocols for women with specific risks.</div>
+        <details id="q080">
+          <summary>Will IVF hormones affect breastfeeding later?</summary>
+          <div class="a">No lasting effect. The hormones used are temporary and don&#x27;t stop future breastfeeding.</div>
         </details>
-        <details id="q055">
-          <summary>I&#x27;m feeling anxious and irritable on injections. Is this normal?</summary>
-          <div class="a">Yes, hormones plus uncertainty can affect mood. Tell us early. We can support you medically and with counseling, and adjust expectations and coping tools.</div>
+        <details id="q081">
+          <summary>Is sex allowed after embryo transfer?</summary>
+          <div class="a">Usually yes after a short rest (often 3-5 days), unless you had bleeding, pain, or high OHSS risk. We&#x27;ll tell you based on your case.</div>
+        </details>
+        <details id="q082">
+          <summary>Can I travel during IVF or early pregnancy?</summary>
+          <div class="a">Light travel is okay during stimulation if monitoring is not missed. After transfer, short trips are fine if you&#x27;re stable, but avoid very long or stressful travel unless cleared.</div>
+        </details>
+        <details id="q116">
+          <summary>What happens in the first weeks after a positive test?</summary>
+          <div class="a">After a positive test, medication and follow-up are continued according to the treatment plan. Serial beta-hCG and ultrasound are used when appropriate to confirm pregnancy location and development.<span class="qa-note">Covers: beta hCG, early scan, spotting, ectopic pregnancy, multiple pregnancy.</span></div>
         </details>
     </div>
   </div>
 </section>
-<section id="costs" class="qa-sec">
+<section id="repeated-failure-and-miscarriage" class="qa-sec">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Costs</p>
-      <h2>Costs &#8212; 8 questions</h2>
+      <p class="eyebrow">After the transfer</p>
+      <h2>Repeated failure and miscarriage</h2>
+      <p class="measure">Repeated implantation failure and recurrent miscarriage - what is investigated and why.</p>
+    </div>
+    <div class="faq">
+        <details id="q011">
+          <summary>I had two miscarriages. Is IVF with genetic testing needed?</summary>
+          <div class="a">Not automatically. We first look for causes-uterine factors, thyroid/diabetes, antiphospholipid antibodies, chromosomal issues, sperm DNA issues, etc. IVF with PGT may help in selected cases, especially with age 38+ or proven genetic problems.</div>
+        </details>
+        <details id="q037">
+          <summary>What if IVF fails-does that mean no chance?</summary>
+          <div class="a">Not at all. Failure gives us information. We review embryo quality, uterine factors, sperm DNA, and protocol, then modify the next plan. Many couples succeed on a later attempt.</div>
+        </details>
+        <details id="q079">
+          <summary>If miscarriage happens after IVF, what next?</summary>
+          <div class="a">We do a structured review-genetics of the pregnancy if possible, uterine evaluation, hormones, clotting and immune factors, and sperm quality. Then plan next transfer with corrections.</div>
+        </details>
+        <details id="q089">
+          <summary>Do autoimmune diseases affect fertility?</summary>
+          <div class="a">Some autoimmune conditions can affect implantation or pregnancy. With proper control and a coordinated plan with your physician, most women conceive safely.</div>
+        </details>
+        <details id="q117">
+          <summary>How is repeated failure or recurrent miscarriage investigated?</summary>
+          <div class="a">Repeated failure or miscarriage deserves a structured review rather than automatically adding multiple tests. The evaluation should consider embryo factors, uterine anatomy, endocrine issues, sperm factors and other findings supported by the clinical history.<span class="qa-note">Covers: repeated implantation failure, recurrent miscarriage, chronic endometritis, uterine reassessment, sperm/embryo factors.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section id="genetics-and-pgt" class="qa-sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">After the transfer</p>
+      <h2>Genetics and PGT</h2>
+      <p class="measure">PGT-A, PGT-M, carrier screening and thalassaemia.</p>
+    </div>
+    <div class="faq">
+        <details id="q039">
+          <summary>What is PGT-A and who should consider it?</summary>
+          <div class="a">PGT-A checks embryos for chromosome number errors to select a euploid embryo. It&#x27;s most helpful for women 38+, recurrent miscarriage, repeated IVF failure, or severe male factor/older paternal age.</div>
+        </details>
+        <details id="q040">
+          <summary>We have a known genetic disease in family. Can IVF prevent passing it?</summary>
+          <div class="a">Yes. With PGT-M, we test embryos for a specific gene mutation and transfer only unaffected embryos. It needs genetic counseling and a custom test setup.</div>
+        </details>
+        <details id="q041">
+          <summary>Should we do genetic carrier screening before IVF?</summary>
+          <div class="a">Carrier screening can identify hidden recessive disease risks. It&#x27;s optional but useful if there&#x27;s family history, consanguinity, or you want maximum reassurance before treatment.</div>
+        </details>
+        <details id="q042">
+          <summary>We are thalassemia carriers. What are our options?</summary>
+          <div class="a">You can conceive naturally with prenatal diagnosis, or do IVF with PGT-M to transfer unaffected embryos. The choice depends on your values, cost, and timeline.</div>
+        </details>
+        <details id="q043">
+          <summary>Does IVF reduce the chance of Down syndrome?</summary>
+          <div class="a">IVF itself doesn&#x27;t reduce risk, but selecting embryos via PGT-A or doing prenatal screening in pregnancy can lower the chance of transferring an aneuploid embryo.</div>
+        </details>
+        <details id="q118">
+          <summary>When is genetic testing worth doing?</summary>
+          <div class="a">Genetic testing is most useful when there is a clear clinical indication. Carrier screening, PGT-M and PGT-A answer different questions and have limitations; genetic counseling can help couples choose appropriately.<span class="qa-note">Covers: carrier screening, PGT-A, PGT-M, chromosomal abnormalities, family genetic disease.</span></div>
+        </details>
+    </div>
+  </div>
+</section>
+<section class="qa-band">
+  <div class="wrap">
+    <p class="eyebrow">Money, law and feelings</p>
+    <h2 class="qa-band-h">The parts of treatment nobody prepares you for.</h2>
+    <p class="qa-band-n">27 questions</p>
+  </div>
+</section>
+<section id="costs-and-payment" class="qa-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Money, law and feelings</p>
+      <h2>Costs and payment</h2>
       <p class="measure">General ranges in India, what drives them, and how to avoid surprises.</p>
     </div>
     <div class="faq">
@@ -1242,53 +1594,49 @@ strong{font-weight:700;color:var(--ink)}
     </div>
   </div>
 </section>
-<section id="lifestyle" class="qa-sec">
+<section id="law-and-consent-in-india" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Lifestyle</p>
-      <h2>Lifestyle &#8212; 7 questions</h2>
-      <p class="measure">Weight, smoking, alcohol, coffee, exercise, diet and supplements.</p>
+      <p class="eyebrow">Money, law and feelings</p>
+      <h2>Law and consent in India</h2>
+      <p class="measure">What the ART and Surrogacy Acts permit, donor anonymity, storage and consent.</p>
     </div>
     <div class="faq">
-        <details id="q062">
-          <summary>What diet helps female fertility?</summary>
-          <div class="a">A balanced, anti-inflammatory diet helps: plenty of vegetables, fruits, whole grains, pulses, nuts, healthy fats, and adequate protein. Limit excess sugar, trans-fats, and ultra-processed foods.</div>
+        <details id="q075">
+          <summary>Is IVF legal and regulated in India?</summary>
+          <div class="a">Yes. IVF is legal and governed by ART and Surrogacy regulations. Clinics must be registered and follow consent, donor screening, and embryo handling rules.</div>
         </details>
-        <details id="q063">
-          <summary>Any specific foods for sperm health?</summary>
-          <div class="a">Focus on protein, omega-3 sources, nuts/seeds, leafy greens, colorful fruits, and adequate micronutrients like zinc, selenium, folate, and vitamin D. Consistency matters more than one &#x27;superfood&#x27;.</div>
+        <details id="q076">
+          <summary>Will we know the egg/sperm donor?</summary>
+          <div class="a">In India, donors are typically anonymous; you receive medical and phenotypic matching details, not identity. Records are maintained for safety.</div>
         </details>
-        <details id="q064">
-          <summary>Does weight really affect fertility?</summary>
-          <div class="a">Yes. Both underweight and overweight can disturb hormones, ovulation, and sperm. Even a 5-10% weight correction can improve natural and assisted pregnancy rates.</div>
+        <details id="q077">
+          <summary>How long can embryos be frozen?</summary>
+          <div class="a">Embryos can be safely frozen for years with good survival. The legal storage duration depends on national rules and consent, and we renew your consent periodically.</div>
         </details>
-        <details id="q065">
-          <summary>Can I exercise during IVF?</summary>
-          <div class="a">Light to moderate activity is fine. Avoid high-impact workouts and heavy core exercises during stimulation and after transfer to reduce torsion/discomfort.</div>
+        <details id="q078">
+          <summary>When is surrogacy advised?</summary>
+          <div class="a">Surrogacy is considered when a woman cannot carry a pregnancy safely (absent uterus, severe medical disease, repeated implantation failure after evaluation). It must follow legal criteria and approvals.</div>
         </details>
-        <details id="q066">
-          <summary>Is coffee or alcohol completely banned?</summary>
-          <div class="a">Moderation. Limit caffeine to about 1-2 cups a day and avoid binge drinking. In the 2-week wait and pregnancy, it&#x27;s safest to avoid alcohol.</div>
-        </details>
-        <details id="q067">
-          <summary>How much does smoking affect fertility?</summary>
-          <div class="a">Smoking reduces egg reserve, impairs embryo quality, and lowers sperm count/motility. Quitting improves outcomes within a few months.</div>
-        </details>
-        <details id="q068">
-          <summary>Which supplements should we take?</summary>
-          <div class="a">Common basics: folic acid for women, vitamin D if deficient, and antioxidants for men if semen is poor. But supplements should be tailored to your labs-avoid megadoses without advice.</div>
+        <details id="q093">
+          <summary>Can IVF guarantee a boy/girl?</summary>
+          <div class="a">No. Sex selection for social reasons is illegal in India. IVF is for treating infertility and preventing serious genetic disease.</div>
         </details>
     </div>
   </div>
 </section>
-<section id="psych" class="qa-sec">
+<section id="feelings-and-support" class="qa-sec">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">Psych</p>
-      <h2>Psych &#8212; 6 questions</h2>
-      <p class="measure">The two-week wait, family pressure, blame and the loneliness of it.</p>
+      <p class="eyebrow">Money, law and feelings</p>
+      <h2>Feelings and support</h2>
+      <p class="measure">The two-week wait, family pressure, blame, and the loneliness of it.</p>
     </div>
     <div class="faq">
+        <details id="q055">
+          <summary>I&#x27;m feeling anxious and irritable on injections. Is this normal?</summary>
+          <div class="a">Yes, hormones plus uncertainty can affect mood. Tell us early. We can support you medically and with counseling, and adjust expectations and coping tools.</div>
+        </details>
         <details id="q069">
           <summary>Did stress cause our infertility?</summary>
           <div class="a">Stress alone rarely causes infertility, but it can worsen hormones, libido, and coping. Think of stress as a load on top of a medical issue, not the only reason.</div>
@@ -1313,88 +1661,42 @@ strong{font-weight:700;color:var(--ink)}
           <summary>My husband feels ashamed about male factor. How can I help him?</summary>
           <div class="a">Reassure him that male factor is common and treatable. Avoid sharing his reports with others. Come as a team to visits so he feels supported, not singled out.</div>
         </details>
-    </div>
-  </div>
-</section>
-<section id="legal" class="qa-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Legal</p>
-      <h2>Legal &#8212; 4 questions</h2>
-      <p class="measure">What the ART and Surrogacy Acts allow, donor anonymity and embryo storage.</p>
-    </div>
-    <div class="faq">
-        <details id="q075">
-          <summary>Is IVF legal and regulated in India?</summary>
-          <div class="a">Yes. IVF is legal and governed by ART and Surrogacy regulations. Clinics must be registered and follow consent, donor screening, and embryo handling rules.</div>
-        </details>
-        <details id="q076">
-          <summary>Will we know the egg/sperm donor?</summary>
-          <div class="a">In India, donors are typically anonymous; you receive medical and phenotypic matching details, not identity. Records are maintained for safety.</div>
-        </details>
-        <details id="q077">
-          <summary>How long can embryos be frozen?</summary>
-          <div class="a">Embryos can be safely frozen for years with good survival. The legal storage duration depends on national rules and consent, and we renew your consent periodically.</div>
-        </details>
-        <details id="q078">
-          <summary>When is surrogacy advised?</summary>
-          <div class="a">Surrogacy is considered when a woman cannot carry a pregnancy safely (absent uterus, severe medical disease, repeated implantation failure after evaluation). It must follow legal criteria and approvals.</div>
+        <details id="q094">
+          <summary>Is IVF acceptable in our religion?</summary>
+          <div class="a">Many couples reconcile IVF with faith by focusing on the intention-building a family. If you want, we can discuss options that align with your beliefs, like using your own gametes.</div>
         </details>
     </div>
   </div>
 </section>
-<section id="after-ivf" class="qa-sec">
+<section id="appointments-and-the-clinic" class="qa-sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">After IVF</p>
-      <h2>After IVF &#8212; 3 questions</h2>
-      <p class="measure">Sex, travel and breastfeeding after treatment.</p>
+      <p class="eyebrow">Money, law and feelings</p>
+      <h2>Appointments and the clinic</h2>
+      <p class="measure">Appointments, where the clinic is, what to bring, and consulting in your own language.</p>
     </div>
     <div class="faq">
-        <details id="q080">
-          <summary>Will IVF hormones affect breastfeeding later?</summary>
-          <div class="a">No lasting effect. The hormones used are temporary and don&#x27;t stop future breastfeeding.</div>
-        </details>
-        <details id="q081">
-          <summary>Is sex allowed after embryo transfer?</summary>
-          <div class="a">Usually yes after a short rest (often 3-5 days), unless you had bleeding, pain, or high OHSS risk. We&#x27;ll tell you based on your case.</div>
-        </details>
-        <details id="q082">
-          <summary>Can I travel during IVF or early pregnancy?</summary>
-          <div class="a">Light travel is okay during stimulation if monitoring is not missed. After transfer, short trips are fine if you&#x27;re stable, but avoid very long or stressful travel unless cleared.</div>
-        </details>
-    </div>
-  </div>
-</section>
-<section id="clinic" class="qa-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Clinic</p>
-      <h2>Clinic &#8212; 6 questions</h2>
-      <p class="measure">Appointments, location, what to bring and consulting in your own language.</p>
-    </div>
-    <div class="faq">
-        <details id="q100">
+        <details id="q121">
           <summary>How do I book an appointment with Dr Gupta?</summary>
           <div class="a">Call or WhatsApp +91 98999 84791 - the same number takes both. Consultations at Indira IVF, J.P. Nagar, Bengaluru are by appointment. If you are travelling from outside Bengaluru or from abroad, ask for a video consultation first and send your reports in advance.</div>
         </details>
-        <details id="q101">
+        <details id="q122">
           <summary>Where is the clinic?</summary>
           <div class="a">Indira IVF, Woody&#x27;s Building, 3rd Floor, Plot No. 45/1-1, near Bangalore Central Mall, J.P. Nagar, Bengaluru 560078, Karnataka. It is convenient for Jayanagar, Banashankari, BTM Layout and Bannerghatta Road.</div>
         </details>
-        <details id="q102">
+        <details id="q123">
           <summary>What should I bring to the first visit?</summary>
           <div class="a">Every report you already have: previous cycle summaries and discharge notes, semen analyses, hormone profiles including AMH, thyroid and prolactin, HSG or ultrasound reports, hysteroscopy or laparoscopy notes, and the medicines used in earlier cycles. A consultation with the old records in the room is far more useful than one starting from scratch.</div>
         </details>
-        <details id="q103">
+        <details id="q124">
           <summary>Can I come for a second opinion after treatment elsewhere?</summary>
           <div class="a">Yes, and that is a large part of the practice. Bring the records from the previous centre. The point of the first visit is to work out what happened and why, before anything new is planned.</div>
         </details>
-        <details id="q104">
+        <details id="q125">
           <summary>Which languages can we consult in?</summary>
           <div class="a">English, Hindi, Nepali and Bhojpuri, and conversational Kannada and Bengali. The website itself can be read in Kannada, Bengali and Nepali using the language buttons at the top of the page.</div>
         </details>
-        <details id="q105">
+        <details id="q126">
           <summary>Who is Dr Shyam N Gupta?</summary>
           <div class="a">MBBS, MD in Obstetrics and Gynaecology, with fellowships in infertility and gynaecological endoscopy and a diploma in male infertility from ANDROFERT, Brazil. Centre Head at Indira IVF, J.P. Nagar, Bengaluru since 2016 and Zonal Business Director for Indira IVF South, with sixteen publications and twelve years in reproductive medicine. Much of the practice concerns couples for whom something has already gone wrong more than once.</div>
         </details>
@@ -1430,15 +1732,18 @@ strong{font-weight:700;color:var(--ink)}
   <div class="bot-head">
     <div>
       <p class="bot-title" id="bot-title">Ask Dr Gupta</p>
-      <p class="bot-sub">100 questions, answered in his own words</p>
+      <p class="bot-sub" id="bot-count">Answered in his own words</p>
     </div>
     <button type="button" id="bot-close" class="bot-close" aria-label="Close">&#215;</button>
   </div>
   <div class="bot-log" id="bot-log" role="log" aria-live="polite"></div>
-  <form class="bot-form" id="bot-form">
+  <form class="bot-form" id="bot-form" autocomplete="off">
+    <div id="bot-suggest" class="bot-suggest" role="listbox" aria-label="Matching questions" hidden></div>
     <label class="sr-only" for="bot-input">Type your question</label>
     <input type="text" id="bot-input" autocomplete="off" enterkeyhint="send"
-           placeholder="Why did my IVF cycle fail?">
+           role="combobox" aria-autocomplete="list" aria-expanded="false"
+           aria-controls="bot-suggest"
+           placeholder="Start typing &#8212; low AMH, cost, no sperm&#8230;">
     <button type="submit" class="bot-send">Ask</button>
   </form>
   <p class="bot-foot">General information, not a diagnosis and not a substitute for
