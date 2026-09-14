@@ -614,6 +614,28 @@ strong{font-weight:700;color:var(--ink)}
 .faq summary{font-weight:700}
 .link-card .net,.review .net{font-weight:800}
 
+/* ---- social feed: click-to-load Instagram reels and the Facebook page ----
+   Nothing from Meta loads until the visitor presses play. That keeps the
+   page fast for Core Web Vitals and keeps a fertility patient from being
+   tracked just for reading the page. Without script the button is a plain
+   link that opens the post on Instagram or Facebook. */
+.feed{margin-top:clamp(1.8rem,4vw,2.8rem)}
+.feed-head{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.feed-head h3{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.feed-head p{font-size:.88rem;color:var(--muted);max-width:62ch}
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;align-items:start}
+.feed-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.45rem}
+.feed-card .net{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:800}
+.feed-card h3{font-family:var(--serif);font-size:1.08rem;color:var(--ink);line-height:1.3;text-wrap:balance}
+.feed-card .what{font-size:.86rem;color:var(--muted);line-height:1.55}
+.feed-card .feed-play{align-self:flex-start;margin-top:.5rem}
+.feed-frame:empty{display:none}
+.feed-frame{margin-top:.4rem;border-radius:calc(var(--radius) - 4px);overflow:hidden;background:var(--bg)}
+.feed-frame iframe{display:block;width:100%;border:0}
+.feed-reel .feed-frame iframe{height:620px}
+.feed-page .feed-frame iframe{height:640px}
+
 /* ============ ask-a-question bot ============ */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -770,7 +792,7 @@ strong{font-weight:700;color:var(--ink)}
 .cta-band p{color:var(--on-dark-dim);margin-top:.7rem;max-width:52ch}
 
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/#page", "url": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/", "name": "Recurrent implantation failure", "description": "Recurrent implantation failure investigated properly before another transfer — hysteroscopy, chronic endometritis (CD138), endometrial receptivity, immune and male factor testing. Dr Shyam N Gupta, Indira IVF J.P. Nagar, Bengaluru.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Recurrent implantation failure"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-13", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many failed transfers before it is called recurrent implantation failure?", "acceptedAnswer": {"@type": "Answer", "text": "Commonly three or more good-quality embryos, or two or more euploid blastocysts, transferred without pregnancy. The pattern matters more than the exact number — embryos that should have implanted, did not."}}, {"@type": "Question", "name": "Do I need every test on the list?", "acceptedAnswer": {"@type": "Answer", "text": "No. Testing is directed by your history and previous cycles. An unfocused panel of every available immune and thrombophilia test is expensive and often unhelpful; the aim is an explanation, not a longer report."}}, {"@type": "Question", "name": "Is chronic endometritis common in recurrent implantation failure?", "acceptedAnswer": {"@type": "Answer", "text": "It is found in a meaningful proportion of women with repeated failure and is frequently silent — no pain, no discharge, normal scan. It is diagnosed on CD138 immunohistochemistry of an endometrial sample and is treatable."}}, {"@type": "Question", "name": "Can the male partner be the reason implantation keeps failing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A normal semen analysis does not exclude high sperm DNA fragmentation, which can produce embryos that grade well but fail after transfer. The male side is re-evaluated as part of the workup."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Recurrent implantation failure", "item": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "MedicalWebPage", "@id": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/#page", "url": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/", "name": "Recurrent implantation failure", "description": "Recurrent implantation failure investigated properly before another transfer — hysteroscopy, chronic endometritis (CD138), endometrial receptivity, immune and male factor testing. Dr Shyam N Gupta, Indira IVF J.P. Nagar, Bengaluru.", "inLanguage": "en-IN", "about": {"@type": "MedicalCondition", "name": "Recurrent implantation failure"}, "author": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "reviewedBy": {"@id": "https://www.drshyamguptaivf.com/#physician"}, "lastReviewed": "2026-09-14", "isPartOf": {"@id": "https://www.drshyamguptaivf.com/#website"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many failed transfers before it is called recurrent implantation failure?", "acceptedAnswer": {"@type": "Answer", "text": "Commonly three or more good-quality embryos, or two or more euploid blastocysts, transferred without pregnancy. The pattern matters more than the exact number — embryos that should have implanted, did not."}}, {"@type": "Question", "name": "Do I need every test on the list?", "acceptedAnswer": {"@type": "Answer", "text": "No. Testing is directed by your history and previous cycles. An unfocused panel of every available immune and thrombophilia test is expensive and often unhelpful; the aim is an explanation, not a longer report."}}, {"@type": "Question", "name": "Is chronic endometritis common in recurrent implantation failure?", "acceptedAnswer": {"@type": "Answer", "text": "It is found in a meaningful proportion of women with repeated failure and is frequently silent — no pain, no discharge, normal scan. It is diagnosed on CD138 immunohistochemistry of an endometrial sample and is treatable."}}, {"@type": "Question", "name": "Can the male partner be the reason implantation keeps failing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A normal semen analysis does not exclude high sperm DNA fragmentation, which can produce embryos that grade well but fail after transfer. The male side is re-evaluated as part of the workup."}}]}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dr Shyam N Gupta", "item": "https://www.drshyamguptaivf.com/"}, {"@type": "ListItem", "position": 2, "name": "Recurrent implantation failure", "item": "https://www.drshyamguptaivf.com/recurrent-implantation-failure/"}]}]}</script>
 </head>
 <body>
 <div class="langbar">
@@ -1036,6 +1058,29 @@ strong{font-weight:700;color:var(--ink)}
   window.addEventListener("beforeunload", stopAll);
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) stopAll();
+  });
+})();
+
+/* ---- social feed: swap the play link for the real embed on click ---- */
+(function () {
+  document.querySelectorAll(".feed-play").forEach(function (btn) {
+    btn.addEventListener("click", function (ev) {
+      var card = btn.closest(".feed-card"), frame = card && card.querySelector(".feed-frame");
+      if (!frame || !frame.dataset.embed) return;          // no embed: follow the link
+      ev.preventDefault();
+      var f = document.createElement("iframe");
+      var src = frame.dataset.embed.replace(/&amp;/g, "&");
+      // Facebook's page plugin renders at the width it is asked for and
+      // ignores the iframe's own width, so ask for the column's real width
+      var w = Math.max(180, Math.min(500, Math.round(card.getBoundingClientRect().width - 36)));
+      f.src = src.replace(/([?&]width=)\d+/, "$1" + w);
+      f.title = frame.dataset.title || "Social post";
+      f.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; clipboard-write");
+      f.setAttribute("allowfullscreen", "");
+      frame.appendChild(f);
+      btn.hidden = true;
+      f.focus();
+    });
   });
 })();
 </script>

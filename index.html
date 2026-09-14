@@ -621,6 +621,28 @@ strong{font-weight:700;color:var(--ink)}
 .faq summary{font-weight:700}
 .link-card .net,.review .net{font-weight:800}
 
+/* ---- social feed: click-to-load Instagram reels and the Facebook page ----
+   Nothing from Meta loads until the visitor presses play. That keeps the
+   page fast for Core Web Vitals and keeps a fertility patient from being
+   tracked just for reading the page. Without script the button is a plain
+   link that opens the post on Instagram or Facebook. */
+.feed{margin-top:clamp(1.8rem,4vw,2.8rem)}
+.feed-head{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.feed-head h3{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.feed-head p{font-size:.88rem;color:var(--muted);max-width:62ch}
+.feed-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;align-items:start}
+.feed-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.45rem}
+.feed-card .net{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);font-weight:800}
+.feed-card h3{font-family:var(--serif);font-size:1.08rem;color:var(--ink);line-height:1.3;text-wrap:balance}
+.feed-card .what{font-size:.86rem;color:var(--muted);line-height:1.55}
+.feed-card .feed-play{align-self:flex-start;margin-top:.5rem}
+.feed-frame:empty{display:none}
+.feed-frame{margin-top:.4rem;border-radius:calc(var(--radius) - 4px);overflow:hidden;background:var(--bg)}
+.feed-frame iframe{display:block;width:100%;border:0}
+.feed-reel .feed-frame iframe{height:620px}
+.feed-page .feed-frame iframe{height:640px}
+
 /* ============ ask-a-question bot ============ */
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0 0 0 0);white-space:nowrap;border:0}
@@ -1534,7 +1556,7 @@ strong{font-weight:700;color:var(--ink)}
     <div class="sec-head">
       <p class="eyebrow">Follow &amp; review</p>
       <h2>Updates, and a place to leave feedback</h2>
-      <p class="measure">Case notes, congress reports and patient education go out on LinkedIn and Instagram. If you have been treated at the centre, a Google review helps other couples decide.</p>
+      <p class="measure">Case notes, congress reports and patient education go out on LinkedIn, Instagram and Facebook. If you have been treated at the centre, a Google review helps other couples decide.</p>
     </div>
     <div class="connect">
       <div class="links">
@@ -1565,6 +1587,43 @@ strong{font-weight:700;color:var(--ink)}
         <p>Fertility treatment is chosen largely on trust, and couples weighing up a clinic read what other patients have written. If you have been through treatment here, a few honest lines help more than you would think.</p>
         <a class="btn btn-solid" href="https://g.page/r/CXxDEThKmkaVEAE/review">Write a Google review</a>
         <span class="alt">Or <a href="https://g.page/r/CXxDEThKmkaVEAE">read what patients have already said</a> about Indira IVF, J.P. Nagar.</span>
+      </div>
+    </div>
+
+    <div class="feed">
+      <div class="feed-head">
+        <h3>From Instagram and Facebook</h3>
+        <p>Each post loads from Instagram or Facebook only when you press play, so neither can track you before you choose to watch.</p>
+      </div>
+      <div class="feed-grid">
+        <article class="feed-card feed-reel">
+          <p class="net">Instagram reel</p>
+          <h3>ASPIRE 2026, Beijing</h3>
+          <p class="what">Three scientific papers presented and two sessions chaired at the Asia Pacific Initiative on Reproduction congress.</p>
+          <div class="feed-frame" data-embed="https://www.instagram.com/reel/DYlYCibDUns/embed/" data-title="ASPIRE 2026, Beijing on Instagram"></div>
+          <a class="btn btn-solid feed-play" href="https://www.instagram.com/reel/DYlYCibDUns/" target="_blank" rel="noopener">Play reel</a>
+        </article>
+        <article class="feed-card feed-reel">
+          <p class="net">Instagram reel</p>
+          <h3>IVF questions, answered</h3>
+          <p class="what">Episode 3 of the FAQ series from Indira IVF J.P. Nagar, for couples still unsure what IVF actually involves.</p>
+          <div class="feed-frame" data-embed="https://www.instagram.com/reel/Da4JfGOpMSV/embed/" data-title="IVF questions, answered on Instagram"></div>
+          <a class="btn btn-solid feed-play" href="https://www.instagram.com/reel/Da4JfGOpMSV/" target="_blank" rel="noopener">Play reel</a>
+        </article>
+        <article class="feed-card feed-reel">
+          <p class="net">Instagram reel</p>
+          <h3>International Speaker Programme 2025</h3>
+          <p class="what">Prof. Simon Fishel, part of the team behind the first IVF baby, and Dr Sandro Esteves of ANDROFERT, in Bengaluru.</p>
+          <div class="feed-frame" data-embed="https://www.instagram.com/reel/DG0hHxQS0b5/embed/" data-title="International Speaker Programme 2025 on Instagram"></div>
+          <a class="btn btn-solid feed-play" href="https://www.instagram.com/reel/DG0hHxQS0b5/" target="_blank" rel="noopener">Play reel</a>
+        </article>
+        <article class="feed-card feed-page">
+          <p class="net">Facebook page</p>
+          <h3>Latest posts</h3>
+          <p class="what">The newest updates from the Facebook page, loaded live, so this card is never out of date.</p>
+          <div class="feed-frame" data-embed="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdrshyamgupta.ivf&amp;tabs=timeline&amp;width=500&amp;height=640&amp;small_header=true&amp;hide_cover=true&amp;show_facepile=false&amp;adapt_container_width=true" data-title="Latest posts on Facebook"></div>
+          <a class="btn btn-solid feed-play" href="https://www.facebook.com/drshyamgupta.ivf" target="_blank" rel="noopener">Show posts</a>
+        </article>
       </div>
     </div>
   </div>
@@ -1768,6 +1827,29 @@ strong{font-weight:700;color:var(--ink)}
   window.addEventListener("beforeunload", stopAll);
   document.addEventListener("visibilitychange", function () {
     if (document.hidden) stopAll();
+  });
+})();
+
+/* ---- social feed: swap the play link for the real embed on click ---- */
+(function () {
+  document.querySelectorAll(".feed-play").forEach(function (btn) {
+    btn.addEventListener("click", function (ev) {
+      var card = btn.closest(".feed-card"), frame = card && card.querySelector(".feed-frame");
+      if (!frame || !frame.dataset.embed) return;          // no embed: follow the link
+      ev.preventDefault();
+      var f = document.createElement("iframe");
+      var src = frame.dataset.embed.replace(/&amp;/g, "&");
+      // Facebook's page plugin renders at the width it is asked for and
+      // ignores the iframe's own width, so ask for the column's real width
+      var w = Math.max(180, Math.min(500, Math.round(card.getBoundingClientRect().width - 36)));
+      f.src = src.replace(/([?&]width=)\d+/, "$1" + w);
+      f.title = frame.dataset.title || "Social post";
+      f.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; clipboard-write");
+      f.setAttribute("allowfullscreen", "");
+      frame.appendChild(f);
+      btn.hidden = true;
+      f.focus();
+    });
   });
 })();
 </script>
